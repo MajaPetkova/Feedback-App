@@ -3,7 +3,7 @@ import { RatingSelect } from "./RatingSelect";
 import { Button } from "./shared/Button";
 import { Card } from "./shared/Card";
 
-export const FeedbackForm = () => {
+export const FeedbackForm = ({handleAdd}) => {
   const [text, setText] = useState("");
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -11,11 +11,11 @@ export const FeedbackForm = () => {
 
   const handleTextChange = (e) => {
     if (text === "") {
-      setBtnDisabled(true);
       setMessage(null);
-    } else if (text !== "" && text.trim().length <= 10) {
       setBtnDisabled(true);
+    } else if (text !== "" && text.trim().length <= 10) {
       setMessage("Text must be at least 10 characters");
+      setBtnDisabled(true);
     } else {
       setMessage(null);
       setBtnDisabled(false);
@@ -23,11 +23,23 @@ export const FeedbackForm = () => {
     setText(e.target.value);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+        const newFeedback ={
+          text,
+          rating  
+        }
+       handleAdd(newFeedback);
+       setText("")
+    }
+  };
+
   return (
     <Card>
-      <form>
+      <form onSubmit={submitHandler}>
         <h2>How would you rate your service with us?</h2>
-            <RatingSelect/>
+        <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             type="text"
@@ -35,7 +47,7 @@ export const FeedbackForm = () => {
             onChange={handleTextChange}
             value={text}
           ></input>
-          <Button type="submit" isDisabled={btnDisabled} >
+          <Button type="submit" isDisabled={btnDisabled}>
             Send
           </Button>
         </div>
