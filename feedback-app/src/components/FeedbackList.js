@@ -4,11 +4,11 @@ import { useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 
 
-export const FeedbackList = ({ closeHandler }) => {
+export const FeedbackList = () => {
 
   const {feedback} = useContext(FeedbackContext);
 
-  if (!feedback || feedback.length == 0) {
+  if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
   }
   return (
@@ -21,7 +21,9 @@ export const FeedbackList = ({ closeHandler }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <FeedBackItem key={x.id} x={x} closeHandler={closeHandler} />
+            <FeedBackItem key={x.id} x={x} 
+            // closeHandler={closeHandler} 
+            />
           </motion.div>
         ))}
       </AnimatePresence>
