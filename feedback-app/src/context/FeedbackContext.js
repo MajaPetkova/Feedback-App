@@ -4,26 +4,26 @@ import { v4 as uuidv4 } from "uuid";
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [isLoading, setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const [feedback, setFeedback] = useState([]);
-    // {
-    //   id: 1,
-    //   text: "Feedback from Context 1",
-    //   rating: 5,
-    // },
-    // {
-    //   id: 2,
-    //   text: "Feedback from Context 2",
-    //   rating: 7,
-    // },
-    // {
-    //   id: 3,
-    //   text: "Feedback from Context 3",
-    //   rating: 9,
-    // },
+  // {
+  //   id: 1,
+  //   text: "Feedback from Context 1",
+  //   rating: 5,
+  // },
+  // {
+  //   id: 2,
+  //   text: "Feedback from Context 2",
+  //   rating: 7,
+  // },
+  // {
+  //   id: 3,
+  //   text: "Feedback from Context 3",
+  //   rating: 9,
+  // },
 
   useEffect(() => {
-    fetchFeedback()
+    fetchFeedback();
   }, []);
 
   // fetch feedback
@@ -32,8 +32,8 @@ export const FeedbackProvider = ({ children }) => {
       "http://localhost:5000/feedback?_sort=id&_order=desc"
     );
     const data = await res.json();
-   setFeedback(data);
-   setIsLoading(false)
+    setFeedback(data);
+    setIsLoading(false);
   };
 
   const [feedbackEdit, setFeedbackEdit] = useState({
@@ -48,9 +48,19 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
   // add feedback
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4();
-    setFeedback([newFeedback, ...feedback]);
+  const addFeedback =  async(newFeedback) => {
+    const res = await fetch("http://localhost:5000/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newFeedback)
+    });
+    const data= await res.json()
+    console.log(data)
+
+    // newFeedback.id = uuidv4();
+    setFeedback([data, ...feedback]);
   };
   // set item to update
   const editFeedback = (item) => {
