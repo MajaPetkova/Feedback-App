@@ -42,8 +42,10 @@ export const FeedbackProvider = ({ children }) => {
   });
 
   // delete feedback
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async(id) => {
     if (window.confirm("Are you sure you want to delete this feedback?")) {
+        await fetch(`http://localhost:5000/feedback/${id}`, {
+            method: "DELETE",})
       setFeedback(feedback.filter((x) => x.id !== id));
     }
   };
@@ -70,9 +72,16 @@ export const FeedbackProvider = ({ children }) => {
     });
   };
 
-  const updateFeedback = (id, updatedItem) => {
-    setFeedback(
-      feedback.map((x) => (x.id === id ? { ...x, ...updatedItem } : x))
+  const updateFeedback = async (id, updatedItem) => {
+    const res= await fetch(`http://localhost:5000/feedback/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:JSON.stringify(updatedItem)
+    });
+    const data= await res.json()
+    setFeedback(feedback.map((x) => (x.id === id ? { ...x, ...data } : x))
     );
   };
 
