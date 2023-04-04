@@ -1,0 +1,28 @@
+.nav {
+  background-color: var(--secondary-color);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: auto 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.logo-icon {
+  color: var(--orange-color);
+  font-size: 22px;
+}
+.logo-title {
+  text-decoration: none;
+  font-size: 24px;
+  color: var(--orange-color);
+  font-weight: 900;
+  padding-left: 10px;
+}
+.btn{
+ color:var(--orange-color)
+}
