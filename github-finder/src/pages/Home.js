@@ -1,7 +1,12 @@
+import { UserResult } from "../components/users/UserResult"
+
+
 export const Home= ()=>{
     return (
-        <div>
-<h1>Welcome</h1>
-        </div>
+        <>
+        
+        {/* Search component  */}
+         <UserResult/>
+        </>
     )
 }

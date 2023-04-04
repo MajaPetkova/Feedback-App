@@ -32,7 +32,8 @@ body {
   height: 100vh;
 }
 .main-container {
-  height: 87vh;
+  height: 78vh;
+  /* position:sticky; */
 }
 .about,
 .notFound {
@@ -65,4 +66,12 @@ p {
 }
 .btnPrimary:hover{
   color: var(--orange-color);
+}
+.users{
+  margin: 70px 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) ;
+  grid-auto-rows: auto;
+  justify-items: center;
+  grid-gap:15px;
 }
