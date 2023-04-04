@@ -6,8 +6,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.container{
+    margin: auto 40px;
+}
 .logo {
-  margin: auto 20px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -25,4 +27,7 @@
 }
 .btn{
  color:var(--orange-color)
+}
+.flex-btn{
+    margin: auto 40px;
 }
