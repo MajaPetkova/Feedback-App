@@ -7,7 +7,7 @@
   align-items: center;
 }
 .container{
-    margin: auto 40px;
+  margin:auto 40px;
 }
 .logo {
   text-align: center;
@@ -25,9 +25,9 @@
   font-weight: 900;
   padding-left: 10px;
 }
-.btn{
- color:var(--orange-color)
+.btn {
+  color:var(--orange-color);
 }
 .flex-btn{
-    margin: auto 40px;
+  margin: auto 40px;
 }
