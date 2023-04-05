@@ -10,27 +10,37 @@ export const GithubProvider = ({ children }) => {
 
   const initialState = {
     users: [],
-    loading: true,
+    loading: false,
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
+  //Get initials Users (testing purposes)
   const fetchUsers = async () => {
+    setLoading();
     const res = await fetch("https://api.github.com/users");
     const data = await res.json();
     // setUsers(data);
     // setLoading(false);
     dispatch({
-        type :"GET_USERS",
-        payload :data
-    })
+      type: "GET_USERS",
+      payload: data,
+    });
+  };
+  const setLoading = () => {
+    dispatch({
+      type: "SET_LOADING",
+    });
   };
 
   return (
-    <GithubContext.Provider value={{ 
+    <GithubContext.Provider
+      value={{
         users: state.users,
-        loading: state.loading, 
-        fetchUsers }}>
+        loading: state.loading,
+        fetchUsers,
+      }}
+    >
       {children}
     </GithubContext.Provider>
   );
