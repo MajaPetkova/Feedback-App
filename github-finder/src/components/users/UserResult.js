@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Spinner } from "../layout/Spinner";
+import { UserItem } from "./UserItem";
 
 export const UserResult = () =>{
     const [users, setUsers] = useState([]);
@@ -21,9 +22,9 @@ export const UserResult = () =>{
         return(
             <div className="users">
                 {users.map(x=> (
-                    <h3>{x.login}</h3>
+                    <UserItem key={x.id} user={x}/>
                 ) )}
-            </div>
+            </div> 
         )
     }else{
       return <Spinner/> 
