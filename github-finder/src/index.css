@@ -137,7 +137,7 @@ input {
   border:black 3px solid
 }
 .btn-clear {
-  width: 15%;
+  width: 20%;
   border-radius: 6px;
   padding: 12px;
   font-weight: 600;
@@ -149,4 +149,8 @@ input {
   font-size: 14px;
   margin-top: 10px;
 }
-
+.alert-msg{
+ color: var(--orange-color);
+ font-weight: 700;
+ margin:10px 0%
+}
