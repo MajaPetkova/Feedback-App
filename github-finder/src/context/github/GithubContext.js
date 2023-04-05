@@ -14,7 +14,6 @@ export const GithubProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
-  //Get initials Users (testing purposes)
   const searchUsers = async (text) => {
     setLoading();
     const params= new URLSearchParams({
