@@ -89,12 +89,11 @@ h2 {
   flex-direction: row;
   gap: 25px;
   border-radius: 6px;
-padding:10px;
-
+  padding: 10px;
 }
 .link-profile {
   text-decoration: none;
-  color: rgba(248, 177, 46, 0.535);
+  color: rgba(255, 194, 81, 0.644);
   font-size: 16px;
   /* letter-spacing: 1px; */
 }
