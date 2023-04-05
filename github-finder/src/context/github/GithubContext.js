@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 import { GithubReducer } from "./GithubReducer";
 
 export const GithubContext = createContext();
-// const url= "https://api.github.com/users";
 
 export const GithubProvider = ({ children }) => {
   //   const [users, setUsers] = useState([]);
@@ -16,17 +15,25 @@ export const GithubProvider = ({ children }) => {
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
   //Get initials Users (testing purposes)
-  const fetchUsers = async () => {
+  const searchUsers = async (text) => {
     setLoading();
-    const res = await fetch("https://api.github.com/users");
-    const data = await res.json();
+    const params= new URLSearchParams({
+        q:text
+    })
+    const res = await fetch(`https://api.github.com/search/users?${params}`);
+    const {items} = await res.json();
     // setUsers(data);
     // setLoading(false);
     dispatch({
       type: "GET_USERS",
-      payload: data,
+      payload: items,
     });
   };
+  const clearUsers =() =>{
+    dispatch({
+       type: "CLEAR_USERS" 
+    })
+  }
   const setLoading = () => {
     dispatch({
       type: "SET_LOADING",
@@ -38,7 +45,8 @@ export const GithubProvider = ({ children }) => {
       value={{
         users: state.users,
         loading: state.loading,
-        fetchUsers,
+        searchUsers,
+        clearUsers
       }}
     >
       {children}
