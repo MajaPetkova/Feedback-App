@@ -3,4 +3,8 @@
     background-color: var(--secondary-color);
     text-align: center;
     color: var(--orange-color);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
