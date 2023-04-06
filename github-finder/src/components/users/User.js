@@ -16,14 +16,12 @@ export const User = () => {
     location,
     bio,
     blog,
-    twitter_username,
     login,
     html_url,
     followers,
     following,
     public_repos,
     public_gists,
-    hireable,
   } = user;
 
   useEffect(() => {
@@ -36,7 +34,7 @@ export const User = () => {
   return (
     <>
       <div className="user-card">
-        <div >
+        <div>
           <Link to="/" className="back">
             Back to search
           </Link>
@@ -45,16 +43,70 @@ export const User = () => {
           <div>
             <img className="image" src={avatar_url} alt="profile image" />
             <p className="nickname">{login}</p>
-          <div className="location-info">
-            {location && <p>Location: {location}</p>}
-            {blog && <p>Blog: {blog}</p>}
+          </div>
+          <div>
+            <div className="user-profile">
+              <h2 className="name">
+                {name} <span>{type}</span>
+              </h2>
+              <p>{bio}</p>
+              <div className="visit">
+                <a href={html_url} target="_blank" rel="noreferrer">
+                  Visit Github Profile
+                </a>
+              </div>
+            </div>
+            <div className="location-info">
+              {location && (
+                <div className="location-place">
+                  <p>Location: {location}</p>
+                </div>
+              )}
+              {blog && (
+                <div className="blog">
+                  <a href={`http://${blog}`} target="_blank" rel="noreferrer">
+                    Website: {blog}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
-          <div className="user-profile">
-            <h2 className="name">{name} <span>{type}</span></h2>
-            <p>{bio}</p>
-            <div className="visit">
-            <a href={html_url}  target='_blank' rel="noreferrer" >Visit Github Profile</a>
+        </div>
+        <div className="stat">
+          <div className="blog-box">
+            <div>
+            <p>Followers </p>
+            <h2>{followers}</h2>
+            </div>
+            <div className="icon">
+              <FaUsers />
+            </div>
+          </div>
+          <div className="blog-box">
+            <div>
+            <p>Following </p>
+            <h2>{following}</h2>
+            </div>
+            <div className="icon">
+              <FaUserFriends />
+            </div>
+          </div>
+          <div className="blog-box">
+            <div>
+            <p>Public Repos </p>
+            <h2>{public_repos}</h2>
+            </div>
+            <div className="icon">
+              <FaCodepen />
+            </div>
+          </div>
+          <div className="blog-box">
+            <div>
+              <p>Public Gists </p>
+              <h2>{public_gists}</h2>
+            </div>
+            <div className="icon">
+              <FaStore />
             </div>
           </div>
         </div>
