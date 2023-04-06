@@ -17,15 +17,14 @@ export const User = () => {
     bio,
     blog,
     twitter_username,
-    logi,
+    login,
     html_url,
     followers,
     following,
     public_repos,
     public_gists,
-    hireable
+    hireable,
   } = user;
-
 
   useEffect(() => {
     getUser(params.login);
@@ -36,6 +35,30 @@ export const User = () => {
   }
   return (
     <>
-  <div>{user.login}</div>
-    </>)
+      <div className="user-card">
+        <div >
+          <Link to="/" className="back">
+            Back to search
+          </Link>
+        </div>
+        <div className="user-info">
+          <div>
+            <img className="image" src={avatar_url} alt="profile image" />
+            <p className="nickname">{login}</p>
+          <div className="location-info">
+            {location && <p>Location: {location}</p>}
+            {blog && <p>Blog: {blog}</p>}
+            </div>
+          </div>
+          <div className="user-profile">
+            <h2 className="name">{name} <span>{type}</span></h2>
+            <p>{bio}</p>
+            <div className="visit">
+            <a href={html_url}  target='_blank' rel="noreferrer" >Visit Github Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
