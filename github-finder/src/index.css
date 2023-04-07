@@ -264,7 +264,7 @@ span {
   border-bottom: 1px solid black;
   padding: 4px 15px;
   margin: 20px auto;
-  height: 120px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
