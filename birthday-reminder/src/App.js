@@ -1,11 +1,14 @@
+import {useState} from "react";
+import data from "./data";
 
-import './App.css';
 
 function App() {
+  const [people, setPeople] = useState(data);
+  console.log(people)
   return (
     <main >
     <section className="container">
-      <h3 className="hero"> 0 birthdays today</h3>
+      <h3> 0 birthdays today</h3>
     </section>
     </main>
   );
