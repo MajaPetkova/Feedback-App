@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Loading } from "./Loading";
+import { Tours } from "./Tours";
 
 function App() {
   const url = "https://course-api.com/react-tours-project";
@@ -29,6 +30,7 @@ function App() {
   return (
     <main className="App">
       <h1>Tours Starter</h1>
+      <Tours tours={tours}/>
     </main>
   );
 }
