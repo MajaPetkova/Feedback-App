@@ -7,7 +7,7 @@ export const Tours =({tours}) =>{
            <h4>our tours</h4>
            <div className="title-underline"></div>
            </div> 
-           <div>{tours.map(x =><Tour key={x.id} tours={x}/> )}</div>  
+           <div className="tours-section">{tours.map(x =><Tour key={x.id} tours={x} /> )}</div>  
 
        </section>
     )
