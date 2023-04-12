@@ -7,35 +7,50 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-.loading{
-  margin: 200px auto;
+.loading {
+  margin: 200px 40%;
 }
-.title{
+.title {
   margin: 30px auto;
-
 }
-.title-underline{
+.title-underline {
   background-color: purple;
   width: 70px;
   height: 3px;
   margin: 10px auto;
 }
-.tours-section{
+.tours-section {
   margin: 100px auto;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap:30px;
-  
+  gap: 30px;
 }
-.img{
+.img {
   width: 400px;
   height: 400px;
-  
 }
-.single-tour{
+.single-tour {
   background-color: rgb(240, 237, 237);
   width: 400px;
-border: 1px solid black;
+  border: 1px solid black;
+  position: relative;
+}
+.tour-price {
+  position: absolute;
+  margin-left: -100px;
+  background-color: purple;
+  width: 100px;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.info-tour h5 {
+  font-size: 20px;
+  margin: 10px auto;
+}
+.info-tour {
+  padding: 10px 10px;
 }
