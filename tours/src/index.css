@@ -7,7 +7,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-h4{
+h4 {
   font-size: 24px;
   letter-spacing: 1px;
 }
@@ -60,15 +60,20 @@ h5 {
 .info-tour {
   padding: 10px 10px;
 }
-.btn{
-  margin-top:20px;
+.btn {
+  margin-top: 20px;
   padding: 6px 10px;
   border-radius: 6px;
   border: 2px solid purple;
   width: 90%;
   bottom: 20px;
 }
-.btn:hover{
+.btn:hover {
   background-color: purple;
   color: white;
+}
+.info-btn {
+  border: none;
+  color: purple;
+  font-size: 16px;
 }
