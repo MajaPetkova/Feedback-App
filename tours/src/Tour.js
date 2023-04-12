@@ -1,4 +1,4 @@
-export const Tour = ({ tours }) => {
+export const Tour = ({ tours, removeTour }) => {
   return (
     <article className="single-tour">
       <img src={tours.image} alt="logo" className="img"/>
@@ -6,6 +6,7 @@ export const Tour = ({ tours }) => {
       <div className="info-tour">
         <h5>{tours.name}</h5>
         <p>{tours.info}</p>
+        <button type="button" className="btn" onClick={()=>removeTour(tours.id)}>not interested</button>
       </div>
     </article>
   );

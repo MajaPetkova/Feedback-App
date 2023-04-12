@@ -7,6 +7,14 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+h4{
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+h5 {
+  font-size: 20px;
+  margin: 10px auto;
+}
 .loading {
   margin: 200px 40%;
 }
@@ -36,6 +44,7 @@ body {
   width: 400px;
   border: 1px solid black;
   position: relative;
+  /* position: relative; */
 }
 .tour-price {
   position: absolute;
@@ -47,10 +56,19 @@ body {
   font-weight: 600;
   font-size: 20px;
 }
-.info-tour h5 {
-  font-size: 20px;
-  margin: 10px auto;
-}
+
 .info-tour {
   padding: 10px 10px;
+}
+.btn{
+  margin-top:20px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 2px solid purple;
+  width: 90%;
+  bottom: 20px;
+}
+.btn:hover{
+  background-color: purple;
+  color: white;
 }
