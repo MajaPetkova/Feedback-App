@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Loading } from "./Loading";
-import { Tours } from "./Tours";
+import { Loading } from "../src/components/Loading";
+import { Tours } from "../src/components/Tours";
 
 function App() {
   const url = "https://course-api.com/react-tours-project";
@@ -31,6 +31,14 @@ const removeTour=(id)=>{
 
   if(isLoading){
     return (<Loading/>)
+  }
+  if(tours.length == 0){
+    return(<main>
+      <div className="title">
+        <h2>No tours left</h2>
+        <button className="btn-btn" type="button" onClick={()=>fetchTours()}>Get Tours</button>
+      </div>
+    </main>)
   }
   return (
     <main className="App">

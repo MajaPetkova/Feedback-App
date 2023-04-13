@@ -1,4 +1,4 @@
-import loadingSpinner from "../src/components/assets/loading.gif";
+import loadingSpinner from "./assets/loading.gif";
 export const Loading = () => {
   return (
     <div className="loading">

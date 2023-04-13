@@ -77,3 +77,8 @@ h5 {
   color: purple;
   font-size: 16px;
 }
+.btn-btn{
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 2px solid purple;
+}
