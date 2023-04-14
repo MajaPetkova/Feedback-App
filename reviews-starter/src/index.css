@@ -7,24 +7,26 @@ body {
 }
 .card {
   width: 400px;
-  height: 400px;
-
+  height: 420px;
   margin: 240px auto;
   text-align: center;
+  box-shadow: 4px 5px 10px 4px rgba(0,0,0,0.57);
 }
 .img-container {
   background-color: rgb(111, 111, 230);
   border-radius: 50%;
-  width: 150px;
+  width: 130px;
   height: 150px;
   margin: 10px auto;
   padding: 10px 0 0 0;
   position: relative;
+  top: 20px;
 }
 .person-img {
   border-radius: 50%;
-  width: 150px;
+  width: 125px;
   height: 150px;
+ 
 }
 span {
   position: absolute;
@@ -44,4 +46,20 @@ span {
   display: flex;
   gap: 50px;
   justify-content: center;
+  color:purple;
+  font-size: 20px;
+
+}
+.name{
+  font-size: 18px;
+}
+.job{
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+}
+.prev-btn,
+.next-btn{
+padding:4px 6px;
+color:purple
 }
