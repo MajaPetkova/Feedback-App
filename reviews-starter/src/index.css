@@ -7,13 +7,13 @@ body {
 }
 .card {
   width: 400px;
-  height: 420px;
+  height: 480px;
   margin: 240px auto;
   text-align: center;
-  box-shadow: 4px 5px 10px 4px rgba(0,0,0,0.57);
+  box-shadow: 4px 5px 10px 4px rgba(0, 0, 0, 0.57);
 }
 .img-container {
-  background-color: rgb(111, 111, 230);
+  background-color: rgb(176, 111, 230);
   border-radius: 50%;
   width: 130px;
   height: 150px;
@@ -26,7 +26,6 @@ body {
   border-radius: 50%;
   width: 125px;
   height: 150px;
- 
 }
 span {
   position: absolute;
@@ -40,26 +39,36 @@ span {
   transform: translateY(25%);
   color: white;
   font-size: 18px;
-  background-color: rgb(111, 111, 230);
+  background-color: rgb(186, 111, 230);
 }
 .buttons {
   display: flex;
-  gap: 50px;
   justify-content: center;
-  color:purple;
-  font-size: 20px;
-
+  color: purple;
+  justify-content: space-between;
+margin: 20px auto;
+  width: 120px;
 }
-.name{
+.name {
   font-size: 18px;
 }
-.job{
+.job {
   color: purple;
   font-size: 20px;
   font-weight: bold;
 }
 .prev-btn,
-.next-btn{
-padding:4px 6px;
-color:purple
+.next-btn {
+  border: none;
+  color: purple;
+  background-color: white;
+  font-size: 25px;
+}
+.btn{
+  border: 1px solid purple;
+  border-radius: 6px;
+  background-color: rgb(212, 93, 252);
+  color: white;
+  padding: 4px 6px;
+  font-weight: bold;
 }
