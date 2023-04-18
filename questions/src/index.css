@@ -8,12 +8,30 @@ body {
 }
 .container {
   width: 800px;
-  border: 1px solid black;
+  padding: 10px 0;
   margin: 200px auto;
-  background-color: rgb(220, 247, 254);
+  background-color: white;
 }
 .container h1 {
   text-align: center;
   font-size: 28px;
-  margin: 20px auto;
+  margin: 30px auto;
+}
+.question {
+  border: 1px solid rgb(235, 235, 235);
+  margin: 20px 30px;
+  background-color: white;
+  box-shadow: 2px 2px 4px 2px rgba(154, 154, 154, 0.57);
+}
+.title {
+  padding-left: 35px;
+  text-align: start;
+  font-size: 24px;
+  font-weight: 100;
+  color: rgb(66, 66, 66);
+}
+p {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(123, 122, 122);
 }
