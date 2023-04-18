@@ -29,9 +29,17 @@ body {
   font-size: 24px;
   font-weight: 100;
   color: rgb(66, 66, 66);
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+padding-right: 30px;
 }
 p {
   text-align: center;
   font-size: 18px;
   color: rgb(123, 122, 122);
+}
+.question-btn{
+ border: 3px solid lightblue;
+
 }
