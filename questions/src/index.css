@@ -1,8 +1,19 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
- 
+  background-color: lightblue;
+  box-sizing: border-box;
 }
-
+.container {
+  width: 800px;
+  border: 1px solid black;
+  margin: 200px auto;
+  background-color: rgb(220, 247, 254);
+}
+.container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin: 20px auto;
+}

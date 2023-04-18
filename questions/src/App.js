@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Questions } from './components/Questions';
+import data from "./data";
+import{useState} from "react"
 
 function App() {
+  const [questions, setQuestions] = useState(data)
+
   return (
-    <div className="App">
-     
-    </div>
+    <main className="">
+   
+     <Questions questions={questions}/>
+        </main>
   );
 }
 
