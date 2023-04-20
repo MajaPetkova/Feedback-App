@@ -1,9 +1,12 @@
+import { Title } from "./components/Title";
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <main>
+      <section className="menu">
+        <Title text={"Our Menu"}/>
+      </section>
+    </main>
   );
 }
 
