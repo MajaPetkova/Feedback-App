@@ -1,9 +1,17 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-
+  box-sizing: border-box;
 }
-
-
+.title {
+  font-size: 32px;
+  text-align: center;
+}
+.title-underline {
+  height: 4px;
+  width: 80px;
+  background-color: orange;
+  margin:10px auto
+}
