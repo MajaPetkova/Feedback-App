@@ -1,11 +1,13 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
+import {v4 as uuidv4} from "uuid";
 
 export const Duties = ({ duties }) => {
-  return (
-    <div>
+    return (
+        <div>
       {duties.map((duty, index) => {
-        return (
-          <div key={index} className="job-desc">
+          const id = uuidv4();
+          return (
+          <div key={id} className="job-desc">
             <FaAngleDoubleRight className="job-icon"/>
             <p>{duty}</p>
           </div>
