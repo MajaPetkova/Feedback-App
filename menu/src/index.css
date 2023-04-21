@@ -14,7 +14,7 @@ body {
 .title-underline {
   height: 4px;
   width: 80px;
-  background-color:rgb(214, 189, 44);
+  background-color: rgb(243, 177, 55);
   margin: 10px auto;
 }
 .section-center {
@@ -50,7 +50,7 @@ h5 {
   text-transform: capitalize;
 }
 .item-price {
-  background-color: rgb(214, 189, 44);
+  background-color:  rgb(243, 177, 55);
   border-radius: 6px;
   padding: 4px 6px;
   color: white;
@@ -59,4 +59,22 @@ h5 {
 .item-text {
   text-align: center;
   color: gray;
+}
+.btn-container{
+  justify-content: center;
+  margin: 30px auto;
+  display: flex;
+gap:20px
+}
+.btn{
+  border: 2px solid  rgb(243, 177, 55) ;
+  background-color: rgb(243, 177, 55);
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+.btn:hover{
+  background-color: white;
+  color:  rgb(205, 142, 23);
 }
