@@ -4,7 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   box-sizing: border-box;
-  background-color: rgb(231, 249, 249);
+  background-color: rgb(233, 246, 246);
 }
 .title {
   margin-top: 30px;
@@ -14,7 +14,7 @@ body {
 .title-underline {
   height: 4px;
   width: 80px;
-  background-color: gold;
+  background-color:rgb(214, 189, 44);
   margin: 10px auto;
 }
 .section-center {
@@ -27,7 +27,7 @@ body {
 }
 .menu-item {
   width: 350px;
-  height: 400px;
+  height: 370px;
   text-align: start;
   background-color: white;
 }
@@ -44,11 +44,16 @@ header {
 }
 h5 {
   display: inline-block;
-  font-size: 14px;
+  font-size: 15px;
+  letter-spacing: 1px;
   text-align: center;
+  text-transform: capitalize;
 }
 .item-price {
-  background-color: gold;
+  background-color: rgb(214, 189, 44);
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
 }
 
 .item-text {

@@ -1,11 +1,18 @@
-import { Title } from "./components/Title";
 import {useState} from "react";
 import data from "./data";
+import { Title } from "./components/Title";
 import { Menu } from "./components/Menu";
 
-function App() {
-  const [menuItems, setMenuItems] = useState(data)
+const tempCategories = data.map(x=> x.category);
+const tempSet = new Set(tempCategories);
+const allCategories= ["all", ...tempSet];
 
+
+function App() {
+  const [menuItems, setMenuItems] = useState(data);
+  const [categories, setCategories] = useState(allCategories);
+  console.log(categories);
+  
   return (
     <main>
       <section className="menu">
