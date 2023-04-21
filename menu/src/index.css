@@ -4,14 +4,54 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   box-sizing: border-box;
+  background-color: rgb(231, 249, 249);
 }
 .title {
+  margin-top: 30px;
   font-size: 32px;
   text-align: center;
 }
 .title-underline {
   height: 4px;
   width: 80px;
-  background-color: orange;
-  margin:10px auto
+  background-color: gold;
+  margin: 10px auto;
+}
+.section-center {
+  /* grid-template-rows: 350px; */
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.menu-item {
+  width: 350px;
+  height: 400px;
+  text-align: start;
+  background-color: white;
+}
+/* header{display: flex;} */
+.image {
+  width: 350px;
+  height: 190px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+h5 {
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+}
+.item-price {
+  background-color: gold;
+}
+
+.item-text {
+  text-align: center;
+  color: gray;
 }
