@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Loading } from "./components/Loading";
 const url = "https://course-api.com/react-tabs-project";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     return (
       <section className="jobs-center">
         <div className="loading">
-          <h1>Loading...</h1>
+          <Loading/>
         </div>
       </section>
     );
