@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Loading } from "./components/Loading";
+import { JobInfo } from "./components/JobInfo";
 const url = "https://course-api.com/react-tabs-project";
 
 function App() {
@@ -15,17 +16,22 @@ function App() {
   useEffect(() => {
     fetchJobs();
   }, []);
+
   if (isLoading) {
     return (
       <section className="jobs-center">
         <div className="loading">
-          <Loading/>
+          <Loading />
         </div>
       </section>
     );
   }
 
-  return <main className="container"></main>;
+  return (
+    <main className="jobs-center">
+      <JobInfo jobs={jobs} />
+    </main>
+  );
 }
 
 export default App;
