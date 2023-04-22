@@ -4,20 +4,34 @@ import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 export const Carousel = () => {
-  const [people, setPeople] = useState(list);
-  const prevSlide =() =>{
-
-  }
-  const nextSlide =() =>{
-    
-  }
+  const [people, setPeople] = useState(longList);
+  const [currentPerson, setCurrentPerson] = useState(0);
+  const prevSlide = () => {
+    setCurrentPerson((oldPerson) => {
+      const result = (oldPerson - 1 + people.length) % people.length;
+      return result;
+    });
+  };
+  const nextSlide = () => {
+    setCurrentPerson((oldPerson) => {
+      const result = (oldPerson + 1) % people.length;
+      return result;
+    });
+  };
 
   return (
     <section className="slider-container">
-      {people.map((p) => {
+      {people.map((p, personIndex) => {
         const { id, image, name, title, quote } = p;
         return (
-          <article className="slide" key={id}>
+          <article
+            className="slide"
+            style={{
+              transform: `translateX(${100 * (personIndex - currentPerson)}%)`,
+            //   visibility:personIndex === currentPerson ? "visible" : "hidden"
+            }}
+            key={id}
+          >
             <img src={image} alt={name} className="person-img" />
             <h5 className="name">{name}</h5>
             <p className="title">{title}</p>
@@ -27,13 +41,12 @@ export const Carousel = () => {
         );
       })}
 
-        <button className="prev" onClick={prevSlide}>
-          <FiChevronLeft />
-        </button>
-        <button className="next" onClick={nextSlide}>
-          <FiChevronRight />
-        </button>
-    
+      <button className="prev" onClick={prevSlide}>
+        <FiChevronLeft />
+      </button>
+      <button className="next" onClick={nextSlide}>
+        <FiChevronRight />
+      </button>
     </section>
   );
 };
