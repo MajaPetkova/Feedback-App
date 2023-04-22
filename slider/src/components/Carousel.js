@@ -4,7 +4,14 @@ import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 export const Carousel = () => {
-  const [people, setPeople] = useState(shortList);
+  const [people, setPeople] = useState(list);
+  const prevSlide =() =>{
+
+  }
+  const nextSlide =() =>{
+    
+  }
+
   return (
     <section className="slider-container">
       {people.map((p) => {
@@ -19,14 +26,14 @@ export const Carousel = () => {
           </article>
         );
       })}
-      <div className="btn">
-        <button className="prev">
+
+        <button className="prev" onClick={prevSlide}>
           <FiChevronLeft />
         </button>
-        <button className="next">
+        <button className="next" onClick={nextSlide}>
           <FiChevronRight />
         </button>
-      </div>
+    
     </section>
   );
 };
