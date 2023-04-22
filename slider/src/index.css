@@ -1,7 +1,9 @@
 body {
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
 }
+
 /* .slider-container {
   margin: 300px auto;
 
@@ -128,4 +130,20 @@ cursor:pointer;
   .text{
    max-width: 45em; 
   }
+}
+/* **************Slick Carousel*************** */
+.slick-container{
+  margin: 10rem auto;
+  max-width: 800px;
+  width: 80%;
+text-align: center;
+}
+img{
+  margin:auto 300px;
+  display: inline-block;
+}
+.slick-prev::before, 
+.slick-next::before{
+/* color:purple; */
+background-color: purple
 }
