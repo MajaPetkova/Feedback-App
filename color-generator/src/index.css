@@ -31,3 +31,24 @@ input {
 .head {
   border: none;
 }
+.colors{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:5px;
+  max-width: 1200px ;
+}
+.single{
+  width: 250px;
+  height: 110px;
+  color:white
+}
+.color{
+  width: 250px;
+  height: 110px;
+}
+.percent,
+.hex{
+  margin: 10px 10px;
+}
