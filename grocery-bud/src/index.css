@@ -5,12 +5,12 @@ body {
 }
 .container {
   margin: 200px 200px;
+  border: 1px solid rgb(105, 104, 104);
+  background-color: white;
+  width: 500px;
 }
 .form-block {
-  border: 1px solid rgb(105, 104, 104);
-  width: 500px;
   padding: 20px 20px;
-  background-color: white;
 }
 h4 {
   text-align: center;
@@ -22,7 +22,7 @@ h4 {
   margin-left: 10%;
   padding: 4px 10px;
   border: 1px solid rgb(163, 163, 163);
-  background-color:rgb(234, 234, 255) ;
+  background-color: rgb(234, 234, 255);
 }
 .btn {
   background-color: rgb(75, 190, 235);
@@ -32,4 +32,25 @@ h4 {
   border-bottom-right-radius: 4px;
   padding: 4px 14px;
   font-weight: bold;
+}
+.items {
+  /* border: 1px solid rgb(105, 104, 104); */
+  padding: 0px 50px;
+  margin-top: 30px;
+}
+.single-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  display: flex;
+  gap: 15px;
+}
+.btn-remove{
+  background-color: black;
+color: white;
+padding: 4px 8px;
+border-radius: 6px;
+border: none;
 }
