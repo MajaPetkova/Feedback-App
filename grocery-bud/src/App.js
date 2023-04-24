@@ -15,7 +15,10 @@ function App() {
     setItems([...items, newItem])
     console.log(newItem)
   };
-const removeItem=(itemId)=>{}
+const removeItem=(itemId)=>{
+  const newItemsArray= items.filter(x =>x.id !== itemId);
+  setItems(newItemsArray)
+}
 
   return (
     <section className="container">

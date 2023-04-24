@@ -48,9 +48,16 @@ h4 {
   gap: 15px;
 }
 .btn-remove{
-  background-color: black;
+background-color: black;
 color: white;
 padding: 4px 8px;
 border-radius: 6px;
 border: none;
+
+}
+input:checked{
+  text-decoration: line-through;
+}
+p{
+  text-transform: capitalize;
 }
