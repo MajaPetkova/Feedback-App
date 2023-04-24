@@ -18,7 +18,6 @@ const setLocalStorage = (items) => {
 };
 const defaultList = JSON.parse(localStorage.getItem("list") || "[]");
 
-
 function App() {
   const [items, setItems] = useState(defaultList);
 
@@ -32,16 +31,28 @@ function App() {
     setItems(newItems);
     setLocalStorage(newItems);
   };
+
   const removeItem = (itemId) => {
     const newItemsArray = items.filter((x) => x.id !== itemId);
     setItems(newItemsArray);
     setLocalStorage(newItemsArray);
   };
 
+  const editItem = (itemId) => {
+    const newArray = items.map((x) => {
+      if (x.id == itemId) {
+        const newItem = { ...x, completed: !x.isCompleted };
+        return newItem;
+      }
+      return x;
+    });
+    setItems(newArray);
+    setLocalStorage(newArray);
+  };
   return (
     <section className="container">
       <Form addItem={addItem} />
-      <ItemList items={items} removeItem={removeItem} />
+      <ItemList items={items} removeItem={removeItem}  editItem={editItem}/>
     </section>
   );
 }
