@@ -23,29 +23,37 @@ nav {
   transition: all 0.3s linear;
   cursor: pointer;
 }
-.nav-toggle:hover{
-  color:rgb(11, 86, 162);
+.nav-toggle:hover {
+  color: rgb(11, 86, 162);
   transform: rotate(90deg);
 }
-.logo{
+.logo {
   height: 40px;
 }
-.links a{
-color:grey;
-font-size: 18px;
-font-weight: 600;
-letter-spacing: 1px;
-display: block;
-text-transform: capitalize;
-text-decoration: none;
-padding:8px 10px;
-transition: all 0.3s linear;
+.links a {
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 8px 10px;
+  transition: all 0.3s linear;
 }
-.links li{
+.links li {
   list-style-type: none;
 }
-.links a:hover{
-  background-color: rgb(11, 86, 162) ;
-  color:white;
-  padding-left:24px;
+.links a:hover {
+  background-color: rgb(11, 86, 162);
+  color: white;
+  padding-left: 24px;
+}
+.links-container{
+  height: 0;
+  overflow: hidden;
+  transition:all 0.3s linear ;
+}
+.show-container{
+  height: 230px;
 }

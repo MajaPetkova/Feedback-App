@@ -20,8 +20,8 @@ export const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        {showLinks && (
-          <div className="links-container">
+        {/* {showLinks && ( */}
+          <div className={showLinks ? "links-container show-container" :"links-container"}>
             <ul className="links">
               {links.map((x) => {
                 const { id, text, url } = x;
@@ -33,7 +33,7 @@ export const Navbar = () => {
               })}
             </ul>
           </div>
-        )}
+        {/* )} */}
       </div>
     </nav>
   );
