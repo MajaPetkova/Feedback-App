@@ -39,6 +39,12 @@ export const Navbar = () => {
             })}
           </ul>
         </div>
+        {/* {social links} */}
+        <ul className="social-icons">
+            {social.map((x)=>{
+                return <li id={x.id}><a href={x.url}>{x.icon}</a></li>
+            })}
+        </ul>
         {/* )} */}
       </div>
     </nav>

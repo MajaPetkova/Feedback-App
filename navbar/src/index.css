@@ -58,3 +58,55 @@ nav {
 /* .show-container{
   height: 230px;
 } */
+.social-icons{
+  display: none;
+}
+@media screen and (min-width:800px) {
+  .nav-toggle{
+    display: none;
+  }
+  .nav-header{
+    padding: 0;
+  }
+ .nav-center{
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  /* border: 2px solid red; */
+ }
+ .social-icons{
+  display: flex;
+  gap:0.5rem;
+ }
+ .links-container{
+  height: auto !important;
+
+ }
+ .links{
+  display: flex;
+/* gap: 0.5rem; */
+ }
+ .links a{
+  padding: 0;
+ }
+ .links a:hover{
+  padding: 0;
+  background-color: transparent;
+  color:rgb(11, 86, 162) ;
+ }
+ .social-icons li{
+  list-style: none;
+ }
+ .social-icons a{
+  color:rgb(86, 165, 245);
+  transition:all 0.3s linear ;
+  font-size: 24px;
+ }
+ .social-icons a:hover{
+  color:rgb(11, 86, 162);
+  transition:all 0.3s linear ;
+ }
+}
