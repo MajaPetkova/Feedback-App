@@ -3,7 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   background-color: rgb(115, 15, 253);
 }
 nav {
@@ -124,8 +124,30 @@ nav {
 .sidebar-sublinks svg {
   color: grey;
 }
+.nav-links {
+  display: none;
+}
 @media screen and (min-width: 992px) {
   .aside {
     display: none;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+  }
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border: 2px solid red;
+  }
+  .nav-link {
+    border: 2px solid rgb(140, 231, 21);
+    padding: 0 1rem;
+    color: white;
+    background-color: transparent;
+    /* border-color: transparent; */
+    font-size: 1.25rem;
+    text-transform: capitalize;
   }
 }
