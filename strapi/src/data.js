@@ -14,27 +14,50 @@ import {
 import { nanoid } from "nanoid";
 const sublinks = [
   {
+    pageId: nanoid(),
     page: "products",
     links: [
-      { label: "payment", icon: <FaCreditCard />, url: "/products" },
-      { label: "terminal", icon: <FaCreditCard />, url: "/products" },
-      { label: "connect", icon: <FaCreditCard />, url: "/products" },
+      {
+        id: nanoid(),
+        label: "payment",
+        icon: <Fa500Px />,
+        url: "/products",
+      },
+      {
+        id: nanoid(),
+        label: "terminal",
+        icon: <FaAccusoft />,
+        url: "/products",
+      },
+      {
+        id: nanoid(),
+        label: "connect",
+        icon: <FaCreditCard />,
+        url: "/products",
+      },
     ],
   },
   {
+    pageId: nanoid(),
     page: "developers",
     links: [
-      { label: "plugins", icon: <FaBook />, url: "/products" },
-      { label: "libraries", icon: <FaBook />, url: "/products" },
-      { label: "help", icon: <FaBook />, url: "/products" },
-      { label: "billing", icon: <FaBook />, url: "/products" },
+      { id: nanoid(), label: "plugins", icon: <FaDocker />, url: "/products" },
+      { id: nanoid(), label: "libraries", icon: <FaBitcoin />, url: "/products" },
+      { id: nanoid(), label: "help", icon: <FaAdversal />, url: "/products" },
+      { id: nanoid(), label: "billing", icon: <FaBook />, url: "/products" },
     ],
   },
   {
+    pageId: nanoid(),
     page: "company",
     links: [
-      { label: "about", icon: <FaBriefcase />, url: "/products" },
-      { label: "customers", icon: <FaBriefcase />, url: "/products" },
+      { id: nanoid(), label: "about", icon: <FaBtc />, url: "/products" },
+      {
+        id: nanoid(),
+        label: "customers",
+        icon: <FaBriefcase />,
+        url: "/products",
+      },
     ],
   },
 ];
