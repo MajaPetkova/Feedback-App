@@ -134,20 +134,62 @@ nav {
   .nav-links {
     display: flex;
     justify-content: center;
-    border: 2px solid white;
   }
   .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
-    border: 2px solid red;
   }
   .nav-link {
-    border: 2px solid rgb(140, 231, 21);
     padding: 0 1rem;
     color: white;
     background-color: transparent;
-    /* border-color: transparent; */
+    border: none;
     font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+}
+.submenu {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .submenu {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 6rem;
+    width: 90vw;
+    max-width: 1170px;
+    background-color: white;
+    padding: 1rem 2rem;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top;
+    perspective: 1000px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    border-radius: 6px;
+  }
+  .show-submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(0deg) translateX(-50%);
+  }
+  .submenu h5 {
+    margin-bottom: 1rem;
+    color: rgb(29, 103, 171);
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .submenu-links {
+    display: grid;
+    row-gap: 0.5rem;
+  }
+  .submenu-links a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: grey;
     text-transform: capitalize;
   }
 }
