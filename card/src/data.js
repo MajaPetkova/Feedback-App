@@ -16,9 +16,9 @@
   },
   {
     id: 3,
-    title: "Xiaomi Redmi Note 8",
+    title: "Xiaomi Redmi Note ",
     price: 699.99,
-    img: "https://m.media-amazon.com/images/I/61ykl4wsysL._AC_SX679_.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPh5VDrYMhMhQiNklA8fJPhMSko3KNo9J_q_3hF-nRoSR9taZvmzhw26qfDr2iRyUJMxY&usqp=CAU",
     amount: 1,
   },
 ];
