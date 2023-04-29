@@ -60,6 +60,9 @@ h4 span {
   padding: 2px 4px;
   border-radius: 4px;
 }
+.cart{
+  text-align: center;
+}
 .btn {
   background-color: rgba(85, 195, 242, 0.597);
   border: none;
@@ -98,17 +101,18 @@ img {
   gap: 1rem;
   /* margin-bottom: -10px; */
 }
-.amount-btn{
+.amount-btn {
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-right: 2rem;
-padding:25px 0
+  padding: 25px 0;
 }
 button svg {
   font-size: 15px;
+  color: rgb(3, 129, 184);
 }
 .btn-arrow {
   background-color: transparent;
