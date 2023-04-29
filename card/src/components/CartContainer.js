@@ -1,3 +1,5 @@
+import data from "../data";
+import { CartItem } from "./CartItem";
 
 export const CartContainer=() =>{
     return(
@@ -6,7 +8,9 @@ export const CartContainer=() =>{
         <h2>Your bag</h2>
     </header>
     <div>
-
+     {data.map(x =>{
+        return <CartItem key={x.id} {...x}/>
+     })}
     </div>
     <footer>
         <hr />
@@ -15,7 +19,7 @@ export const CartContainer=() =>{
                 total <span>$0.00</span>
             </h4>
         </div>
-        <button className="btn clear-btn">Clear Cart</button>
+        <button className="btn clear-btn" onClick={console.log("clear all")}>Clear Cart</button>
     </footer>
 </section>
     )

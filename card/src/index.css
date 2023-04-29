@@ -1,13 +1,120 @@
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+.nav-center {
+  width: 100%;
+  background-color: rgb(3, 129, 184);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  color: white;
+  padding-left: 3rem;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.nav-container {
+  margin-right: 3rem;
+  position: relative;
+}
+.nav-container svg {
+  font-size: 26px;
+}
+.total-amount {
+  position: absolute;
+  top: -30px;
+  left: 17px;
+  background-color: rgba(85, 195, 242, 0.597);
+  padding: 1px 6px;
+  border-radius: 50%;
+}
+header,
+footer {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+header h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+}
+.cart-total h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  text-transform: capitalize;
+}
+footer {
+  text-align: center;
+}
+h4 span {
+  background-color: rgb(85, 195, 242, 0.597);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.btn {
+  background-color: rgba(85, 195, 242, 0.597);
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: rgb(3, 129, 184);
+  font-weight: 100;
+}
+.cart-item {
+  width: 60vw;
+  position: relative;
+  display: flex;
+  margin: 0px auto;
+  gap: 0px;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.remove-btn {
+  border: none;
+  background-color: transparent;
+  color: rgb(3, 129, 184);
+  position: absolute;
+  bottom: 30px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-left: 1rem;
+  gap: 1rem;
+  /* margin-bottom: -10px; */
+}
+.amount-btn{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+padding:25px 0
+}
+button svg {
+  font-size: 15px;
+}
+.btn-arrow {
+  background-color: transparent;
+  border: none;
+}
+.item-price {
+  font-weight: 100;
+  margin-top: -20px;
 }
