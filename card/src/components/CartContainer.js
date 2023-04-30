@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 export const CartContainer = () => {
     
-    const {cart, clearCart} = useContext(AppContext)
+    const {cart, clearCart, totalCost} = useContext(AppContext)
     const cartArray = Array.from (cart.entries())
     console.log(cartArray)
 
@@ -34,7 +34,7 @@ export const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>$0.00</span>
+            total <span>${totalCost.toFixed(2)}</span>
           </h4>
         </div>
         <button className="btn clear-btn" onClick={clearCart}>
