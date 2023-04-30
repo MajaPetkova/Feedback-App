@@ -4,7 +4,7 @@ import { AppContext } from "../context/context";
 
 export const CartItem = ({ ...x }) => {
 
-  const {removeItem} = useContext(AppContext)
+  const {removeItem, increase, decrease} = useContext(AppContext)
   return (
     <article className="cart-item">
       <div className="details">
@@ -16,11 +16,11 @@ export const CartItem = ({ ...x }) => {
         </div>
       </div>
       <div className="amount-btn">
-        <button className="btn-arrow" onClick={()=>console.log("increase")}>
+        <button className="btn-arrow" onClick={()=>increase(x.id)}>
           <FaChevronUp />
         </button>
         <p className="amount">{x.amount}</p>
-        <button className="btn-arrow" onClick={()=>console.log("decrease")}>
+        <button className="btn-arrow" onClick={()=>decrease(x.id)}>
           <FaChevronDown />
         </button>
       </div>
