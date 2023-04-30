@@ -17,16 +17,19 @@ const initialState = {
   cart: new Map(cartItems.map((x) => [x.id, x])),
 };
 
-
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const clearCart =() =>{
-    dispatch({type: CLEAR_CART })
-  }
-
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
+  const removeItem = (id) => {
+    dispatch({type: REMOVE, payload:{id}})
+  };
 
   return (
-    <AppContext.Provider value={{ ...state, clearCart }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, clearCart, removeItem }}>
+      {children}
+    </AppContext.Provider>
   );
 };

@@ -4,6 +4,7 @@ import { AppContext } from "../context/context";
 
 export const CartItem = ({ ...x }) => {
 
+  const {removeItem} = useContext(AppContext)
   return (
     <article className="cart-item">
       <div className="details">
@@ -11,7 +12,7 @@ export const CartItem = ({ ...x }) => {
         <div>
           <h4>{x.title}</h4>
           <h4 className="item-price">${x.price}</h4>
-          <button className="remove-btn" onClick={()=>console.log("remove item")}>Remove</button>
+          <button className="remove-btn" onClick={()=>removeItem(x.id)}>Remove</button>
         </div>
       </div>
       <div className="amount-btn">
