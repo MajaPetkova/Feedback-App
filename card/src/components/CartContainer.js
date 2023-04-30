@@ -5,9 +5,9 @@ import { useContext } from "react";
 
 export const CartContainer = () => {
     
-    const {cart} = useContext(AppContext)
+    const {cart, clearCart} = useContext(AppContext)
     const cartArray = Array.from (cart.entries())
-    // console.log(cartArray)
+    console.log(cartArray)
 
     if(cartItems.length === 0){
         return (
@@ -37,7 +37,7 @@ export const CartContainer = () => {
             total <span>$0.00</span>
           </h4>
         </div>
-        <button className="btn clear-btn" onClick={console.log("clear all")}>
+        <button className="btn clear-btn" onClick={clearCart}>
           Clear Cart
         </button>
       </footer>

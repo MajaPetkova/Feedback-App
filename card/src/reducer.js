@@ -1,7 +1,21 @@
-import { CLEAR_CART, REMOVE, INCREASE, DECREASE, LOADING, DISPLAY_ITEMS } from "./actions";
+import {
+  CLEAR_CART,
+  REMOVE,
+  INCREASE,
+  DECREASE,
+  LOADING,
+  DISPLAY_ITEMS,
+} from "./actions";
+
+export const reducer = (state, action) => {
+  switch (action.type) {
+    case "CLEAR_CART":
+      return { ...state,
+         cart: new Map() };
 
 
-export const reducer = (state, action)=>{
 
-    return state;
-}
+
+  }
+  throw new Error(`No matching action type: ${action.type}`);
+};
