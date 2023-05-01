@@ -28,3 +28,8 @@ img{
   color: white;
   font-weight: 500;
 }
+.alert{
+  background-color: rgba(238, 133, 133, 0.665);
+  color: rgb(131, 8, 8);
+  text-align: center;
+}
