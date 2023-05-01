@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ToggleChallenge = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -23,5 +23,14 @@ export const ToggleChallenge = () => {
   );
 };
 const Alert = () => {
+  useEffect(()=>{
+    console.log("huhu");
+   const intId = setInterval(()=>{
+     console.log("hello from interval") 
+    },1000)
+    return ()=>{
+      clearInterval(intId)
+    }
+  }, [])
   return <div className="alert">Hello World</div>;
 };
