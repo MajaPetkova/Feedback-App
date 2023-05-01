@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  box-sizing: border-box;
+}
+.container{
+  width: 800px;
+  margin: 20px 40px
+}
