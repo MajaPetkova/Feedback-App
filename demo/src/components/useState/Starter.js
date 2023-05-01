@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { data } from "../data";
+import { data } from "../../data";
 
 export const Starter = () => {
   const [people, setPeople] = useState(data);
