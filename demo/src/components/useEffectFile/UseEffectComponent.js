@@ -3,6 +3,8 @@ const url = "https://api.github.com/users";
 
 export const UseEffectComponent = () => {
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false)
 
   const sayHello = () => {
     console.log("hello");
@@ -14,12 +16,20 @@ export const UseEffectComponent = () => {
   const getUsers = async () => {
     try {
       const res = await fetch(url);
+
+      if(res.ok != true){
+        setIsError(true)
+        setIsLoading(false)
+        return
+      }
       const data = await res.json();
       setUsers(data);
       // console.log(data)
     } catch (err) {
+      setIsError(true)
       console.log(err);
     }
+    setIsLoading(false)
   };
 
   useEffect(() => {
@@ -27,6 +37,12 @@ export const UseEffectComponent = () => {
     console.log("Hello from useEffect");
   }, []);
 
+  if(isLoading){
+    return <h2>Loading...</h2>
+  }
+  if(isError){
+    return <h2>There was an error..</h2>
+  }
   return (
     <div>
       <h2>Fetch data Example</h2>
