@@ -17,7 +17,7 @@ export const UseEffectComponent = () => {
     try {
       const res = await fetch(url);
 
-      if(res.ok != true){
+      if(res.ok !== true){
         setIsError(true)
         setIsLoading(false)
         return
@@ -48,10 +48,11 @@ export const UseEffectComponent = () => {
       <h2>Fetch data Example</h2>
       <div className="fetchData">
         {users.map((x) => {
+          const {id, avatar_url, login} = x;
           return (
-            <article key={x.id}>
-              <img src={x.avatar_url} alt="img" />
-              <h3>{x.login}</h3>
+            <article key={id}>
+              <img src={avatar_url} alt="img" />
+              <h3>{login}</h3>
             </article>
           );
         })}
