@@ -7,13 +7,15 @@ import { ToggleChallenge } from "./components/useEffectFile/ToggleChallenge";
 import { UserChallenge } from "./components/useEffectFile/UserChallenge";
 import { List } from "./components/leverage JS/List";
 import { ControlledInputs } from "./components/forms/ControlledInputs";
+import { MultipleInputs } from "./components/forms/MultipleInputs";
 
 
 
 function App() {
   return (
     <div className="container">
-      <ControlledInputs/>
+      <MultipleInputs/>
+      {/* <ControlledInputs/> */}
       {/* <List/> */}
       <UserChallenge/>
       <ToggleChallenge/>
