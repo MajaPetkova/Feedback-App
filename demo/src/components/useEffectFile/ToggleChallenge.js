@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 export const ToggleChallenge = () => {
   const [showAlert, setShowAlert] = useState(false);
 
-//   const toggleAlert = () => {
-//     if (showAlert) {
-//         setShowAlert(false);
-//         return 
-//     }
-//     setShowAlert(true)
-//   };
+  // const toggleAlert = () => {
+  //   if (showAlert) {
+  //       setShowAlert(false);
+  //       return 
+  //   }
+  //   setShowAlert(true)
+  // };
 
   return (
     <div>
