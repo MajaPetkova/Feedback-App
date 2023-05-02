@@ -6,13 +6,15 @@ import { ShortComponent} from "./components/useEffectFile/ShortComponent";
 import { ToggleChallenge } from "./components/useEffectFile/ToggleChallenge";
 import { UserChallenge } from "./components/useEffectFile/UserChallenge";
 import { List } from "./components/leverage JS/List";
+import { ControlledInputs } from "./components/forms/ControlledInputs";
 
 
 
 function App() {
   return (
     <div className="container">
-      <List/>
+      <ControlledInputs/>
+      {/* <List/> */}
       <UserChallenge/>
       <ToggleChallenge/>
       <ShortComponent/>

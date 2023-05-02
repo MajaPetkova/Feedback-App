@@ -33,3 +33,15 @@ img{
   color: rgb(131, 8, 8);
   text-align: center;
 }
+.form{
+  width: 400px;
+background-color: rgb(211, 211, 211);
+padding: 10px 30px;
+}
+.form-row{
+  display: flex;
+  flex-direction: column;
+}
+.form-row input{
+  width: 60%;
+}
