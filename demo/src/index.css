@@ -45,3 +45,7 @@ padding: 10px 30px;
 .form-row input{
   width: 60%;
 }
+.form-container{
+  background-color: rgb(209, 249, 249);
+  padding: 10px 40px;
+}

@@ -8,13 +8,15 @@ import { UserChallenge } from "./components/useEffectFile/UserChallenge";
 import { List } from "./components/leverage JS/List";
 import { ControlledInputs } from "./components/forms/ControlledInputs";
 import { MultipleInputs } from "./components/forms/MultipleInputs";
+import { UseRefBasics } from "./components/useRef/UseRefBasics";
 
 
 
 function App() {
   return (
     <div className="container">
-      <MultipleInputs/>
+      <UseRefBasics/>
+      {/* <MultipleInputs/> */}
       {/* <ControlledInputs/> */}
       {/* <List/> */}
       <UserChallenge/>

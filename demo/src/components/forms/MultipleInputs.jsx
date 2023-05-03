@@ -26,6 +26,10 @@ setFramework(e.target.value)
     e.preventDefault();
     console.log(user);
     console.log(shipping)
+    console.log(framework)
+  // const formData= new FormData(e.currentTarget)
+  // const newUser = Object.fromEntries(formData)
+  // console.log(newUser)
   };
 
   return (
@@ -67,6 +71,7 @@ setFramework(e.target.value)
           onChange={handleChange}
         />
       </div>
+      
       <div className="">
         <label htmlFor="shipping" className="form-label">
           Free shipping
@@ -88,7 +93,7 @@ setFramework(e.target.value)
             <option key={x}>{x}</option>
           )}
         </select>
-        </div>
+      </div>
       <button type="submit" className="btn">
         Submit
       </button>
