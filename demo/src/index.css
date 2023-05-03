@@ -49,3 +49,28 @@ padding: 10px 30px;
   background-color: rgb(209, 249, 249);
   padding: 10px 40px;
 }
+.navbar-container{
+display: flex;
+align-items:center;
+justify-content: space-around;
+
+gap: 15px;
+}
+.list-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.list-nav ul{
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  gap:35px
+}
+.user-container{
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap:20px
+}

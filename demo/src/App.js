@@ -12,6 +12,7 @@ import { UseRefBasics } from "./components/useRef/UseRefBasics";
 import { ToggleCustomHook } from "./components/customHooks/ToggleCustomHook";
 
 import FetchDataComponent from "./components/customHooks/FetchDataComponent";
+import { Navbar } from "./components/context/Navbar";
 
 
 
@@ -19,8 +20,9 @@ import FetchDataComponent from "./components/customHooks/FetchDataComponent";
 function App() {
   return (
     <div className="container">
+    <Navbar/>
     <FetchDataComponent/>
-      <ToggleCustomHook/>
+      {/* <ToggleCustomHook/> */}
       {/* <UseRefBasics/> */}
       {/* <MultipleInputs/> */}
       {/* <ControlledInputs/> */}
