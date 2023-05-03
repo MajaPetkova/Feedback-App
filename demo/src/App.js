@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="container">
     <Navbar/>
-    <FetchDataComponent/>
+    {/* <FetchDataComponent/> */}
       {/* <ToggleCustomHook/> */}
       {/* <UseRefBasics/> */}
       {/* <MultipleInputs/> */}
