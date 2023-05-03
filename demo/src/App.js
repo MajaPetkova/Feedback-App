@@ -11,11 +11,15 @@ import { MultipleInputs } from "./components/forms/MultipleInputs";
 import { UseRefBasics } from "./components/useRef/UseRefBasics";
 import { ToggleCustomHook } from "./components/customHooks/ToggleCustomHook";
 
+import FetchDataComponent from "./components/customHooks/FetchDataComponent";
+
+
 
 
 function App() {
   return (
     <div className="container">
+    <FetchDataComponent/>
       <ToggleCustomHook/>
       {/* <UseRefBasics/> */}
       {/* <MultipleInputs/> */}
