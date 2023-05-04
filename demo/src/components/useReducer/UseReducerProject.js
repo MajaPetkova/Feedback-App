@@ -1,27 +1,12 @@
 import { useState, useReducer } from "react";
+import reducer from "./reducer";
 import { data } from "../../data";
 import { CLEAR_ITEM, CLEAR_LIST, RESET_LIST } from "./actions";
-
 // const [people, setPeople] = useState(data);
 
 const defaultState = {
   people: data,
 };
-
-const reducer = (state, action) => {
-if(action.type === CLEAR_LIST){
-  return { ...state, people: []}
-}
-if(action.type === RESET_LIST){
-  return { ...state, people: data}
-}
-if(action.type === CLEAR_ITEM){
-  let newPeople = state.people.filter((x) => x.id !== action.payload.id)
-  return { ...state, people: newPeople}
-
-// return state;
-};
-}
 
 export const UseReducerProject = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -34,10 +19,9 @@ export const UseReducerProject = () => {
     // setPeople(data);
   };
   const removeOneHandler = (id) => {
-    dispatch({ type: "CLEAR_ITEM", payload:{id} });
+    dispatch({ type: CLEAR_ITEM, payload: { id } });
     // const newArr = people.filter((x) => x.id !== id);
     // setPeople(newArr);
-
   };
   return (
     <div>
