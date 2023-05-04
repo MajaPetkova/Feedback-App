@@ -13,6 +13,7 @@ import { ToggleCustomHook } from "./components/customHooks/ToggleCustomHook";
 
 import FetchDataComponent from "./components/customHooks/FetchDataComponent";
 import { Navbar } from "./components/context/Navbar";
+import { UseReducerProject } from "./components/useReducer/UseReducerProject";
 
 
 
@@ -20,6 +21,7 @@ import { Navbar } from "./components/context/Navbar";
 function App() {
   return (
     <div className="container">
+      <UseReducerProject/>
     <Navbar/>
     {/* <FetchDataComponent/> */}
       {/* <ToggleCustomHook/> */}
