@@ -5,6 +5,10 @@ export const Starter = () => {
   const [people, setPeople] = useState(data);
 
   const removeHandler = () => {
+    if(people.length == 0){
+      setPeople(data);
+      return
+    }
     setPeople([]);
   };
   const removeOneHandler = (id) => {
@@ -30,7 +34,7 @@ export const Starter = () => {
         onClick={removeHandler}
         style={{ marginTop: "30px" }}
       >
-        Remove all
+        {people.length >0 ? "Clear All" : "Reset"}
       </button>
     </div>
   );
