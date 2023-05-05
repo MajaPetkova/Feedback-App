@@ -15,7 +15,7 @@ export const Search =() =>{
         <section className="form-section">
             <h1 className="title">Unsplash images</h1>
             <form onSubmit={handleSubmit}>
-                <input type="text" className="form-input search input" name="search" placeholder="cat" />
+                <input type="text" className="form-input search input" name="search" placeholder="monkey" />
                 <button className="btn">Submit</button>
             </form>
 

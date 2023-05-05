@@ -38,7 +38,7 @@ body {
   font-weight: 400;
   color: rgb(238, 3, 238);
   padding-bottom: 30px;
-  font-size: 32px;
+  font-size: 58px;
 }
 .form-section form {
   margin: 0 auto;
@@ -54,7 +54,9 @@ img {
   width: 200px;
   height: 200px;
 }
-
+.result{
+  margin: 10px 40px;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     background-color: rgb(56, 55, 55);
