@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../context";
 
 const url =
-  "https://api.unsplash.com/search/photos?client_id=luqIRSHEGX1hdTA0mByfX0lC8kq5jV1WhtM50UPYR1Y&query=monkey";
+  "https://api.unsplash.com/search/photos?client_id=luqIRSHEGX1hdTA0mByfX0lC8kq5jV1WhtM50UPYR1Y";
 
 export const Gallery = () => {
-    const[ results, setResults] = useState([])
+    const[ results, setResults] = useState([]);
+    const{searchTerm} = useContext(AppContext);
+    // console.log(searchTerm)
+
   const getImages = async () => {
-    const res = await fetch(url);
+    const res = await fetch(`${url}&query=${searchTerm}`);
     if (res.isLoading) {
       return (
         <section>
@@ -33,7 +37,7 @@ export const Gallery = () => {
     useEffect(() => {
       getImages();
       
-    }, []);
+    }, [searchTerm]);
 
 
     return (

@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { AppContext } from "../context";
+
 export const Search =() =>{
+    const{setSearchTerm}= useContext(AppContext)
     const handleSubmit =(e) =>{
       e.preventDefault();
       const searchValue= e.target.search.value;
-      console.log(searchValue)
       if(searchValue == ""){
-        return;
-      }
+          return;
+        }
+        setSearchTerm(searchValue)
     }
     return (
         <section className="form-section">
