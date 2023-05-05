@@ -6,8 +6,8 @@ export const ThemeToggle = () => {
   const { toggleDarkTheme, isDarkTheme } = useContext(AppContext);
   return (
     <section className="toggle-container">
-      <button className="dark-toggle" onClick={toggleDarkTheme}>
-        {isDarkTheme ? <BsToggleOn /> : <BsToggleOff />}
+      <button className="dark-toggle" onClick={toggleDarkTheme}  >
+        {isDarkTheme ? <BsToggleOn/> : <BsToggleOff/>}
       </button>
     </section>
   );

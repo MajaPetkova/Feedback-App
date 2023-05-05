@@ -9,19 +9,54 @@ body {
 }
 .dark-toggle {
   margin: 50px 85%;
-}
-button {
   font-size: 36px;
   color: rgb(238, 3, 238);
   border: none;
   background-color: transparent;
 }
+.form-input {
+  padding: 6px 15px;
+  width: 60%;
+}
+.btn {
+  background-color: rgb(238, 3, 238);
+  color: white;
+  padding: 6px 10px;
+  border: 2px solid rgb(238, 3, 238);
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 15px;
+  width: 20%;
+}
 .dark-theme {
   background-color: rgb(56, 55, 55);
   color: white;
 }
-@media (prefers-color-scheme:dark){
-  :root{
+.title {
+  text-align: center;
+  font-weight: 400;
+  color: rgb(238, 3, 238);
+  padding-bottom: 30px;
+  font-size: 32px;
+}
+.form-section form {
+  margin: 0 auto;
+  width: 60%;
+}
+.image-container {
+  margin: 30px 10%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
     background-color: rgb(56, 55, 55);
     color: white;
   }
