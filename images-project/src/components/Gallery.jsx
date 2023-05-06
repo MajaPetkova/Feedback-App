@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context";
 
 const url =
-  "https://api.unsplas.com/search/photos?client_id=luqIRSHEGX1hdTA0mByfX0lC8kq5jV1WhtM50UPYR1Y";
+  "https://api.unsplash.com/search/photos?client_id=luqIRSHEGX1hdTA0mByfX0lC8kq5jV1WhtM50UPYR1Y";
 
 export const Gallery = () => {
   const [results, setResults] = useState([]);
@@ -16,14 +16,13 @@ export const Gallery = () => {
     if (res.ok !== true) {
       // setIsError(true)
       setIsLoading(false);
-    //   setIsError(true)
+      setIsError(true)
       return;
     }
     setIsLoading(true);
     const results = await res.json();
     setResults(results);
     setIsLoading(false);
-    // setIsError(false)
     // console.log(results.total);
   };
   useEffect(() => {
