@@ -7,6 +7,7 @@ import { ErrorPage } from "./components/ErrorPage";
 import { SingleProduct } from "./components/SingleProduct";
 import { Dashboard } from "./components/Dashboard";
 import { Login } from "./components/Login";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,7 +22,11 @@ function App() {
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
 
-        <Route path="/dashboard" element={<Dashboard user={user}/>} /> 
+        <Route path="/dashboard" element={
+          <ProtectedRoute user={user}>
+            <Dashboard user={user}/>
+          </ProtectedRoute>
+        } /> 
         <Route path="/login" element={<Login setUser={setUser}/>} />
       </Routes>
     </BrowserRouter>
