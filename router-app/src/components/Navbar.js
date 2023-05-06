@@ -7,6 +7,7 @@ export const Navbar =() =>{
             <Link to="/about" >About</Link>
             <NavLink to="/products" className={({isActive}) =>
              isActive ? "active": "link"} >Products</NavLink>
+             <Link to="/login">Login</Link>
         </nav>
     )
 }
