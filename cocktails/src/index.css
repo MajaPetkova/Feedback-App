@@ -16,6 +16,9 @@ h2{
   border-radius: 6px;
   text-decoration: none;
 }
+.btn-primary:hover{
+  background-color: rgb(223, 168, 79);
+}
 .logo{
   display: flex;
   justify-content: space-between;
@@ -25,11 +28,14 @@ h2{
   width: 70%;
   height: 80px;
   border-bottom: 2px solid black;
+  box-shadow: -8px 14px 14px -12px rgba(0,0,0,0.79);
 }
 .cocktail-logo{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  border: 3px solid beige;
+  margin-left: -10px;
 }
 .name{
   display: flex;
@@ -61,4 +67,15 @@ h2{
   width: 50%;
   margin:150px auto;
   text-align: center;
+}
+.loader{
+  width: 50%;
+  margin:150px auto;
+  text-align: center;
+}
+.no-found{
+  width: 50%;
+  margin:150px auto;
+  text-align: center;
+  text-transform: capitalize;
 }
