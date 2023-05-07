@@ -4,7 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-p{
+p {
   margin-top: -14px;
   color: grey;
 }
@@ -12,11 +12,11 @@ h2 {
   font-size: 32px;
   color: darkcyan;
 }
-h3{
+h3 {
   font-size: 24px;
   color: darkcyan;
 }
-h4{
+h4 {
   font-size: 16px;
   font-weight: 600;
   margin-top: -14px;
@@ -37,7 +37,7 @@ h4{
   justify-content: space-between;
 }
 .navbar {
-  margin: 0px auto;
+  margin: 10px auto;
   width: 70%;
   height: 80px;
   border-bottom: 2px solid black;
@@ -92,13 +92,13 @@ h4{
   text-align: center;
   text-transform: capitalize;
 }
-.cocktail-container{
+.cocktail-container {
   display: flex;
   flex-wrap: wrap;
   padding: 5% 16%;
-  gap:25px
+  gap: 25px;
 }
-.section-title{
+.section-title {
   text-align: center;
   margin-bottom: -40px;
   margin-top: 60px;
@@ -106,7 +106,7 @@ h4{
 /* card */
 .card {
   width: 300px;
-  height:420px;
+  height: 420px;
 
   box-shadow: 8px 24px 34px -12px black;
   border-radius: 4px;
@@ -115,9 +115,32 @@ h4{
   width: 300px;
   height: 250px;
 }
-.cocktail-footer{
+.cocktail-footer {
   text-align: start;
   padding-left: 30px;
-  margin-top:-15px;
+  margin-top: -15px;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+letter-spacing: 1px;
+font-weight: 600;
+}
+.search {
+  box-shadow: 8px 14px 24px -12px rgba(0, 0, 0, 0.649);
+  border: 1px solid beige;
+  margin: 80px auto;
+  padding: 40px 30px;
+  width: 40%;
+}
+.search-input {
+  width: 70%;
+  margin: 20px auto;
+  border: 1px solid grey;
+  padding: 6px 10px;
 }
 
