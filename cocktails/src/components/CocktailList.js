@@ -4,14 +4,14 @@ import { Loading } from "./Loading";
 import { CocktailItem } from "./CocktailItem";
 
 export const CocktailList = () => {
-  const { loading, cocktails, } = useContext(AppContext);
-  // console.log(cocktails);
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  const { loading, cocktails } = useContext(AppContext);
+//   console.log(cocktails);
+  if (loading) {
+    return <Loading />;
+  }
   if (cocktails.length < 1) {
     return (
-      <h2 className="no-found">no cocktails matched your search criteria</h2>
+      <h2 className="no-found">no cocktails mached your search criteria</h2>
     );
   }
   return (

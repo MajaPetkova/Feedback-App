@@ -2,20 +2,15 @@ import { useContext, useRef, useEffect } from "react";
 import { AppContext } from "../context";
 
 export const Search = () => {
-  const { 
-    // setSearchTerm 
-    searchTerm
-   } = useContext(AppContext);
+  const { setSearchTerm } = useContext(AppContext);
   const searchValue = useRef("");
-  
+
   useEffect(()=>{
-    searchValue.current.focus()
+      searchValue.current.focus()
   }, []);
-  
+
   const searchCocktail = () => {
-    // setSearchTerm(searchValue.current.value);
-    searchTerm(searchValue.current.value)
-    console.log(searchValue.current.value)
+    setSearchTerm(searchValue.current.value);
   };
 
   const handleSubmit =(e) =>{
