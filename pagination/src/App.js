@@ -17,7 +17,7 @@ function App() {
   const handlePage = (index) => {
     setPage(index);
   };
-  const prevPage = (index) => {
+  const prevPage = () => {
     setPage((oldPage) => {
       let prevPage = oldPage - 1;
       if (prevPage < 0 ) {
@@ -27,7 +27,7 @@ function App() {
     });
   };
 
-  const nextPage = (index) => {
+  const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1;
       if (nextPage > data.length - 1) {
