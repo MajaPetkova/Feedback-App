@@ -11,8 +11,8 @@ export const UseFetch = () => {
   const getProfiles = async () => {
     const res = await fetch(url);
     const data = await res.json();
-    paginate(data)
-    setData(data);
+    
+    setData(paginate(data));
     setLoading(false);
   };
 
