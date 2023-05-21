@@ -5,11 +5,23 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   max-width: 1240px;
+  background-color: var(--clr-bcg);
+  color: var(--clr-font);
 }
-:root {
+/* :root {
   --clr-bcg: #fff;
   --clr-font: rgb(61, 61, 61);
   --clr-primary: #d23669;
+} */
+.light-theme{
+    --clr-bcg: #fff;
+    --clr-font: rgb(61, 61, 61);
+    --clr-primary: #e91159;
+}
+.dark-theme{
+  --clr-bcg:rgb(61, 61, 61);
+  --clr-font: #fff;
+  --clr-primary: #f480a7;
 }
 .container {
   display: flex;
