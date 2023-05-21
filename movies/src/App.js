@@ -1,12 +1,17 @@
-import{useContext} from "react";
-import { AppContext } from "./context";
+// import { useContext } from "react";
+// import { AppContext } from "./context";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Movie } from "./components/Movie";
 
 function App() {
- const{}=  useContext(AppContext)
+
+
   return (
-    <div className="App">
- Movies
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/movies/:id" element={<Movie />} />
+    </Routes>
   );
 }
 
