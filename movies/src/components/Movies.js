@@ -1,3 +1,9 @@
+import { useContext } from "react";
+import { AppContext } from "../context";
+
 export const Movies = () => {
-    return <h2>Movies</h2>;
+  const{movies} = useContext(AppContext);
+
+ 
+ 
   };

@@ -1,5 +1,5 @@
 export const Movie= () =>{
     return(
-        <h2>Movie</h2>
+     <h3>Single movie</h3>
     )
 }
