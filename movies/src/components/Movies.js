@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AppContext } from "../context";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const imgUrl= "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg";
+export const imgUrl= "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg";
 
 
 export const Movies = () => {
