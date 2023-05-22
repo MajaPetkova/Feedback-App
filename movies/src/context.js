@@ -15,7 +15,6 @@ export const AppProvider = ({ children }) => {
     try{
       const res = await fetch(`${API_ENDPOINT}&s=${query}`);
       const data = await res.json();
-      console.log(data);
       if(data.Response === "True"){
         setMovies(data.Search)
         setError({show: false , msg: ""})
