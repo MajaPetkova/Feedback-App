@@ -55,6 +55,22 @@ body {
   border-bottom: 1px solid rgb(2, 160, 222);
   padding: 4px 12px;
 }
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 300px;
+  margin: 0 auto;
+  gap:20px
+}
+.btn-container button{
+  border: none;
+  background-color:rgb(2, 160, 222);
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: white;
+
+}
 @media screen and (max-width: 800px) {
   .stories-container {
     margin: 30px auto;
