@@ -1,9 +1,21 @@
-import { createContext } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { reducer } from "./reducer";
 
-export const AppContext= createContext();
+const initialState = {
+  isLoading: true,
+};
 
-export const AppProvider =({children})=>{
-    return (
-        <AppContext.Provider value="hello">{children}</AppContext.Provider>
-    )
-}
+export const AppContext = createContext();
+
+export const AppProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const fetchStories = async () => {
+    dispatch({ type: "SET_LOADING" });
+  };
+  useEffect(() => {
+    fetchStories();
+  }, []);
+
+  return <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>;
+};
