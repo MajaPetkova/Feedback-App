@@ -13,7 +13,7 @@ body {
 }
 .stories-container {
   margin: 30px auto;
-  max-width: 540px;
+  width: 390px;
   display: grid;
   grid-template-columns:  1fr;
   gap: 15px;
@@ -71,9 +71,9 @@ body {
   color: white;
 
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   .stories-container {
-    max-width: 800px;
+    width: 900px;
     grid-template-columns: 1fr 1fr;
 
   }
