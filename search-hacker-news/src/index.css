@@ -43,6 +43,7 @@ body {
   font-size: 12px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 @media screen and (max-width: 800px) {
   .stories-container{
