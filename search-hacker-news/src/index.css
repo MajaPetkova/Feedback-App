@@ -46,7 +46,7 @@ body {
 }
 .form {
   text-align: center;
-  width: 600px;
+  /* width: 600px; */
   margin: 20px auto;
 }
 .form input {
