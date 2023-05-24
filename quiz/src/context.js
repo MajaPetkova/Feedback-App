@@ -13,6 +13,11 @@ export const AppProvider = ({ children }) => {
   const [index, setIndex] = useState(0);
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [quiz, setQuiz] = useState({
+    amount : 0,
+    category: "sports",
+    difficulty: "easy"
+  });
 
   const fetchQuestions = async (url) => {
     setWaiting(false);
@@ -32,23 +37,31 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   const nextQuestion = () => {
-   setIndex((oldIndex)=>{
-    const index = oldIndex + 1
-    if(index > questions.length - 1 ){
-        return 0
-    }else{
-        return index
-    }
-   })
+    setIndex((oldIndex) => {
+      const index = oldIndex + 1;
+      if (index > questions.length - 1) {
+        openModal()
+        return 0;
+      } else {
+        return index;
+      }
+    });
   };
   const checkAnswer = (value) => {
-    if(value){
-        setCorrect((oldState) => oldState +1 )
+    if (value) {
+      setCorrect((oldState) => oldState + 1);
     }
-    nextQuestion()
+    nextQuestion();
   };
 
-
+  const openModal = () =>{
+    setIsModalOpen(true)
+  }
+  const closeModal = () =>{
+    setIsModalOpen(false)
+    setWaiting(true)
+    setCorrect(0)
+  }
   return (
     <AppContext.Provider
       value={{
@@ -60,7 +73,9 @@ export const AppProvider = ({ children }) => {
         error,
         isModalOpen,
         nextQuestion,
-        checkAnswer
+        checkAnswer,
+        closeModal,
+        quiz
       }}
     >
       {children}
