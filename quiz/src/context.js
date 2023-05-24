@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const tempUrl =
   "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple";
@@ -13,6 +13,24 @@ export const AppProvider = ({ children }) => {
   const [index, setIndex] = useState(0);
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const fetchQuestions = async(url) =>{
+    setWaiting(false)
+    setIsLoading(true)
+    try{
+        const res= await fetch (url)
+        const data= await res.json()
+        setQuestions(data.results)
+        setIsLoading(false)
+    }catch(error){
+        console.log(error)
+        setError(true)
+    }
+  
+  }
+  useEffect (()=>{
+    fetchQuestions(tempUrl)
+  }, [])
 
   return (
     <AppContext.Provider

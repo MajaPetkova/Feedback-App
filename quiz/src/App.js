@@ -4,7 +4,7 @@ import { AppContext } from "./context";
 import { useContext } from "react";
 
 function App() {
-  const { isLoading, waiting, question, index, correct } = useContext(AppContext);
+  const { isLoading, waiting, questions, index, correct } = useContext(AppContext);
 
   if(waiting) {
     return <SetupForm/>
@@ -13,10 +13,11 @@ function App() {
   if (isLoading) {
     return <Loading />;
   }
-
+    const {question, correct_answer, incorrect_answers} = questions[0];
+    const answers= [...incorrect_answers, correct_answer]
   return (
     <main>
-      <h2>Quiz starter</h2>
+      
     </main>
   );
 }
