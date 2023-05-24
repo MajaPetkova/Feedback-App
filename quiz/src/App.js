@@ -5,7 +5,7 @@ import { AppContext } from "./context";
 import { useContext } from "react";
 
 function App() {
-  const { isLoading, waiting, questions, index, correct } = useContext(AppContext);
+  const { isLoading, waiting, questions, index, correct, nextQuestion, checkAnswer } = useContext(AppContext);
 
   if(waiting) {
     return <SetupForm/>
@@ -14,7 +14,7 @@ function App() {
   if (isLoading) {
     return <Loading />;
   }
-  
+
     const {question, correct_answer, incorrect_answers} = questions[index];
     const answers = [...incorrect_answers, correct_answer]
   return (
@@ -26,11 +26,11 @@ function App() {
           <h2 dangerouslySetInnerHTML={{__html : question}}/>
             <div className="btn-container">
                {answers.map((x, index)=>{
-                  return <button key={index} dangerouslySetInnerHTML={{__html: x}} className="answer-btn"/>
+                  return <button key={index} dangerouslySetInnerHTML={{__html: x}} onClick={()=>checkAnswer(correct_answer===x)} className="answer-btn"/>
                 })}
             </div>
        </article>
-         <button className="next-question">Next Question</button>
+         <button className="next-question" onClick={nextQuestion}>Next Question</button>
       </section>
     </main>
   );

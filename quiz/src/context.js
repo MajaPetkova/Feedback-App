@@ -14,23 +14,40 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const fetchQuestions = async(url) =>{
-    setWaiting(false)
-    setIsLoading(true)
-    try{
-        const res= await fetch (url)
-        const data= await res.json()
-        setQuestions(data.results)
-        setIsLoading(false)
-    }catch(error){
-        console.log(error)
-        setError(true)
+  const fetchQuestions = async (url) => {
+    setWaiting(false);
+    setIsLoading(true);
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      setQuestions(data.results);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setError(true);
     }
-  
-  }
-  useEffect (()=>{
-    fetchQuestions(tempUrl)
-  }, [])
+  };
+  useEffect(() => {
+    fetchQuestions(tempUrl);
+  }, []);
+
+  const nextQuestion = () => {
+   setIndex((oldIndex)=>{
+    const index = oldIndex + 1
+    if(index > questions.length - 1 ){
+        return 0
+    }else{
+        return index
+    }
+   })
+  };
+  const checkAnswer = (value) => {
+    if(value){
+        setCorrect((oldState) => oldState +1 )
+    }
+    nextQuestion()
+  };
+
 
   return (
     <AppContext.Provider
@@ -42,6 +59,8 @@ export const AppProvider = ({ children }) => {
         index,
         error,
         isModalOpen,
+        nextQuestion,
+        checkAnswer
       }}
     >
       {children}
