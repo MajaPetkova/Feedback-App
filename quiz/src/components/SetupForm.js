@@ -2,11 +2,11 @@ import { AppContext } from "../context";
 import { useContext } from "react";
 
 export const SetupForm = () => {
-  const { quiz, error } = useContext(AppContext);
+  const { quiz, error, handleSubmit, handleChange } = useContext(AppContext);
   return (
     <main>
       <h3>Setup Quiz</h3>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-input">
           <label htmlFor="number-questions">Number of questions</label>
           <input
@@ -17,12 +17,12 @@ export const SetupForm = () => {
             id="number-questions"
             className="input"
             value={quiz.amount}
-            onChange=""
+            onChange={handleChange}
           />
         </div>
         <div className="form-input">
           <label htmlFor="category">Category</label>
-          <select name="category" id="category" value={quiz.category} onChange="">
+          <select name="category" id="category" value={quiz.category} onChange={handleChange}>
             <option value="sport">Sports</option>
             <option value="politics">Politics</option>
             <option value="history">History</option>
@@ -30,14 +30,14 @@ export const SetupForm = () => {
         </div>
         <div className="form-input">
           <label htmlFor="difficulty">Difficulty</label>
-          <select name="difficulty" id="difficulty" value={quiz.difficulty}>
+          <select name="difficulty" id="difficulty" value={quiz.difficulty} onChange={handleChange}>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
         </div>
         {error && <p className="error"> Can't generate questions</p>}
-        <button type="submit" >Start</button>
+        <button type="submit" onClick="">Start</button>
       </form>
     </main>
   );

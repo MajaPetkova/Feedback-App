@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [quiz, setQuiz] = useState({
-    amount : 0,
+    amount : 10,
     category: "sports",
     difficulty: "easy"
   });
@@ -62,6 +62,15 @@ export const AppProvider = ({ children }) => {
     setWaiting(true)
     setCorrect(0)
   }
+  const handleSubmit =(e) =>{
+    e.preventDefault()
+  }
+  const handleChange =(e) =>{
+  const name = e.target.name;
+  const value= e.target.value;
+//   console.log(name, value)
+    setQuiz({...quiz, [name]:value})
+  }
   return (
     <AppContext.Provider
       value={{
@@ -75,7 +84,9 @@ export const AppProvider = ({ children }) => {
         nextQuestion,
         checkAnswer,
         closeModal,
-        quiz
+        quiz,
+        handleSubmit,
+        handleChange
       }}
     >
       {children}
