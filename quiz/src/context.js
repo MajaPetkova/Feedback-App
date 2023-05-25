@@ -1,7 +1,7 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 const API_ENDPOINT = "https://opentdb.com/api.php?";
-let url = "";
+
 const table = {
   sports: 21,
   history: 23,
