@@ -1,8 +1,12 @@
 import { createContext, useState, useEffect } from "react";
 
-const tempUrl =
-  "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple";
-
+const API_ENDPOINT = "https://opentdb.com/api.php?";
+let url = "";
+const table = {
+  sports: 21,
+  history: 23,
+  politics: 24,
+};
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -14,9 +18,9 @@ export const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [quiz, setQuiz] = useState({
-    amount : 10,
+    amount: 10,
     category: "sports",
-    difficulty: "easy"
+    difficulty: "easy",
   });
 
   const fetchQuestions = async (url) => {
@@ -25,22 +29,29 @@ export const AppProvider = ({ children }) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      setQuestions(data.results);
-      setIsLoading(false);
+      if (data.results.length > 0) {
+        setQuestions(data.results);
+        setIsLoading(false);
+        setWaiting(false);
+        setError(false);
+      } else {
+        setError(true);
+        setWaiting(true)
+      }
     } catch (error) {
       console.log(error);
       setError(true);
     }
   };
-  useEffect(() => {
-    fetchQuestions(tempUrl);
-  }, []);
+  //   useEffect(() => {
+  //     fetchQuestions(tempUrl);
+  //   }, []);
 
   const nextQuestion = () => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1;
       if (index > questions.length - 1) {
-        openModal()
+        openModal();
         return 0;
       } else {
         return index;
@@ -54,23 +65,31 @@ export const AppProvider = ({ children }) => {
     nextQuestion();
   };
 
-  const openModal = () =>{
-    setIsModalOpen(true)
-  }
-  const closeModal = () =>{
-    setIsModalOpen(false)
-    setWaiting(true)
-    setCorrect(0)
-  }
-  const handleSubmit =(e) =>{
-    e.preventDefault()
-  }
-  const handleChange =(e) =>{
-  const name = e.target.name;
-  const value= e.target.value;
-//   console.log(name, value)
-    setQuiz({...quiz, [name]:value})
-  }
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setWaiting(true);
+    setCorrect(0);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { amount, category, difficulty } = quiz;
+    // const tempUrl =
+    //   "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple";
+
+    const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=multiple`;
+
+    fetchQuestions(url);
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    //   console.log(name, value)
+    setQuiz({ ...quiz, [name]: value });
+  };
   return (
     <AppContext.Provider
       value={{
@@ -86,7 +105,7 @@ export const AppProvider = ({ children }) => {
         closeModal,
         quiz,
         handleSubmit,
-        handleChange
+        handleChange,
       }}
     >
       {children}

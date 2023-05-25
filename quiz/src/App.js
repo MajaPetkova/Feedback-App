@@ -19,7 +19,7 @@ function App() {
     const answers = [...incorrect_answers, correct_answer]
   return (
     <main>
-      {/* <Modal/> */}
+      <Modal/>
       <section className="question-container">
          <p className="correct-ans">correct answers: {correct}/{index}</p>
         <article className="question">

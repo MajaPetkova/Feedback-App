@@ -36,8 +36,8 @@ export const SetupForm = () => {
             <option value="hard">Hard</option>
           </select>
         </div>
-        {error && <p className="error"> Can't generate questions</p>}
-        <button type="submit" onClick="">Start</button>
+        {error && (<p className="error"> Can't generate questions. Please try with different options.</p>)}
+        <button type="submit" onClick={handleSubmit}>Start</button>
       </form>
     </main>
   );
