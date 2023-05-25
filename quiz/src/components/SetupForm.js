@@ -4,7 +4,7 @@ import { useContext } from "react";
 export const SetupForm = () => {
   const { quiz, error, handleSubmit, handleChange } = useContext(AppContext);
   return (
-    <main>
+    <main className="form-container">
       <h3>Setup Quiz</h3>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-input">
@@ -37,7 +37,7 @@ export const SetupForm = () => {
           </select>
         </div>
         {error && (<p className="error"> Can't generate questions. Please try with different options.</p>)}
-        <button type="submit" onClick={handleSubmit}>Start</button>
+        <button type="submit" onClick={handleSubmit} className="start-btn btn">Start</button>
       </form>
     </main>
   );

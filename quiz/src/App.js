@@ -51,13 +51,13 @@ function App() {
                   key={index}
                   dangerouslySetInnerHTML={{ __html: x }}
                   onClick={() => checkAnswer(correct_answer === x)}
-                  className="answer-btn"
+                  className="answer-btn btn"
                 />
               );
             })}
           </div>
         </article>
-        <button className="next-question" onClick={nextQuestion}>
+        <button className="next-btn btn" onClick={nextQuestion}>
           Next Question
         </button>
       </section>
