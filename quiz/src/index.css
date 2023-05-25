@@ -23,7 +23,7 @@ body {
 .form-container {
   width: 400px;
   margin: 12rem auto;
-  padding: 0.3 1.2rem;
+  padding: 0.4rem 2rem;
   background-color: var(--color-white);
 }
 .form-container h3 {
@@ -45,7 +45,7 @@ body {
 .form-input select {
   background-color: var(--color-bg);
   border: none;
-  padding: 4px;
+  padding: 8px;
 }
 .start-btn,
 .next-btn,
@@ -57,7 +57,7 @@ body {
   border: none;
   color: var(--color-black);
   font-weight: 600;
-  padding: 4px;
+  padding: 6px;
 }
 .loading img {
   margin: 12rem 42%;
