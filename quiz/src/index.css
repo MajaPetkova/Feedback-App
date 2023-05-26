@@ -59,14 +59,16 @@ body {
   padding: 6px;
 }
 .loading img {
-  margin: 12rem 42%;
+  margin: 12rem 27%;
 }
 .question-container {
   border: 1px solid black;
-  padding: 20px 20px;
+  background-color: var(--color-white);
+  padding: 1rem;
   margin: 12rem auto;
-  width: 320px;
+  width: 90%;
   font-size: 0.6rem;
+  text-align: center;
 }
 .correct-ans {
   color: var(--color-green);
@@ -76,13 +78,11 @@ body {
   font-size: 0.8rem;
 }
 .btn-container {
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
   width: 70%;
   text-align: center;
-  justify-content: center;
   margin: 0 auto;
 }
 .answer-btn {
@@ -123,7 +123,6 @@ body {
   padding: 3rem 4rem;
   width: 30%;
 }
-
 .close-btn {
   width: 100px;
 }
@@ -136,13 +135,8 @@ body {
     background-color: var(--color-white);
   }
   .question-container {
-    position: relative;
-    width: 380px;
-    margin: 12rem auto;
-    text-align: center;
     font-size: 1.2rem;
-    background-color: var(--color-white);
-    padding: 10px 30px;
+    padding: 1rem 2rem;
     border: none;
   }
   .close-btn {
@@ -157,22 +151,22 @@ body {
     margin-top: 2rem;
     font-size: 0.7rem;
   }
+  .loading img {
+    margin: 12rem 34%;
+  }
 }
 @media screen and (min-width: 720px) {
   .question-container {
-    position: relative;
-    width: 700px;
-    margin: 12rem auto;
-    text-align: center;
-    font-size: 1.2rem;
-    background-color: var(--color-white);
-    padding: 10px 30px;
-    border: none;
+    width: 60%;
   }
   .correct-ans {
     font-size: 1.1rem;
   }
-  .close-btn, .next-btn {
+  .close-btn,
+  .next-btn {
     width: 200px;
+  }
+  .loading img {
+    margin: 12rem 42%;
   }
 }
