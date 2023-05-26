@@ -6,7 +6,6 @@ body {
   background-color: var(--color-bg);
   /* box-sizing: border-box; */
   /* position: relative */
-  
 }
 :root {
   --color-black: #222;
@@ -113,22 +112,22 @@ body {
   background-color: #2222229c;
   opacity: 0;
   z-index: -10;
-  position: fixed
+  position: fixed;
 }
 .open {
   visibility: visible;
   z-index: 10;
   opacity: 1;
 }
-.modal-content{
+.modal-content {
   background-color: var(--color-white);
-  margin:10rem auto;
+  margin: 10rem auto;
   text-align: center;
   padding: 3rem 4rem;
   width: 30%;
 }
 
-.close-btn{
+.close-btn {
   width: 100px;
 }
 @media screen and (min-width: 600px) {
@@ -142,7 +141,34 @@ body {
   .correct-ans {
     font-size: 1.1rem;
   }
-  .close-btn{
+  .close-btn {
     width: 200px;
+  }
+}
+@media screen and (min-width: 350px) {
+  .form-container {
+    width: 300px;
+  }
+  .question-container {
+    border: 1px solid black;
+    padding: 20px 20px;
+    margin: 12rem auto;
+    width: 300px;
+    font-size: 0.6rem;
+  }
+  .correct-ans {
+    font-size: 0.8rem;
+  }
+  .close-btn {
+    width: 90%;
+    color: var(--color-black);
+    font-weight: 300;
+    padding: 4px;
+  }
+  .next-btn{
+  width: 100px;
+  margin-left: 60%;
+  margin-top: 2rem;
+  font-size: 0.7rem;
   }
 }
