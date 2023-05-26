@@ -20,9 +20,9 @@ body {
   border-radius: 4px;
 }
 .form-container {
-  width: 400px;
+  width: 360px;
   margin: 12rem auto;
-  padding: 0.4rem 2rem;
+  padding: 0.4rem 1rem;
   background-color: var(--color-white);
 }
 .form-container h3 {
@@ -62,14 +62,11 @@ body {
   margin: 12rem 42%;
 }
 .question-container {
-  position: relative;
-  width: 500px;
+  border: 1px solid black;
+  padding: 20px 20px;
   margin: 12rem auto;
-  text-align: center;
-  font-size: 1.2rem;
-  background-color: var(--color-white);
-  padding: 10px 30px;
-  /* border:none */
+  width: 320px;
+  font-size: 0.6rem;
 }
 .correct-ans {
   color: var(--color-green);
@@ -99,11 +96,11 @@ body {
   background-color: var(--color-hover);
 }
 .next-btn {
-  width: 200px;
+  width: 100px;
   margin-left: 60%;
   margin-top: 2rem;
+  font-size: 0.7rem;
 }
-
 .modal-container {
   top: 0;
   left: 0;
@@ -130,34 +127,23 @@ body {
 .close-btn {
   width: 100px;
 }
-@media screen and (min-width: 600px) {
-  .question-container {
-    border: 1px solid black;
-    padding: 80px 120px;
-    margin: 12rem auto;
-    width: 900px;
-    font-size: 1.3rem;
-  }
-  .correct-ans {
-    font-size: 1.1rem;
-  }
-  .close-btn {
-    width: 200px;
-  }
-}
-@media screen and (min-width: 350px) {
+
+@media screen and (min-width: 400px) {
   .form-container {
-    width: 300px;
+    width: 380px;
+    margin: 12rem auto;
+    padding: 0.4rem 1rem;
+    background-color: var(--color-white);
   }
   .question-container {
-    border: 1px solid black;
-    padding: 20px 20px;
+    position: relative;
+    width: 380px;
     margin: 12rem auto;
-    width: 300px;
-    font-size: 0.6rem;
-  }
-  .correct-ans {
-    font-size: 0.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--color-white);
+    padding: 10px 30px;
+    border: none;
   }
   .close-btn {
     width: 90%;
@@ -165,10 +151,28 @@ body {
     font-weight: 300;
     padding: 4px;
   }
-  .next-btn{
-  width: 100px;
-  margin-left: 60%;
-  margin-top: 2rem;
-  font-size: 0.7rem;
+  .next-btn {
+    width: 130px;
+    margin-left: 60%;
+    margin-top: 2rem;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 720px) {
+  .question-container {
+    position: relative;
+    width: 700px;
+    margin: 12rem auto;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--color-white);
+    padding: 10px 30px;
+    border: none;
+  }
+  .correct-ans {
+    font-size: 1.1rem;
+  }
+  .close-btn, .next-btn {
+    width: 200px;
   }
 }
