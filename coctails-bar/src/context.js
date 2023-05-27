@@ -5,7 +5,7 @@ const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`;
 export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("du");
+  const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState([]);
 
   const fetchDrinks = async () => {
@@ -14,9 +14,12 @@ export const AppProvider = ({ children }) => {
       const res = await fetch(`${url}${searchTerm}`);
       const data = await res.json();
       const { drinks } = data;
-      console.log(drinks);
+      // console.log(drinks);
       if (drinks) {
-        setCocktails(drinks);
+         const newCocktails= drinks.map((x) => {
+          const{idDrink,strDrink, strDrinkThumb, strAlcoholic, strGlass } = x;
+        return {id:idDrink, name:strDrink, img: strDrinkThumb, info:strAlcoholic, glass:strGlass }})
+        setCocktails(newCocktails);
       } else {
         setCocktails([]);
       }
