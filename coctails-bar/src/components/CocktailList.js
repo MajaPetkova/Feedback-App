@@ -5,7 +5,7 @@ import { Cocktail } from "./Cocktail";
 
 export const CocktailList = () => {
   const { loading, cocktails } = useContext(AppContext);
-   console.log(cocktails)
+  //  console.log(cocktails)
   if (loading) {
     return <Loading />;
   }
