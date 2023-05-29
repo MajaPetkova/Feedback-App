@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <div className="calculator">
         <div className="display">
-
+          <span>32</span>
         </div>
         <div className="operators">
           <button>/</button>
