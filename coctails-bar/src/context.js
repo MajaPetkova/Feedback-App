@@ -7,7 +7,7 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState([]);
-
+ 
   const fetchDrinks = async () => {
     setLoading(true);
     try {
