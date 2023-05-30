@@ -11,55 +11,57 @@ body {
   --color-light: #eee;
   --color-white: white;
 }
-.App{
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
   padding: 1rem;
 }
-.calculator{
+.calculator {
   background-color: var(--color-white);
   width: 100%;
   max-width: 400px;
- border-radius: 0.4rem;
- overflow: hidden;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
-.display{
+.display {
   padding: 1rem 0.8rem;
   text-align: right;
   background-color: var(--color-black);
   color: var(--color-white);
-  font-size:1.6rem;
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 300;
 }
-button{
-  border:none;
+span {
+  opacity: 0.3;
+}
+button {
+  border: none;
   appearance: none;
   outline: none;
   color: var(--color-light);
   font-size: 1.6rem;
-  cursor:pointer;
+  cursor: pointer;
   padding: 0.8rem;
   transition: 0.4s;
 }
-button:hover{
-  opacity: 0.9;
+button:hover {
+  opacity: 0.7;
 }
-.operators{
+.operators {
   display: flex;
 }
-.operators button{
-  flex:1 1 0%;
+.operators button {
+  flex: 1 1 0%;
   background-color: var(--color-primary);
-
 }
-.digits{
+.digits {
   display: flex;
   flex-wrap: wrap;
 }
-.digits button{
-  flex: 1 1 33.333% ;
+.digits button {
+  flex: 1 1 33.333%;
   background-color: var(--color-black);
   /* max-width: 33.33%; */
 }
