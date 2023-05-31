@@ -9,13 +9,15 @@ body {
 }
 p {
   font-size: 1.2rem;
+  text-transform: capitalize;
 }
 h1 {
   font-size: 4.5rem;
 }
 h3 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 .bold {
   font-weight: 800;
@@ -59,16 +61,23 @@ h3 {
   /* border:1px solid  white; */
   padding: 0.5rem;
   margin: -1rem auto;
+  text-align: center;
   border-radius: 0.4rem;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
 }
 .search {
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 4rem 0;
   border-radius: 1.2rem;
   width: 70%;
   text-align: center;
+}
+.search input{
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: white;
 }
 ::placeholder {
   text-transform: capitalize;
@@ -86,5 +95,8 @@ h3 {
   }
   .search {
     width: 50%;
+  }
+  .app .bottom{
+    justify-content: space-around;
   }
 }
