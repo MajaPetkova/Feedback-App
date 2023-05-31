@@ -70,11 +70,11 @@ function App() {
         </div>
       </form>
       <div className="center">
-        <h3>Your BMI is: {bmi}</h3>
+        {bmi ? <h3>Your BMI is:</h3> : null}
         <p>{message}</p>
       </div>
       <div className="img-container">
-        <img src={imgSrc} alt="" />
+        <img src={imgSrc} alt="img" />
       </div>
     </div>
   );
