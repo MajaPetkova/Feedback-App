@@ -74,7 +74,7 @@ function App() {
         <p>{message}</p>
       </div>
       <div className="img-container">
-        <img src={imgSrc} alt="img" />
+        <img src={imgSrc} alt="" />
       </div>
     </div>
   );
