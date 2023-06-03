@@ -1,15 +1,14 @@
-import {FaRegEdit, FaTrashAlt} from "react-icons/fa"
+import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
-export const Todo=({x})=>{
-    return (
-        <div className="todo">
-            <p>
-        {x.task}
-            </p>
-<div className="buts">
-<FaRegEdit/>
-<FaTrashAlt/>
-</div>
-        </div> 
-    )
-}
+export const Todo = ({ x, toggleComplete, deleteTask, editTask }) => {
+  
+  return (
+    <div className="todo">
+      <p onClick={()=>toggleComplete(x.id)} className={`${x.task.completed ? "completed": ""}`}>{x.task}</p>
+      <div className="buts">
+        <FaRegEdit onClick={()=>editTask(x.id)} />
+        <FaTrashAlt onClick={()=>deleteTask(x.id)}/>
+      </div>
+    </div>
+  );
+};
