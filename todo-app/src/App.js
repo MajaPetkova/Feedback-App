@@ -12,7 +12,7 @@ function App() {
   }
   return <div className="container">
      <TodoForm addTodo={addTodo}/>
-     {todos.map((x, index)=>(<Todo/>) )}
+     {todos.map((x, index)=>(<Todo x={x} key={index}/>) )}
   
   </div>;
 }
