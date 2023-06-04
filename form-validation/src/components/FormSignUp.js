@@ -2,12 +2,12 @@ import UseForm from "../UseForm";
 import validateInfo from "../validatesInfo";
 
 
-export const FormSignUp = () => {
-    const{handleChange, values, handleSubmit ,errors}= UseForm(validateInfo);
+export const FormSignUp = ({submitForm}) => {
+    const{handleChange, values, handleSubmit ,errors}= UseForm(submitForm, validateInfo);
 
   return <div>
     <div className="form-container-right">
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit} validate>
          <h1>Get started with us today?
             Create your account by filling out the information bellow </h1>
          <div className="inputs">
