@@ -26,12 +26,17 @@ body {
   padding: 6px;
   color: white;
 }
+::placeholder {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 .form .btn {
   background-color: rgba(230, 55, 230, 1);
   padding: 6px;
   border: rgba(230, 55, 230, 1) 2px solid;
   color: white;
-  font-weight:600;
+  font-weight: 600;
   width: 25%;
   margin: 10px auto;
 }
@@ -44,8 +49,27 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 6px;
-  
+  font-weight: 600;
+  font-size: 1rem;
 }
-.buts .icon{
+.buts .icon {
   margin-left: 0.5rem;
+}
+@media screen and (min-width: 470px) {
+  .container {
+    width: 60%;
+  }
+  .todo {
+    width: 83%;
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 620px) {
+  .container {
+    width: 45%;
+  }
+  .todo {
+    width: 83%;
+    padding: 0 1rem;
+  }
 }
