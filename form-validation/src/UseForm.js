@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import validateInfo from "./validatesInfo";
 
-const UseForm = () => {
+const UseForm = (validateInfo) => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -21,8 +22,9 @@ const UseForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors(validateInfo(values))
   };
 
-  return { handleChange, values, handleSubmit };
+  return { handleChange, values, handleSubmit, errors };
 };
 export default UseForm;
