@@ -52,6 +52,13 @@ body {
   font-weight: 600;
   font-size: 1rem;
 }
+.todo:nth-child(3n){
+  background-color: rgba(255, 255, 0, 1);
+  color:black
+}
+.todo:nth-child(3n +1){
+  background-color:purple;
+}
 .buts .icon {
   margin-left: 0.5rem;
 }
