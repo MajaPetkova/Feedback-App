@@ -5,7 +5,7 @@ import validateInfo from "../validatesInfo";
 export const FormSignUp = ({submitForm}) => {
     const{handleChange, values, handleSubmit ,errors}= UseForm(submitForm, validateInfo);
 
-  return <div>
+  return <div className="container-right">
     <div className="form-container-right">
       <form className="form" onSubmit={handleSubmit} validate>
          <h1>Get started with us today?

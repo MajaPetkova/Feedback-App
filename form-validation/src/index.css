@@ -1,8 +1,137 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+.main-container {
+  display: flex;
+  width: 100%;
+  border: 1px solid black;
+  flex-direction: column;
+  margin: 4rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.container-left {
+  width: 100%;
+  background-color: rgb(51, 20, 113);
+}
+.container-left img {
+  width: 100%;
+  height: 100%;
+}
+.form-container-right {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  color: aliceblue;
+  padding: 1rem;
+}
+.container-right {
+  background-color: black;
+  width: 100%;
+}
+.form-container-right h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.form-content {
+width: 100%;
+position: relative;
+}
+.form-content img {
+  width: 100%;
+  height: 100%;
+}
+.form-content h2 {
+position: absolute;
+color: aliceblue;
+top:350px;
+left: 40px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  padding: 0.1rem 0.5rem;
+}
+.inputs label {
+  text-align: left;
+}
+.inputs .form-input {
+  padding: 0.2rem 0.4rem;
+}
+.form-btn {
+  margin: 0.5rem;
+  background-color: rgb(52, 103, 174);
+  width: 97%;
+  padding: 0.5rem;
+  border: none;
+  color: aliceblue;
+}
+p {
+  color: rgb(240, 73, 100);
+  text-align: start;
+}
+span {
+  color: aliceblue;
+}
+a {
+  color: rgb(52, 103, 174);
+}
+/* .close-btn {
+  position: absolute;
+  top: 51%;
+  right: 15px;
+} */
 
-
+@media screen and (min-width: 620px) {
+  .main-container {
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    /* align-items: center; */
+    height: 450px;
+  }
+  .container-left {
+    width: 100%;
+  }
+  .form-container-right {
+    width: 80%;
+    text-align: center;
+  }
+  .form-container-right h1 {
+    font-size: 1.1rem;
+  }
+  .form-content h2{
+    top:360px
+  }
+}
+@media screen and (min-width: 820px) {
+  .main-container {
+    width: 80%;
+    height: 500px;
+    justify-content: space-between;
+  }
+  .container-left img {
+    height: 500px;
+  }
+  .form-container-right h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .inputs .form-input {
+    padding: 0.4rem 0.5rem;
+  }
+  .inputs {
+    margin: 0.5rem auto;
+  }
+  .form-btn {
+    margin: 1.2rem auto;
+  }
+  .form-content h2{
+    top:420px
+  }
+}

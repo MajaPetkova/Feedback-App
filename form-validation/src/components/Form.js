@@ -10,7 +10,7 @@ export const Form =() =>{
     }
     return (
         <div className="main-container">
-            <span className="close-btn">x</span>
+            {/* <span className="close-btn">x</span> */}
             <div className="container-left">
                 <img src="images/space.webp" alt="spaceship" />
             </div>
