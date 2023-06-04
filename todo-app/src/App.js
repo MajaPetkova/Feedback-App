@@ -2,6 +2,7 @@ import { TodoForm } from "./components/TodoForm";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Todo } from "./components/Todo";
+import { EditTodoForm } from "./components/EditTodoForm";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -19,21 +20,25 @@ function App() {
   const deleteTask = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
-  const editTask =(id) =>{
+  const editTodo =(id) =>{
    setTodos(todos.map((x)=> x.id ===id ? {...x, isEditing: !x.isEditing} : x))
+  }
+  const editTask=(task, id) =>{
+   setTodos(todos.map((x)=> x.id === id ? {...x, task, isEditing: !x.isEditing } :x ) )
   }
   return (
     <div className="container">
       <h1>Get things done!</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((x) => (
-        <Todo
-          x={x}
-          key={x.id}
-          toggleComplete={toggleComplete}
-          deleteTask={deleteTask}
-          editTask={editTask}
-        />
+        x.isEditing ? ( <EditTodoForm editTodo={editTask} x={x}/>) :(  <Todo
+        x={x}
+        key={x.id}
+        toggleComplete={toggleComplete}
+        deleteTask={deleteTask}
+        editTask={editTodo}
+      /> )
+      
       ))}
     </div>
   );
