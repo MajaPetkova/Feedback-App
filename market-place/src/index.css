@@ -35,3 +35,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.navbarListItemNameActive{
+  color: #2c2c2c;
+}
+.navbarListItemName{
+  color:#8f8f8f;
+}
