@@ -6,6 +6,10 @@ body {
   background-color: rgb(228, 228, 228);
   box-sizing: border-box;
 }
+:root{
+  --color-primary:rgb(0, 187, 0);
+  --color-secondary: ;
+}
 .navbar {
   background-color: white;
   position: fixed;
@@ -35,9 +39,75 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.navbarListItemNameActive{
+.navbarListItemNameActive {
   color: #2c2c2c;
 }
-.navbarListItemName{
-  color:#8f8f8f;
+.navbarListItemName {
+  color: #8f8f8f;
+}
+/* SighIn  */
+.page-container {
+  width: 90%;
+  margin: 1rem auto;
+  text-align: start;
+}
+.header {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+main {
+  text-align: start;
+}
+.email-container {
+  margin: 0.5rem auto;
+  width: 100%;
+}
+.email-container input,
+.password-container input {
+  margin: 0.4rem auto;
+  padding: 0.6rem  1.4rem;
+  width: 90%;
+  border-radius: 1rem;
+  border: none;
+}
+.password-container {
+  position: relative;
+}
+.password-container img {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+}
+.forgot-link {
+  text-align: end;
+  padding: 1.2rem;
+  width: 95%;
+}
+.forgot-link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.signInBar{
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signIn{
+  border-radius: 50%;
+  background-color:var(--color-primary) ;
+  border: none;
+}
+.sighInText {
+  font-weight: 700;
+  padding:1rem;
+}
+.register-link{
+  text-align: center;
+}
+.register-link a{
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-primary);
 }
