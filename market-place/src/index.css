@@ -1,13 +1,14 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background-color: rgb(228, 228, 228);
   box-sizing: border-box;
 }
-:root{
-  --color-primary:rgb(0, 187, 0);
+:root {
+  --color-primary: rgb(0, 187, 0);
   --color-secondary: ;
 }
 .navbar {
@@ -62,52 +63,66 @@ main {
   margin: 0.5rem auto;
   width: 100%;
 }
+.name-container input,
 .email-container input,
 .password-container input {
   margin: 0.4rem auto;
-  padding: 0.6rem  1.4rem;
-  width: 90%;
+  padding: 0.6rem 3rem;
+  width: 75%;
   border-radius: 1rem;
   border: none;
 }
+.email-container input {
+  background: url("./assets/svg/personIcon.svg") #ffffff 2.5% center no-repeat;
+}
+.password-container input {
+  background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat;
+}
+.name-container input {
+  background: url("./assets/svg/badgeIcon.svg") #ffffff 2.5% center no-repeat;
+}
+
 .password-container {
   position: relative;
 }
 .password-container img {
   position: absolute;
-  right: 1rem;
-  top: 0.7rem;
+  top: 0.8rem;
+  right: 6%;
 }
 .forgot-link {
   text-align: end;
   padding: 1.2rem;
-  width: 95%;
+  width: 87%;
 }
 .forgot-link a {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
 }
-.signInBar{
-  margin: 2rem auto;
+.signInBar, .signUpBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
 }
-.signIn{
+.signIn,.signUp {
   border-radius: 50%;
-  background-color:var(--color-primary) ;
+  background-color: var(--color-primary);
   border: none;
 }
-.sighInText {
+.sighInText,
+.signUpText{
   font-weight: 700;
-  padding:1rem;
+  padding: 1rem;
 }
-.register-link{
+.register-link {
   text-align: center;
 }
-.register-link a{
+.register-link a {
   text-decoration: none;
   font-weight: 600;
   color: var(--color-primary);
+}
+@media screen and (min-width: 600px) {
 }

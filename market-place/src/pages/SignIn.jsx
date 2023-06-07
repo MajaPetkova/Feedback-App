@@ -12,7 +12,13 @@ export const SignIn = () => {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  const onChange = () => {};
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+     [e.target.id] : e.target.value,
+      
+    }));
+  };
 
   return (
     <>
@@ -34,13 +40,13 @@ export const SignIn = () => {
             </div>
             <div className="password-container">
               <input
-                type={showPassword ? "text" : "passwords"}
+                type={showPassword ? "text" : "password"}
                 className="passwordInput"
                 placeholder="Password"
                 id="password"
                 value={password}
                 onChange={onChange}
-              />
+                />
               <img
                 src={visibilityIcon}
                 alt="show password"
