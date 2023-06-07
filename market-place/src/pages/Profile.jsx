@@ -1,7 +1,16 @@
-export const Profile =() =>{
-    return (
-        <div>
-            <h1>Profile</h1>
-        </div>
-    )
-}
+import { useEffect, useState } from "react";
+import { getAuth } from "firebase/auth";
+
+export const Profile = () => {
+    const[user,setUser] = useState(null);
+
+  const auth = getAuth();
+
+  useEffect(() => {
+   setUser(auth.currentUser);
+  }, []);
+
+
+
+  return user ? <h2>{user.displayName}</h2>: "Not Logged In"
+};
