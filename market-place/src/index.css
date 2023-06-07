@@ -10,9 +10,10 @@ body {
 :root {
   --color-primary: rgb(0, 187, 0);
   --color-secondary: ;
+  --color-white:#fff;
 }
 .navbar {
-  background-color: white;
+  background-color: var(--color-white);
   position: fixed;
   bottom: 0px;
   left: 0;
@@ -73,13 +74,13 @@ main {
   border: none;
 }
 .email-container input {
-  background: url("./assets/svg/personIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/personIcon.svg") var(--color-white) 2.5% center no-repeat;
 }
 .password-container input {
-  background: url("./assets/svg/lockIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/lockIcon.svg") var(--color-white) 2.5% center no-repeat;
 }
 .name-container input {
-  background: url("./assets/svg/badgeIcon.svg") #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/badgeIcon.svg") var(--color-white) 2.5% center no-repeat;
 }
 
 .password-container {
@@ -123,6 +124,26 @@ main {
   text-decoration: none;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+/* Profile  */
+.profile-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.page-header{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.logout{
+  background-color: var(--color-primary);
+  color:var(--color-white);
+  padding: 0.2rem 1rem;
+  border:none;
+  border-radius: 1rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 600px) {
 }
