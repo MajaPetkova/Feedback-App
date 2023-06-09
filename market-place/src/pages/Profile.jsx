@@ -69,7 +69,7 @@ export const Profile = () => {
             <input
               type="text"
               id="name"
-              className={!changeDetails ? "profile-name" : "profile-name active" }
+              className={!changeDetails ? "profileName" : "profileNameActive" }
               disabled={!changeDetails}
               value={name}
               onChange={onChange}
@@ -77,7 +77,7 @@ export const Profile = () => {
              <input
               type="text"
               id="email"
-              className={!changeDetails ? "profile-email" : "profile-email active" }
+              className={!changeDetails ? "profileEmail" : "profileEmailActive" }
               disabled={!changeDetails}
               value={email}
               onChange={onChange}
