@@ -13,6 +13,9 @@ body {
   --color-white: #fff;
   --color-gray: rgb(228, 228, 228);
 }
+a {
+  text-decoration: none;
+}
 .navbar {
   background-color: var(--color-white);
   position: fixed;
@@ -129,7 +132,6 @@ main {
   margin: 9rem 0;
 }
 .register-link a {
-  text-decoration: none;
   font-weight: 600;
   color: var(--color-primary);
 }
@@ -230,18 +232,18 @@ main {
 .explore-container {
   width: 90%;
   text-align: start;
-  margin: 3rem auto;
+  margin: 1rem auto;
 }
 .exploreCategoryHeading {
   font-weight: 600;
   width: 90%;
   text-align: start;
-  margin: 3rem auto;
+  margin: 0rem 3rem;
 }
 .header {
   width: 90%;
   text-align: start;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 .exploreCategories {
   width: 90%;
@@ -251,9 +253,6 @@ main {
   justify-content: center;
   align-items: center;
   gap: 2%;
-}
-.exploreCategories a {
-  text-decoration: none;
 }
 .explore-img {
   width: 100%;
@@ -266,7 +265,47 @@ main {
   font-weight: 700;
   font-size: 0.8rem;
 }
-
+.category {
+  width: 100%;
+}
+.category-listing-item {
+  margin-left: -20px;
+  width: 100%;
+}
+.categoryListingLocation {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+.categoryListingName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+.category-listing-link {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+.categoryListingPrice{
+color: var(--color-primary);
+font-weight: 600;
+margin-top: -10px;
+}
+.categoryListing-img {
+  width: 40%;
+  height: 110px;
+  border-radius: 1rem;
+}
+.categoryListingDetails {
+  color: var(--color-black)
+}
+.listing-info{
+  display: flex;
+  justify-content: start;
+  align-items:center;
+  margin-top: -30px;
+}
 @media screen and (min-width: 600px) {
   .page-container {
     width: 45%;

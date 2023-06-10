@@ -12,6 +12,7 @@ import {
   limit,
   startAfter,
 } from "firebase/firestore";
+import { ListingItem } from "../components/ListingItem";
 
 export const Category = () => {
   const [listings, setListings] = useState({});
@@ -62,9 +63,7 @@ export const Category = () => {
         <>
         <main>
             <ul className="categoryListing">
-                {listings.map((x)=>(<h3 key={x.id}>
-                   {x.data.name}
-                </h3>))}
+                {listings.map((x)=>(<ListingItem x={x.data} key={x.id} id= {x.id}/>))}
             </ul>
         </main>
         </>
