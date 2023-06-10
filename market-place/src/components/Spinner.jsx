@@ -1,7 +1,9 @@
+import spinner from "../assets/jpg/loading.gif"
+
 export const Spinner =()=>{
     return (
         <div className="spinner-container">
-            <div className="loading-spinner"></div>
+           <img src={spinner} alt="loading..." />
         </div>
     )
 }
