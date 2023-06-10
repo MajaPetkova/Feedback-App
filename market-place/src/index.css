@@ -227,19 +227,32 @@ main {
 }
 
 /* Explore  */
+.explore-container {
+  width: 90%;
+  text-align: start;
+  margin: 3rem auto;
+}
 .exploreCategoryHeading {
   font-weight: 600;
-  margin-top:3rem;
+  width: 90%;
+  text-align: start;
+  margin: 3rem auto;
+}
+.header {
+  width: 90%;
+  text-align: start;
+  margin: 0 auto;
 }
 .exploreCategories {
-  margin-top:1rem;
+  width: 90%;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:2%
+  gap: 2%;
 }
-.exploreCategories a{
+.exploreCategories a {
   text-decoration: none;
 }
 .explore-img {
@@ -248,10 +261,10 @@ main {
   height: 200px;
 }
 .explore-name {
- color: var(--color-black);
- cursor: pointer;
- font-weight: 700;
- font-size: 0.8rem;
+  color: var(--color-black);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -270,8 +283,13 @@ main {
   .profile-card form {
     width: 45%;
   }
-  .exploreCategories{
+  .exploreCategories {
     flex-direction: row;
+  }
+  .explore-container .exploreCategoryHeading,
+  .header {
+    width: 80%;
+    text-align: center;
   }
 }
 @media screen and (min-width: 1040px) {
@@ -280,5 +298,14 @@ main {
   }
   .password-container img {
     right: 12%;
+  }
+  .explore-container,
+  .exploreCategoryHeading,
+  .header {
+    width: 60%;
+    text-align: center;
+  }
+  .explore-img {
+    height: 250px;
   }
 }
