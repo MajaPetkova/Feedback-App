@@ -4,23 +4,24 @@ import { useNavigate } from "react-router-dom";
 import { Spinner } from "../components/Spinner";
 
 export const CreateListing = () => {
-  const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
+  const [geolocationEnabled, setGeolocationEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    type: "rent",
-    name: "",
+    type: 'rent',
+    name: '',
     bedrooms: 1,
     bathrooms: 1,
     parking: false,
     furnished: false,
-    address: "",
-    offer: true,
+    address: '',
+    offer: false,
     regularPrice: 0,
     discountedPrice: 0,
     images: {},
     latitude: 0,
     longitude: 0,
   });
+ 
   const {
     type,
     name,
@@ -39,102 +40,295 @@ export const CreateListing = () => {
 
   const auth = getAuth();
   const navigate = useNavigate();
+  const isMounted= useRef(true)
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setFormData({ ...formData, userRef: user.uid });
-      } else {
-        navigate("/sign-in");
+    if (isMounted) {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setFormData({ ...formData, userRef: user.uid })
+        } else {
+          navigate('/sign-in')
+        }
+      })
+    }
+
+    return () => {
+      isMounted.current = false
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMounted])
+
+  
+  const submitHandler = (e) => {
+    e.preventDefault()
+    console.log(formData)
+  };
+    const onMutate = (e) => {
+    let boolean = null
+
+    if (e.target.value === 'true') {
+      boolean = true
+    }
+    if (e.target.value === 'false') {
+      boolean = false
+    }
+        //Files
+        if (e.target.files) {
+          setFormData((prevState) => ({
+            ...prevState,
+            images: e.target.files,
+          }))
+        }
+        if (!e.target.files) {
+          setFormData((prevState) => ({
+            ...prevState,
+            [e.target.id]: boolean ?? e.target.value,
+          }))
+        }
       }
-    });
-  }, []);
-
-  if (loading) {
-    return <Spinner />;
-  }
-
-  const submitHandler = (e) => {};
-  const onMutate = (e) => {};
-
-  return (
-    <div className="form-listing">
+    
+        //Text/Booleans/Numbers
+    
+    
+    if (loading) {
+      return <Spinner />;
+    }
+    return (
+      <div className='form-listing'>
       <header>
-        <p className="header">Create a Listing</p>
+        <p className='header'>Create a Listing</p>
       </header>
+
       <main>
         <form onSubmit={submitHandler}>
-            <div className="form-offer">
-          <label className="form-label" htmlFor="type">Sale / Rent</label>
-          <div className="formButtons">
-          <button type="button" className={type === "sale" ? "formBtn active": "formBtn"} id="type" value="sale" onClick={onMutate}>Sell</button>
-          <button type="button" className={type === "rent" ? "formBtn active": "formBtn"} id="type" value="rent" onClick={onMutate} >Rent</button>
+          <label className='formLabel'>Sell / Rent</label>
+          <div className='formButtons'>
+            <button
+              type='button'
+              className={type === 'sale' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='sale'
+              onClick={onMutate}
+            >
+              Sell
+            </button>
+            <button
+              type='button'
+              className={type === 'rent' ? 'formButtonActive' : 'formButton'}
+              id='type'
+              value='rent'
+              onClick={onMutate}
+            >
+              Rent
+            </button>
           </div>
-          </div>
-          <div className="form-offer">
-          <label htmlFor="name" className="form-label">Name</label>
-          <input type="text" id="name"className="formInputName" value={name} onChange={onMutate} maxLength="30" minLength="5" required />
-          </div>
-          <div className="form-offer">
-          <label htmlFor="bedrooms" className="form-label">Bedrooms</label>
-          <input type="number" className="formInputSmall" id="bedrooms" value={bedrooms} onChange={onMutate} min="1" max="15" required />
-          <label htmlFor="bathrooms" className="form-label">Bathrooms</label>
-          <input type="number" className="formInputSmall" id="bathrooms" value={bathrooms} onChange={onMutate} min="1" max="15" required />
-          </div>
-          <div className="form-offer">
-            <label htmlFor="parking" className="form-label">Parking</label>
-            <div className="formButtons">
-            <button className={parking ? "formBtn active": "formBtn"} type="button" id="parking" value={true} onClick={onMutate}>Yes</button>
-            <button className={!parking && parking !== null ? "formBtn active": "formBtn"} type="button" id="parking" value={false} onClick={onMutate}>No</button>
-          </div>
-          </div>
-          <div className="form-offer">
-            <label htmlFor="furnished" className="form-label">Furnished</label>
-            <div className="formButtons">
-            <button className={furnished ? "formBtn active": "formBtn"} type="button" id="furnished" value={true} onClick={onMutate}>Yes</button>
-            <button className={!furnished && furnished !== null ? "formBtn active": "formBtn"} type="button" id="furnished" value={false} onClick={onMutate}>No</button>
-          </div>
-          </div>
-         <div className="form-offer">
-            <label htmlFor="address" className="form-label">Address</label>
-            <textarea className="formInputAddress" id="address" cols="30" rows="2" value={address} onChange={onMutate} required></textarea>
-            {!geoLocationEnabled && (
-                    <div className="form-offer">
-                        <label className="form-label" id="latitude">Latitude</label>
-                        <input type="number" className="formInputSmall" id="latitude" value={latitude} onChange={onMutate} required />
-                        <label className="form-label" id="longitude">Longitude</label>
-                        <input type="number" className="formInputSmall" id="longitude" value={latitude} onChange={onMutate} required />
-                    </div>
-            )}
-         </div>
-        <div className="form-offer">
-        <label htmlFor="offer" className="form-label">Offer</label>
-            <div className="formButtons">
-            <button className={offer ? "formBtn active": "formBtn"} type="button" id="offer" value={true} onClick={onMutate}>Yes</button>
-            <button className={!offer && offer !== null ? "formBtn active": "formBtn"} type="button" id="offer" value={false} onClick={onMutate}>No</button>
-          </div>
-        </div>
-        <div className="form-offer">
-        <label htmlFor="regularPrice" className="form-label">Regular Price</label>
-            <input type="number" className="formInputSmall" id="regularPrice" value={regularPrice} onChange={onMutate} min="20" max="750000000" required/>
-            {type ==="rent" && <p className="formPriceText">$ / Mounth</p>}
 
-        </div>
-        {offer && <div className="form-offer">
-        <label htmlFor="discountedPrice" className="form-label">Discounted Price</label>
-         <input type="number" className="formInputSmall" id="discountedPrice" value={discountedPrice} onChange={onMutate} min="50" max="75000000"  required={offer}/>
-        </div>}
-        
-        <div className="form-offer">
-        <label htmlFor="images" className="form-label">Images</label>
-        <p className="image-info">The first image will be the cover (max 6)</p>
-        <input type="file" className="formInputFile" id="images" onChange={onMutate} max="6" accept=".jpg,.png,.jpeg" multiple required />
-        </div>
-        <div className="form-offer">
-        <button className="formBtnSubmit" type="submit">Create Listing</button>
-        </div>
+          <label className='formLabel'>Name</label>
+          <input
+            className='formInputName'
+            type='text'
+            id='name'
+            value={name}
+            onChange={onMutate}
+            maxLength='32'
+            minLength='10'
+            required
+          />
+
+          <div className='formRooms flex'>
+            <div>
+              <label className='formLabel'>Bedrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bedrooms'
+                value={bedrooms}
+                onChange={onMutate}
+                min='1'
+                max='15'
+                required
+              />
+            </div>
+            <div>
+              <label className='formLabel'>Bathrooms</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='bathrooms'
+                value={bathrooms}
+                onChange={onMutate}
+                min='1'
+                max='15'
+                required
+              />
+            </div>
+          </div>
+
+          <label className='formLabel'>Parking spot</label>
+          <div className='formButtons'>
+            <button
+              className={parking ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='parking'
+              value={true}
+              onClick={onMutate}
+              min='1'
+              max='50'
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !parking && parking !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='parking'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
+
+          <label className='formLabel'>Furnished</label>
+          <div className='formButtons'>
+            <button
+              className={furnished ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='furnished'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !furnished && furnished !== null
+                  ? 'formButtonActive'
+                  : 'formButton'
+              }
+              type='button'
+              id='furnished'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
+
+          <label className='formLabel'>Address</label>
+          <textarea
+            className='formInputAddress'
+            type='text'
+            id='address'
+            value={address}
+            onChange={onMutate}
+            required
+          />
+
+          {!geolocationEnabled && (
+            <div className='formLatLng flex'>
+              <div>
+                <label className='formLabel'>Latitude</label>
+                <input
+                  className='formInputSmall'
+                  type='number'
+                  id='latitude'
+                  value={latitude}
+                  onChange={onMutate}
+                  required
+                />
+              </div>
+              <div>
+                <label className='formLabel'>Longitude</label>
+                <input
+                  className='formInputSmall'
+                  type='number'
+                  id='longitude'
+                  value={longitude}
+                  onChange={onMutate}
+                  required
+                />
+              </div>
+            </div>
+          )}
+
+          <label className='formLabel'>Offer</label>
+          <div className='formButtons'>
+            <button
+              className={offer ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='offer'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !offer && offer !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='offer'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
+
+          <label className='formLabel'>Regular Price</label>
+          <div className='formPriceDiv'>
+            <input
+              className='formInputSmall'
+              type='number'
+              id='regularPrice'
+              value={regularPrice}
+              onChange={onMutate}
+              min='30'
+              max='750000000'
+              required
+            />
+            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+          </div>
+
+          {offer && (
+            <>
+              <label className='formLabel'>Discounted Price</label>
+              <input
+                className='formInputSmall'
+                type='number'
+                id='discountedPrice'
+                value={discountedPrice}
+                onChange={onMutate}
+                min='5'
+                max='7500000'
+                required={offer}
+              />
+            </>
+          )}
+
+          <label className='formLabel'>Images</label>
+          <p className='imagesInfo'>
+            The first image will be the cover (max 6).
+          </p>
+          <input
+            className='formInputFile'
+            type='file'
+            id='images'
+            onChange={onMutate}
+            max='6'
+            accept='.jpg,.png,.jpeg'
+            multiple
+            required
+          />
+          <button type='submit' className='formBtnSubmit'>
+            Create Listing
+          </button>
         </form>
       </main>
     </div>
-  );
-};
+  )
+}
+

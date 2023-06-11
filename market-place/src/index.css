@@ -328,18 +328,15 @@ main {
 }
 /* Form  */
 .form-listing {
-  margin-bottom: 1rem;
+  margin:1.2rem 1rem
 }
-.form-label {
+.formLabel {
   width: 90%;
   margin: 0.6rem;
   font-weight: 600;
 }
-.formButtons {
-  width: 90%;
-  margin-left: 1rem;
-}
-.formBtn {
+
+.formButton{
   background-color: var(--color-white);
   padding: 0.4rem 1.3rem;
   border: none;
@@ -348,9 +345,15 @@ main {
   font-weight: 600;
   width: 25%;
 }
-.active {
+.formButtonActive {
   background-color: var(--color-primary);
   color: var(--color-white);
+  padding: 0.4rem 1.3rem;
+  border: none;
+  border-radius: 0.4rem;
+  margin-right: 0.5rem;
+  font-weight: 600;
+  width: 25%;
 }
 .formInputName,
 .formInputAddress,
@@ -360,7 +363,8 @@ main {
   background-color: var(--color-white);
   border-radius: 0.4rem;
   padding: 0.4rem 1.3rem;
-  margin: 0 1rem;
+  margin: 0rem;
+  display: block;
 }
 .form-offer {
   width: 100%;
@@ -372,7 +376,7 @@ main {
   background-color: var(--color-white);
   border-radius: 0.4rem;
   padding: 0.4rem 0.7rem;
-  margin: 0 0rem;
+  margin: 0.5rem 0rem;
 }
 .formPriceText {
   display: inline-block;
