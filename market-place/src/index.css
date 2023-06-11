@@ -216,8 +216,20 @@ main {
 .pageContainer {
   margin-bottom: 10rem;
 }
-.spinner-container img {
-  margin: 5rem 28%;
+
+.spinner-container .spinner-ring {
+  margin:8rem auto;
+  height: 150px;
+  width: 150px;
+  border: 0.5rem solid  ;
+  border-color: var(--color-primary) transparent green transparent ;
+  border-radius: 50%;
+ animation: spin 0.7s ease infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .profile-text {
   width: 95%;
@@ -341,7 +353,7 @@ main {
     margin: 0 auto;
   }
   .spinner-container {
-    margin: 5rem 30%;
+    /* margin: 5rem 30%; */
   }
 }
 @media screen and (min-width: 1040px) {
