@@ -5,8 +5,39 @@ body {
     sans-serif;
   box-sizing: border-box;
   padding: 0;
-  margin: 6rem auto;
+  margin: 0 auto;
   /* max-width: 1024px; */
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 1rem;
+  color:white;
+  margin-bottom: 2rem;
+}
+.nav_left{
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.nav_middle{
+  position: relative;
+}
+.input_wrapper input{
+  border-radius: 0.8rem;
+  width: 12rem;
+  padding: 0.3rem 0.6rem;
+}
+.input_wrapper i{
+  position: absolute;
+  right:4px;
+  color: grey;
+  top:0.4rem
+}
+i{
+  font-size: 1.3rem;
 }
 .products_wrapper {
   width: 90%;
