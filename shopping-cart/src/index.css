@@ -3,6 +3,35 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  box-sizing:border-box;
+  box-sizing: border-box;
   padding: 0;
+  margin: 6rem auto;
+  /* max-width: 1024px; */
+}
+.products_wrapper {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.productCard_wrapper {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  width: 300px;
+}
+.productCard_price {
+ padding: -1rem;
+  margin-bottom: 1rem;
+}
+.productCard_img {
+  width: 100%;
+  height: 20rem;
+}
+.productCard_btn {
+  background-color: orange;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  border: none;
 }
