@@ -8,13 +8,13 @@ export const Cart = () => {
     <>
       {showCart && (
         <div className="cart_wrapper">
-          <div>
             <i
               className="fa fa-times-circle"
               aria-hidden="true"
               onClick={showHideCart}
             ></i>
-          </div>
+          <div className="line">
+              </div>
           <div className="cart_innerWrapper">
             {cartItems.length == 0 ? (
               <h4>Cart is Empty</h4>
@@ -26,10 +26,10 @@ export const Cart = () => {
               </ul>
             )}
           </div>
+            <div className="line"></div>
           <div className="cart_total">
-            <h3>Cart Total:</h3>
-            <div></div>
-            <div className="">
+            <h4>Cart Total:</h4>
+            <div className="total">
               {(cartItems.reduce((oldAmount, x) => oldAmount + x.price, 0)).toFixed(2)} $
             </div>
           </div>
