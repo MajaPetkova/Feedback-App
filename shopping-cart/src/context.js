@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import CartReducer from "./CartReducer";
+import {cartReducer} from "./cartReducer";
 import { ADD_TO_CART, SHOW_HIDE_CART, REMOVE_ITEM } from "./actions";
 
 export const CartContext = createContext();
@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
     cartItem: [],
   };
 
-  const [state, dispatch] = useReducer(CartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addToCart = (item) => {
     dispatch({ type: ADD_TO_CART, payload: item });
