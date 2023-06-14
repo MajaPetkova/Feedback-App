@@ -3,6 +3,7 @@ import products from "../data";
 
 
 export const Home=()=>{
+ 
     return(
         <div className="products_wrapper">
          {products.map((x)=>(

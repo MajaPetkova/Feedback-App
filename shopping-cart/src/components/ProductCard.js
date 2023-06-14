@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { Rating } from "./Rating";
+import { CartContext } from "../context";
+
 
 export const ProductCard = ({ x }) => {
+  const {addToCart} = useContext(CartContext);
+
   const { name, image, price, rating, numReviews } = x;
+ 
   return (
     <div className="productCard_wrapper">
       <img src={image} alt={image} className="productCard_img" />
@@ -11,7 +17,7 @@ export const ProductCard = ({ x }) => {
         <div className="productCard_rating">
           <Rating value={rating} numReviews={numReviews} />
         </div>
-        <button className="productCard_btn">Add to basket</button>
+        <button className="productCard_btn" onClick={()=>addToCart(x)}>Add to basket</button>
       </div>
     </div>
   );

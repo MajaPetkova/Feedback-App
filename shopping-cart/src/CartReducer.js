@@ -11,13 +11,13 @@ export const cartReducer = (state, action) => {
     case ADD_TO_CART: {
       return {
         ...state,
-        cartItem: [state.cartItem, action.payload],
+        cartItems: [...state.cartItems, action.payload],
       };
     }
     case REMOVE_ITEM: {
       return {
         ...state,
-        cartItem: state.cartItem.filter((x)=> x._id !== action.payload )
+        cartItem: state.cartItems.filter((x)=> x._id !== action.payload )
       };
     }
     default:
