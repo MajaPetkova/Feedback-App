@@ -4,23 +4,33 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+.container {
+  width: 750px;
+}
 .table {
   width: 700px;
   padding: 1rem 4rem;
 }
 thead th {
-  /* width: 33%; */
   border-bottom: 2px solid green;
   padding: 0.8rem 0.8rem;
   text-transform: capitalize;
 }
 
 tbody tr td {
-  /* width: 33%; */
   border-bottom: 1px solid green;
   padding: 0.8rem 0.8rem;
- text-align: center;
+  text-align: center;
 }
-/* tbody td{
-  width: 200px;
-} */
+.text-end {
+  text-align: end;
+  margin-top: 1rem;
+}
+.btn {
+  background-color: teal;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  color:white;
+  text-decoration: none;
+  border: none;
+}

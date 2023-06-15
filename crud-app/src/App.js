@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-
+import axios from "axios"
+import { Routes, Route, Link} from "react-router-dom"
 
 function App() {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
 
   useEffect(() =>{
- fetch("http://localhost:3030/users")
- .then(res=> res.json())
- .then(data =>{setColumns(Object.keys(data[0]))
-                setRecords(data)
+ axios.get("http://localhost:3030/users")
+ .then(res=> {
+            setColumns(Object.keys(res.data[0]))
+                setRecords(res.data)
   })
   // console.log(columns)
   // console.log(records)
@@ -17,6 +18,9 @@ function App() {
 
   return (
     <div className="container">
+      <div className="text-end">
+      <Link to= "/create" className="btn">Add +</Link>
+      </div>
       <table className="table">
         <thead className="head">
           <tr>
