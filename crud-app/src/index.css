@@ -5,10 +5,10 @@ body {
     sans-serif;
 }
 .container {
-  width: 750px;
+  width: 850px;
 }
 .table {
-  width: 700px;
+  width: 800px;
   padding: 1rem 4rem;
 }
 thead th {
@@ -33,4 +33,21 @@ tbody tr td {
   color:white;
   text-decoration: none;
   border: none;
+}
+.danger{
+  background-color: red;
+  padding: 0.3rem 0.8rem;
+  margin: 0.6rem;
+}
+.success{
+  background-color: green;
+  padding: 0.3rem 0.8rem;
+  margin: 0.6rem;
+}
+.form-container{
+ width: 300px;
+ border: 1px teal solid;
+ padding: 1rem 4rem;
+ margin:2rem;
+ text-align: center;
 }
