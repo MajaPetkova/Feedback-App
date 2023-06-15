@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 function App() {
   const [columns, setColumns] = useState([]);
   const [records, setRecords] = useState([]);
-  const navigate= useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:3030/users").then((res) => {
@@ -16,16 +16,18 @@ function App() {
     // console.log(records)
   }, []);
 
-   const deleteHandler =(id)=>{
-  const confirmation = window.confirm("Are you sure?")
-  if(confirmation){
-    axios.delete("http://localhost:3030/users/" + id)
-    .then(res=>{
-      alert("User is removed")
-      navigate("/")
-    } ).catch(err=> console.log(err))
-  }
-   }
+  const deleteHandler = (id) => {
+    const confirmation = window.confirm("Are you sure?");
+    if (confirmation) {
+      axios
+        .delete("http://localhost:3030/users/" + id)
+        .then((res) => {
+          alert("User is removed");
+          navigate("/");
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div className="container">
@@ -50,8 +52,12 @@ function App() {
               <td>{x.name}</td>
               <td>{x.email}</td>
               <td>
-                <Link to={`/update/${x.id}`} className="btn success" >Update</Link>
-                <button  className="danger" onClick={(e)=>deleteHandler(x.id)} >Delete</button>
+                <Link to={`/update/${x.id}`} className="btn success">
+                  Update
+                </Link>
+                <button className="danger" onClick={(e) => deleteHandler(x.id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
