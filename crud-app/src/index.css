@@ -1,8 +1,26 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-
+}
+.table {
+  width: 700px;
+  padding: 1rem 4rem;
+}
+thead th {
+  /* width: 33%; */
+  border-bottom: 2px solid green;
+  padding: 0.8rem 0.8rem;
+  text-transform: capitalize;
 }
 
+tbody tr td {
+  /* width: 33%; */
+  border-bottom: 1px solid green;
+  padding: 0.8rem 0.8rem;
+ text-align: center;
+}
+/* tbody td{
+  width: 200px;
+} */
