@@ -16,7 +16,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">MayAdmin</span>
+        <span className="logo">Mayadmin</span>
       </div>
       <hr />
       <div className="center">
@@ -83,9 +83,7 @@ function Sidebar() {
         <div className="colorOption">
           
         </div>
-        <div className="colorOption">
-          
-        </div>
+       
       </div>
     </div>
   );
