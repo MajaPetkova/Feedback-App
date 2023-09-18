@@ -30,4 +30,23 @@
       color: crimson;
     }
   }
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .viewBtn {
+      padding: 0.1rem 0.4rem;
+      color: darkblue;
+      border-radius: 0.4rem;
+      border: 1px solid rgba(0, 0, 139, 0.448);
+      cursor: pointer;
+    }
+    .deleteBtn {
+        padding: 0.1rem 0.4rem;
+        color: crimson;
+        border-radius: 0.4rem;
+        border:1px solid crimson }
+        cursor: pointer;
+    }
 }
