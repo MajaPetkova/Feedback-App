@@ -86,7 +86,7 @@ const List = () => {
               <TableCell className="tableCell">{row.date}</TableCell>
               <TableCell className="tableCell">{row.amount}</TableCell>
               <TableCell className="tableCell">{row.method}</TableCell>
-              <TableCell className="tableCell">{row.status}</TableCell>
+              <TableCell className="tableCell"><span className={`status ${row.status}`}>{row.status}</span></TableCell>
             </TableRow>
           ))}
         </TableBody>
