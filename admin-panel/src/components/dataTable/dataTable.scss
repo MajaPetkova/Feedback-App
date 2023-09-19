@@ -2,6 +2,27 @@
   height: 600px;
   padding: 1.4rem;
 
+  .dataTableTitle {
+    width: 100%;
+    font-size: 1.5rem;
+    color: gray;
+    margin-bottom: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .link{
+      background-color: rgba(0, 128, 0, 0.201);
+      border:1px solid green;
+      text-decoration: none;
+      color:green;
+      font-size: smaller;
+      border-radius: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+    }
+  }
+
   .cellWithImg {
     display: flex;
     align-items: center;
@@ -43,10 +64,11 @@
       cursor: pointer;
     }
     .deleteBtn {
-        padding: 0.1rem 0.4rem;
-        color: crimson;
-        border-radius: 0.4rem;
-        border:1px solid crimson }
-        cursor: pointer;
+      padding: 0.1rem 0.4rem;
+      color: crimson;
+      border-radius: 0.4rem;
+      border: 1px solid crimson;
     }
+    cursor: pointer;
+  }
 }
