@@ -52,8 +52,8 @@ function New() {
               <div className="formInput">
                 <label>Country</label>
                 <input type="text" placeholder="USA" />
-              </div>
               <button>Send</button>
+              </div>
             </form>
           </div>
         </div>
