@@ -1,74 +1,81 @@
 .single {
   display: flex;
   width: 100%;
-   
-  .singleContainer{
+
+  .singleContainer {
     flex: 6;
 
-    .top{
-     padding: 1.4rem;
-     display: flex;   
-     gap:1.4rem;
+    .top {
+      padding: 1.4rem;
+      display: flex;
+      gap: 1.4rem;
 
-      .left{
+      .left {
         flex: 1;
         -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.67);
         box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.77);
         padding: 0.7rem;
         position: relative;
 
-        .editBtn{
-            position: absolute;
-            top:0;
-            right:0;
-            padding: 0.4rem;
-            font-size: 0.8rem;
-            color: #7451f8;
-            background-color: #7551f82e;
-            border-radius:0 0 0 0.3rem ;
-            cursor: pointer;
+        .editBtn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0.4rem;
+          font-size: 0.8rem;
+          color: #7451f8;
+          background-color: #7551f82e;
+          border-radius: 0 0 0 0.3rem;
+          cursor: pointer;
         }
 
-        .item{
-            display: flex;
-            gap:1.4rem;
+        .item {
+          display: flex;
+          gap: 1.4rem;
 
-            .itemImg{
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                object-fit:cover ;
+          .itemImg {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          .details {
+            .itemTitle {
+              margin-bottom: 0.4rem;
+              color: grey;
+              font-size: 1.8rem;
             }
-            .details{
-              .itemTitle{
-                 margin-bottom: 0.4rem;
-                 color:grey;
-                 font-size: 1.8rem;
-              }  
-              .detailItem{
-                margin-bottom: 0.4rem;
-                font-size: 0.9rem;
-                .itemKey{
-                    font-weight: bold;
-                    color: grey;
-                    margin-right: 0.4rem;
-                }
-                .itemValue{
-                    font-weight: 300;
-                }
+            .detailItem {
+              margin-bottom: 0.4rem;
+              font-size: 0.9rem;
+              .itemKey {
+                font-weight: bold;
+                color: grey;
+                margin-right: 0.4rem;
+              }
+              .itemValue {
+                font-weight: 300;
               }
             }
+          }
         }
       }
 
-      .right{
-        flex:2 ;
+      .right {
+        flex: 2;
       }
     }
-  }
-  .title{
-    font-size: 1rem;
-    color: lightgrey;
-    margin-bottom: 1.4rem;
+    .bottom {
+      padding: 1.4rem;
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.67);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.77);
+      padding: 0.7rem;
+      margin: 0.8rem 1.4rem;
+    }
+    .title {
+      font-size: 1rem;
+      color: lightgrey;
+      margin-bottom: 1.4rem;
+    }
   }
 }
