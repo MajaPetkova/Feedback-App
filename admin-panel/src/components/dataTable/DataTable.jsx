@@ -28,7 +28,7 @@ const DataTable = () => {
         Add new User
         <Link to="/users/new" style={{textDecoration: "none"}} className="link">Add new</Link>
       </div>
-      <DataGrid
+      <DataGrid className="dataGrid"
         rows={userRows}
         columns={userColumns.concat(actionColumn)}
         initialState={{
