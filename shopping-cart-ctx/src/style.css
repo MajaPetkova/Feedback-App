@@ -1,9 +1,28 @@
-.title{
-    font-family: "Roboto";
-    margin: 40px;
-    font-size: 2rem;
-  
-    display: grid;
-    row-gap: 20px;
-    justify-content: center;
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  justify-content: space-between;
+  display: flex;
+  width: 400px;
+  gap: 0px;
+
+}
+.main a {
+  text-decoration: none;
+  color: #bb7250;
+}
+a:hover {
+  color: #bb7250;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.titleMain {
+  font-family: "Roboto";
+  margin: 40px;
+  font-size: 2rem;
+
+  row-gap: 20px;
+  justify-content: center;
 }
