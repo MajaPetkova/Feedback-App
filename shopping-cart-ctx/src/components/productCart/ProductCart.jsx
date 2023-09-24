@@ -5,7 +5,7 @@ function ProductCart({imageUrl, name, price}) {
   return (
     <div className='cart'>
        <img src={imageUrl} alt="img"/>
-       <div className="btnContainer" >
+       <div className="btnContainer" onClick={()=>console.log("Add to cart")}>
         <button className="btn">+</button>
        </div>
         <div className="cartContainer">
