@@ -8,16 +8,19 @@ const shopReducer = (state, action) => {
 
   switch (type) {
     case "ADD_TO_CART":
+        console.log("Add to cart", payload)
       return {
         ...state,
         products: payload.products,
       };
     case "REMOVE_FROM_CART":
+        console.log("remove from cart", payload)
       return {
         ...state,
         products: payload.products,
       };
     case "UPDATE_PRICE":
+        console.log("update price", payload)
       return {
         ...state,
         total: payload.total,

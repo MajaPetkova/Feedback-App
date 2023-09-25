@@ -12,13 +12,20 @@ img {
   height: 340px;
   width: 240px;
 }
-.btn {
+.btn, .btn1 {
   position: relative;
   padding: 10px;
   border-radius: 50%;
   background: #60c95d;
   cursor: pointer;
   border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+}
+.btn1{ 
+  background-color: crimson;
+  color:white
 }
 .btnContainer {
   right: 20px;
@@ -27,10 +34,6 @@ img {
   height: 20px;
   position: absolute;
   border: none;
-}
-.btn:hover {
-  transform: scale(1.2);
-  transition: 1s;
 }
 .cartContainer {
   position: absolute;

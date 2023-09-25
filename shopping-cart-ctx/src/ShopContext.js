@@ -8,7 +8,7 @@ export const ShopProvider = ({ children }) => {
 
   const addToCart = (product) => {
     const updatedCart = state.products.concat(product);
-    updatePrice();
+    updatePrice(updatedCart);
     dispatch({
       type: "ADD_TO_CART",
       payload: {
@@ -18,7 +18,7 @@ export const ShopProvider = ({ children }) => {
   };
   const removeFromCart = (product) => {
     const updatedCart = state.products.filter((x) => x.name !== product.name);
-    updatePrice();
+    updatePrice(updatedCart);
     dispatch({
       type: "REMOVE_FROM_CART",
       payload: {
@@ -53,6 +53,6 @@ const useShop =()=>{
     if(context === undefined){
        throw new Error("useShop must be used within ShopContext")
     }
-    return context
+    return context;
 }
 export default useShop;
