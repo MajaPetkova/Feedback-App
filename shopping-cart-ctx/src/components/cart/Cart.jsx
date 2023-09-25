@@ -1,9 +1,17 @@
 import "./cart.css";
-
+import useShop from "../../ShopContext";
+import ProductCart from "../productCart/ProductCart";
 
 function Cart() {
-  return (
-   <h1 className="titleCart">Your cart total is 300.00$</h1>
+  const {products, total} = useShop();
+  return (<>
+    <h1 className="titleCart">Your cart total is ${total}.00$</h1>
+  <div className="cartShop">
+   {products.map((x, index)=>(
+     <ProductCart {...x} key={index}/>
+     ))}
+  </div>
+     </>
   )
 }
 

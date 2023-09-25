@@ -4,3 +4,10 @@
     margin-top: 20px;
     text-align: left;
 }
+.cartShop{
+    width: 600px;
+    padding: 1rem ;
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+}
