@@ -1,5 +1,4 @@
 import {TiDelete} from "react-icons/ti";
-import React from "react"
 
 function ExpenseItem(props) {
   return (
@@ -9,7 +8,7 @@ function ExpenseItem(props) {
         <span className="mr-3">
         {props.cost}$
         </span>
-        <TiDelete size="1.5em"></TiDelete>
+        <TiDelete size="1.5em" ></TiDelete>
       </div>
     </li>
   );
