@@ -12,6 +12,7 @@ const initialState = {
   expenses: [
     { id: 12, name: "shopping", cost: 40 },
     { id: 13, name: "holiday", cost: 500 },
+    { id: 14, name: "car service", cost: 150 },
   ],
 };
 
