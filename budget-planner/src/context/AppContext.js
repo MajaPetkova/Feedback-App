@@ -3,6 +3,11 @@ import { createContext, useReducer } from "react";
 const AppReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
+    case "ADD_EXPENSE": 
+    return{
+       ...state,
+       expenses: [...state.expenses, action.payload]
+    }
     default:
       return state;
   }
