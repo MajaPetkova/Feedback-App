@@ -15,7 +15,7 @@ function ExpenseItem(props) {
 
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
-      {props.name}- {props.id}
+      {props.name}
       <div>
         <span className="mr-3">{props.cost}$</span>
         <TiDelete size="1.5em" onClick={deleteHandler}></TiDelete>
