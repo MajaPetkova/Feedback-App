@@ -13,7 +13,13 @@ function App() {
     phoneNumber: "",
     email: "",
   });
-  const [editContactId, setEditContactId] = useState(2);
+  const [editContactId, setEditContactId] = useState(null);
+  const [editFormData, setEditFormData] = useState({
+    fullName: "",
+    address: "",
+    phoneNumber: "",
+    email: "",
+  });
 
   const handleAddFormChange = (e) => {
     e.preventDefault();
@@ -23,6 +29,17 @@ function App() {
     const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
     setAddFormData(newFormData);
+  };
+
+  const handleEditFormChange = (e) => {
+    e.preventDefault();
+
+    const fieldName = e.target.getAttribute("name");
+    const fieldValue = e.target.value;
+
+    const newFormData = { ...editFormData };
+    newFormData[fieldName] = fieldValue;
+    setEditFormData(newFormData);
   };
 
   const handleAddFormSubmit = (e) => {
@@ -40,6 +57,17 @@ function App() {
     setContacts(newContacts);
   };
 
+  const handleEditClick = (e, contact) => {
+    e.preventDefault();
+    setEditContactId(contact.id);
+    const formValues = {
+      fullName: contact.fullName,
+      address: contact.address,
+      phoneNumber: contact.phoneNumber,
+      email: contact.email,
+    };
+    setEditFormData(formValues)
+  };
   return (
     <div className="app-container">
       <form>
@@ -57,9 +85,9 @@ function App() {
             {contacts.map((x) => (
               <>
                 {editContactId === x.id ? (
-                  <EditableRow />
+                  <EditableRow  editFormData={editFormData} handleEditFormChange={handleEditFormChange}/>
                 ) : (
-                  <ReadOnlyRow x={x} />
+                  <ReadOnlyRow x={x} handleEditClick={handleEditClick} />
                 )}
               </>
             ))}
