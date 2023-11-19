@@ -2,6 +2,8 @@ import "./App.css";
 import data from "./mock-data.json";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import ReadOnlyRow from "./components/ReadOnlyRow";
+import EditableRow from "./components/EditableRow";
 
 function App() {
   const [contacts, setContacts] = useState(data);
@@ -11,6 +13,7 @@ function App() {
     phoneNumber: "",
     email: "",
   });
+  const [editContactId, setEditContactId] = useState(2);
 
   const handleAddFormChange = (e) => {
     e.preventDefault();
@@ -34,31 +37,36 @@ function App() {
     };
 
     const newContacts = [...contacts, newContact];
-    setContacts(newContacts)
+    setContacts(newContacts);
   };
 
   return (
     <div className="app-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((x) => (
-            <tr key={x.id}>
-              <th>{x.fullName}</th>
-              <th>{x.address}</th>
-              <th>{x.phoneNumber}</th>
-              <th>{x.email}</th>
+      <form>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {contacts.map((x) => (
+              <>
+                {editContactId === x.id ? (
+                  <EditableRow />
+                ) : (
+                  <ReadOnlyRow x={x} />
+                )}
+              </>
+            ))}
+          </tbody>
+        </table>
+      </form>
+
       <h2>Add a Contact</h2>
       <form onSubmit={handleAddFormSubmit}>
         <input
