@@ -1,6 +1,7 @@
 import "./App.css";
 import data from "./mock-data.json";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 function App() {
   const [contacts, setContacts] = useState(data);
@@ -16,9 +17,24 @@ function App() {
     const fieldName = e.target.getAttribute("name");
     const fieldValue = e.target.value;
 
-    const newFormData = {...addFormData}
+    const newFormData = { ...addFormData };
     newFormData[fieldName] = fieldValue;
-    setAddFormData(newFormData)
+    setAddFormData(newFormData);
+  };
+
+  const handleAddFormSubmit = (e) => {
+    e.preventDefault();
+
+    const newContact = {
+      id: nanoid(),
+      fullName: addFormData.fullName,
+      address: addFormData.address,
+      phoneNumber: addFormData.phoneNumber,
+      email: addFormData.email,
+    };
+
+    const newContacts = [...contacts, newContact];
+    setContacts(newContacts)
   };
 
   return (
@@ -34,7 +50,7 @@ function App() {
         </thead>
         <tbody>
           {contacts.map((x) => (
-            <tr>
+            <tr key={x.id}>
               <th>{x.fullName}</th>
               <th>{x.address}</th>
               <th>{x.phoneNumber}</th>
@@ -44,13 +60,13 @@ function App() {
         </tbody>
       </table>
       <h2>Add a Contact</h2>
-      <form >
+      <form onSubmit={handleAddFormSubmit}>
         <input
           type="text"
           name="fullName"
           required="required"
-          placeholder="Enter a name..."    
-        onChange={handleAddFormChange}
+          placeholder="Enter a name..."
+          onChange={handleAddFormChange}
         />
         <input
           type="text"
@@ -73,9 +89,7 @@ function App() {
           placeholder="Enter an email...."
           onChange={handleAddFormChange}
         />
-        <button type="submit" >
-          Add
-        </button>
+        <button type="submit">Add</button>
       </form>
     </div>
   );
