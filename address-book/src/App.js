@@ -86,7 +86,13 @@ function App() {
   };
 
   const handleCancelClick = () => {
-    setEditContactId(null)
+    setEditContactId(null);
+  };
+
+  const handleDeleteClick = (contactId) => {
+    // const newContacts= [...contacts]
+    const newContacts = contacts.filter((x) => x.id !== contactId);
+    setContacts(newContacts);
   };
   return (
     <div className="app-container">
@@ -108,10 +114,14 @@ function App() {
                   <EditableRow
                     editFormData={editFormData}
                     handleEditFormChange={handleEditFormChange}
-                    handleCancelClick ={handleCancelClick}
+                    handleCancelClick={handleCancelClick}
                   />
                 ) : (
-                  <ReadOnlyRow x={x} handleEditClick={handleEditClick} />
+                  <ReadOnlyRow
+                    x={x}
+                    handleEditClick={handleEditClick}
+                    handleDeleteClick={handleDeleteClick}
+                  />
                 )}
               </>
             ))}
