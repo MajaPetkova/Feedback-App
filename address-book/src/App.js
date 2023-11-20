@@ -66,11 +66,28 @@ function App() {
       phoneNumber: contact.phoneNumber,
       email: contact.email,
     };
-    setEditFormData(formValues)
+    setEditFormData(formValues);
   };
+  const handleEditFormSubmit = (e) => {
+    e.preventDefault();
+
+    const editedContact = {
+      id: editContactId,
+      fullName: editFormData.fullName,
+      address: editFormData.address,
+      phoneNumber: editFormData.phoneNumber,
+      email: editFormData.email,
+    };
+    const newContacts = [...contacts];
+    const index = contacts.findIndex((contact) => contact.id === editContactId);
+    newContacts[index] = editedContact;
+    setContacts(newContacts)
+    setEditContactId(null)
+  };
+
   return (
     <div className="app-container">
-      <form>
+      <form onSubmit={handleEditFormSubmit}>
         <table>
           <thead>
             <tr>
@@ -85,7 +102,10 @@ function App() {
             {contacts.map((x) => (
               <>
                 {editContactId === x.id ? (
-                  <EditableRow  editFormData={editFormData} handleEditFormChange={handleEditFormChange}/>
+                  <EditableRow
+                    editFormData={editFormData}
+                    handleEditFormChange={handleEditFormChange}
+                  />
                 ) : (
                   <ReadOnlyRow x={x} handleEditClick={handleEditClick} />
                 )}

@@ -37,6 +37,9 @@ const EditableRow = ({editFormData, handleEditFormChange}) => {
           value={editFormData.email}
           onChange={handleEditFormChange}
         /></th>
+        <th>
+            <button type="submit">Save</button>
+        </th>
     </tr>
   );
 };
