@@ -37,9 +37,11 @@ button{
 span{
     font-size: 12px;
     color: rgb(255, 0, 0);
-    padding: 3px;
     display: none;
 }
-input:invalid ~ span{
+input:invalid[focused="true"] ~ span{
     display: block;
+}
+input:invalid[focused="true"]{
+    border:1px solid red;
 }

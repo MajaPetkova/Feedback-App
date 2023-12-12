@@ -18,6 +18,7 @@ function App() {
       placeholder: "Username",
       errorMessage: "Username should be 3-16 characters",
       label: "Username",
+      pattern:"^[A-Za-z0-9]{3,16}$",
       required:true
     },
     {
@@ -43,6 +44,7 @@ function App() {
       placeholder: "Password",
       errorMessage: "Password should be 7-15 characters",
       label: "Password",
+      pattern:"^[A-Za-z0-9]{7,15}$",
       required:true
     },
     {
@@ -52,6 +54,7 @@ function App() {
       placeholder: " Confirm password",
       errorMessage: "Passwords don't match",
       label: "Confirm password",
+      pattern: values.password,
       required:true
     },
   ];
