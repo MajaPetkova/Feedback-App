@@ -9,7 +9,7 @@ input {
   flex-direction: column;
   width: 280px;
 }
-label{
+label {
   font-size: 14px;
   color: gray;
 }

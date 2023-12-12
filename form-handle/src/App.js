@@ -16,19 +16,23 @@ function App() {
       name: "username",
       type: "text",
       placeholder: "Username",
+      errorMessage: "Username should be 3-16 characters",
       label: "Username",
+      required:true
     },
     {
       id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
+      errorMessage: "It should be a valid email address",
       label: "Email",
+      required:true
     },
     {
       id: 3,
       name: "birthday",
-      type: "text",
+      type: "date",
       placeholder: "Birthday",
       label: "Birthday",
     },
@@ -37,14 +41,18 @@ function App() {
       name: "password",
       type: "password",
       placeholder: "Password",
+      errorMessage: "Password should be 7-15 characters",
       label: "Password",
+      required:true
     },
     {
       id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: " Confirm password",
+      errorMessage: "Passwords don't match",
       label: "Confirm password",
+      required:true
     },
   ];
   const handleSubmit = (e) => {
