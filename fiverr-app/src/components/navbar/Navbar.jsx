@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -26,9 +26,9 @@ export const Navbar = () => {
     <div className={active ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
-          {/* <Link to="/"> */}
-          <span className="text">Fiverr</span>
-          {/* </Link> */}
+          <Link to="/" className="link">
+            <span className="text">Fiverr</span>
+          </Link>
 
           <span className="dot">.</span>
         </div>
@@ -41,19 +41,34 @@ export const Navbar = () => {
           {!currentUser && <button>Join</button>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" />
+              <img
+                src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                alt=""
+              />
               <span>{currentUser?.username}</span>
-             {open && <div className="options">
-                {currentUser?.isSeller && (
-                  <>
-                    <span>Gigs</span>
-                    <span>Add New Gig</span>
-                  </>
-                )}
-                <span>Orders</span>
-                <span>Messages</span>
-                <span>Logout</span>
-              </div>}
+              {open && (
+                <div className="options">
+                  {currentUser?.isSeller && (
+                    <>
+                      <Link to="/mygigs" className="link">
+                        Gigs
+                      </Link>
+                      <Link to="/add" className="link">
+                        Add New Gig
+                      </Link>
+                    </>
+                  )}
+                  <Link to="/orders" className="link">
+                    Orders
+                  </Link>
+                  <Link to="/messages" className="link">
+                    Messages
+                  </Link>
+                  <Link to="/logout" className="link">
+                    Logout
+                  </Link>
+                </div>
+              )}
             </div>
           )}
         </div>
