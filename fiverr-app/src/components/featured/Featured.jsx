@@ -11,7 +11,7 @@ export const Featured = () => {
           </h1>
           <div className="search">
             <div className="searchInput">
-              <img src="" alt="" />
+              <img src="./images/search.png" alt="" />
               <input type="text" placeholder='Try "building mobil app"' />
             </div>
             <button>Search</button>
@@ -25,7 +25,7 @@ export const Featured = () => {
           </div>
         </div>
         <div className="right">
-            <img src="" alt="" />
+            <img src="./images/man.png" alt="" />
         </div>
       </div>
     </div>
