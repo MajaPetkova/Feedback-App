@@ -7,7 +7,7 @@ export const Featured = () => {
       <div className="container">
         <div className="left">
           <h1 className="title">
-            Find the perfect freelance service for your business
+            Find the perfect <i>freelance</i> service for your business
           </h1>
           <div className="search">
             <div className="searchInput">
