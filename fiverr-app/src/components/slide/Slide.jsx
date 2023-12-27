@@ -1,11 +1,19 @@
 import React from "react";
 import "./slide.scss";
-import Carousal from "@itseasy21/react-elastic-carousel";
+import Carousel from "@itseasy21/react-elastic-carousel";
+import { CatCard } from "../catCard/CatCard";
+import { cards } from "../../data";
 
 export const Slide = () => {
   return (
     <div className="slide">
-      <div className="container"></div>
+      <div className="container">
+        <Carousel>
+          {cards.map((x) => (
+            <CatCard key={x.id} />
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 };
