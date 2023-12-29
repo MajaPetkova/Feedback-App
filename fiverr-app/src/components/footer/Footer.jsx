@@ -65,6 +65,7 @@ export const Footer = () => {
             <span>Working Not Working</span>
           </div>
         </div>
+        <hr />
         <div className="bottom">
           <div className="left">
             <h2>fiverr</h2>
