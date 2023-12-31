@@ -17,7 +17,15 @@ export const Gigs = () => {
             <input type="text" placeholder="max" />
             <button>Apply</button>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <span className="sortBy">SortBy</span>
+            <span className="sortType">Best Selling</span>
+            <img src="./images/down.png" alt="" />
+            <div className="rightMenu">
+              <span>Newest</span>
+              <span>Best Selling</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
