@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./gigs.scss";
 
 export const Gigs = () => {
+  const [open, setOpen] = useState(false);
+  const [sort, setSort] = useState("sales");
+  const reSort = (type) => {
+   setSort(type)
+   setOpen(false)
+  };
   return (
     <div className="gigs">
       <div className="container">
@@ -19,12 +25,19 @@ export const Gigs = () => {
           </div>
           <div className="right">
             <span className="sortBy">SortBy</span>
-            <span className="sortType">Best Selling</span>
-            <img src="./images/down.png" alt="" />
-            <div className="rightMenu">
-              <span>Newest</span>
-              <span>Best Selling</span>
-            </div>
+            <span className="sortType">{sort === "sales" ? "Best Selling" : "Newest"} </span>
+            <img
+              src="./images/down.png"
+              alt=""
+              onClick={() => setOpen(!open)}
+            />
+            {open && (
+              <div className="rightMenu">
+                {sort === "sales" ? 
+               ( <span onClick={()=> reSort("createdAt")}>Newest</span>)
+                :
+               ( <span onClick={()=> reSort("sales")}>Best Selling</span>)}
+              </div>            )}
           </div>
         </div>
       </div>
