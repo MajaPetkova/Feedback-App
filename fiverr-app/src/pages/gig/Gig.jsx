@@ -25,7 +25,7 @@ export const Gig = () => {
               <span>5</span>
             </div>
           </div>
-          <Slider slideToShow={1} arrowsScroll={1} className="slider">
+          <Slider slidesToShow={1} arrowsScroll={1} className="slider">
             <img
               src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt=""
