@@ -131,11 +131,11 @@ export const Gig = () => {
                 </div>
               </div>
               <div className="stars">
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
                 <span>5</span>
               </div>
               <p>
@@ -174,11 +174,11 @@ export const Gig = () => {
                 </div>
               </div>
               <div className="stars">
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
                 <span>5</span>
               </div>
               <p>
@@ -215,11 +215,11 @@ export const Gig = () => {
                 </div>
               </div>
               <div className="stars">
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
-                <img src="/img/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
+                <img src="/images/star.png" alt="" />
                 <span>5</span>
               </div>
               <p>
@@ -231,9 +231,9 @@ export const Gig = () => {
               </p>
               <div className="helpful">
                 <span>Helpful?</span>
-                <img src="/img/like.png" alt="" />
+                <img src="/images/like.png" alt="" />
                 <span>Yes</span>
-                <img src="/img/dislike.png" alt="" />
+                <img src="/images/dislike.png" alt="" />
                 <span>No</span>
               </div>
             </div>
