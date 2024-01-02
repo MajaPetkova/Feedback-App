@@ -88,6 +88,7 @@ export const Navbar = () => {
            <Link className="link menuLink" to="/">Business</Link>
            <Link className="link menuLink" to="/">Lifestyle</Link>
           </div>
+          <hr />
         </>
       )}
     </div>
