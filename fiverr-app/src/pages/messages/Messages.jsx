@@ -1,5 +1,6 @@
 import React from "react";
 import "./messages.scss";
+import {Link} from "react-router-dom"
 
 export const Messages = () => {
   const message = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, provident fuga! Porro consequuntur nulla, alias error facere, maiores enim similique nihil facilis nam eligendi aliquam laborum, mollitia impedit commodi eius obcaecati aut distinctio exercitationem dolore nesciunt? Ipsum, hic?"
@@ -16,9 +17,17 @@ export const Messages = () => {
             <th>Date</th>
             <th>Action</th>
           </tr>
-          <tr>
+          <tr className="active">
             <td>John Doe</td>
-            <td>{message.substring(0,100)}...</td>
+            <td><Link to="/message/123" className="link">{message.substring(0,100)}...</Link></td>
+            <td>1 day ago</td>
+            <td>
+              <button>Mark as Read</button>
+            </td>
+          </tr>
+          <tr className="active">
+            <td>John Doe</td>
+            <td><Link to="/message/123" className="link">{message.substring(0,100)}...</Link></td>
             <td>1 day ago</td>
             <td>
               <button>Mark as Read</button>
@@ -26,36 +35,20 @@ export const Messages = () => {
           </tr>
           <tr>
             <td>John Doe</td>
-            <td>{message.substring(0,100)}...</td>
+            <td><Link to="/message/123" className="link">{message.substring(0,100)}...</Link></td>
             <td>1 day ago</td>
-            <td>
-              <button>Mark as Read</button>
-            </td>
           </tr>
           <tr>
             <td>John Doe</td>
-            <td>{message.substring(0,100)}...</td>
+            <td><Link to="/message/123" className="link">{message.substring(0,100)}...</Link></td>
             <td>1 day ago</td>
-            <td>
-              <button>Mark as Read</button>
-            </td>
-          </tr>
-          <tr>
-            <td>John Doe</td>
-            <td>{message.substring(0,100)}...</td>
-            <td>1 day ago</td>
-            <td>
-              <button>Mark as Read</button>
-            </td>
           </tr>
           <tr>
             <td>
            John Doe
             </td>
-            <td>{message.substring(0,100)}...</td>
-            <td>1 day ago</td>
-            <td><button>Mark as Read</button></td>
-          
+            <td><Link to="/message/123" className="link">{message.substring(0,100)}...</Link></td>
+            <td>1 day ago</td>          
           </tr>
         </table>
       </div>
