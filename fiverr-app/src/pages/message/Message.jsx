@@ -63,6 +63,7 @@ export const Message = () => {
             </p>
           </div>
         </div>
+        <hr />
         <div className="write">
           <textarea
             name=""
