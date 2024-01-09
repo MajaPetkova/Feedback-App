@@ -1,6 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose")
-
+const mongoose = require("mongoose");
+const userRouter = require( "./routes/userRoute.js");
 
 async function start() {
     const app = express();
@@ -12,6 +12,9 @@ async function start() {
       return process.exit(1);
     }
     
+
+    app.use("/api/users",userRouter );
+  
     app.listen(8000, ()=>console.log("Backend Server is running on port 8000"))
 }
 start()
