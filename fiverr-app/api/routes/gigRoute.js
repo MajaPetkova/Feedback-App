@@ -1,4 +1,4 @@
-const { deleteUser } = require("../controllers/userController");
+const { deleteUser } = require("../controllers/gigController");
 
 const router = require("express").Router();
 

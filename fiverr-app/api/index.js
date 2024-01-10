@@ -1,6 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require( "./routes/userRoute.js");
+const gigRouter = require("./routes/gigRoute.js")
+const orderRouter = require("./routes/orderRoute.js");
+const conversationRoute= require("./routes/conversationRoute.js");
+const messageRoute= require("./routes/messageRoute.js")
+const reviewRoute = require("./routes/reviewRoute.js");
+
 
 async function start() {
     const app = express();
@@ -14,6 +20,11 @@ async function start() {
     
 
     app.use("/api/users",userRouter );
+    app.use("/api/gigs",gigRouter );
+    app.use("/api/orders", orderRouter);
+    app.use("/api/conversations", conversationRoute);
+    app.use("/api/messages", messageRoute );
+    app.use("/api/reviews", reviewRoute)
   
     app.listen(8000, ()=>console.log("Backend Server is running on port 8000"))
 }
