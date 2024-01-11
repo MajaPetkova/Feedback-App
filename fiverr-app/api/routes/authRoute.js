@@ -1,8 +1,10 @@
-const { deleteUser } = require("../controllers/userController");
-
 const router = require("express").Router();
+const { register } = require("../controllers/authController");
 
-router.get("/test", deleteUser)
+
+router.post("/register",register);
+router.post("/login", );
+router.post("/logout", )
 
 
 

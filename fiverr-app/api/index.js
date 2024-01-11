@@ -6,7 +6,7 @@ const orderRouter = require("./routes/orderRoute.js");
 const conversationRoute= require("./routes/conversationRoute.js");
 const messageRoute= require("./routes/messageRoute.js")
 const reviewRoute = require("./routes/reviewRoute.js");
-
+const authRoute = require("./routes/authRoute.js")
 
 async function start() {
     const app = express();
@@ -18,13 +18,14 @@ async function start() {
       return process.exit(1);
     }
     
-
+    app.use(express.json())
+    app.use("/api/auth", authRoute)
     app.use("/api/users",userRouter );
     app.use("/api/gigs",gigRouter );
     app.use("/api/orders", orderRouter);
     app.use("/api/conversations", conversationRoute);
     app.use("/api/messages", messageRoute );
-    app.use("/api/reviews", reviewRoute)
+    app.use("/api/reviews", reviewRoute);
   
     app.listen(8000, ()=>console.log("Backend Server is running on port 8000"))
 }
