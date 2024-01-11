@@ -18,6 +18,16 @@ const register = async (req, res) => {
 };
 const login = async (req, res) => {
   try {
+    const user= await User.findOne({username:req.body.username});
+    if(!user){
+       return res.status(404).send("User not found")
+    }
+    const isCorrect = bcrypt.compare(req.body.password, user.password )
+    if(!isCorrect){
+      return res.status(400).send("Username or password are not correct")
+    }
+    const {password, ...info} = user._doc;
+    res.status(200).send(info)
   } catch (err) {
     res.status(404).send("Something went wrong");
   }
