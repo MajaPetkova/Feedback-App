@@ -6,10 +6,13 @@ const orderRouter = require("./routes/orderRoute.js");
 const conversationRoute= require("./routes/conversationRoute.js");
 const messageRoute= require("./routes/messageRoute.js")
 const reviewRoute = require("./routes/reviewRoute.js");
-const authRoute = require("./routes/authRoute.js")
+const authRoute = require("./routes/authRoute.js");
+const cookieParser= require("cookie-parser")
+const dotenv= require("dotenv")
 
 async function start() {
     const app = express();
+    dotenv.config();
     try {
       const db = await mongoose.connect("mongodb://localhost:27017/fiverr");
       console.log("DB Ready");
@@ -18,7 +21,9 @@ async function start() {
       return process.exit(1);
     }
     
-    app.use(express.json())
+    app.use(express.json());
+    app.use(cookieParser());
+
     app.use("/api/auth", authRoute)
     app.use("/api/users",userRouter );
     app.use("/api/gigs",gigRouter );
