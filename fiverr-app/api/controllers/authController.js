@@ -1,10 +1,9 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const createError = require("../utils/createError");
 
-// const secretKey= "hgdghfdkjbdfhgfdjgbdfjgkdfnmdf"
-
-const register = async (req, res) => {
+const register = async (req, res, next) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 10);
 
@@ -16,31 +15,39 @@ const register = async (req, res) => {
     await newUser.save();
     res.status(201).send("User has been created");
   } catch (err) {
-    res.status(404).send("Something went wrong");
+    next(err);
   }
 };
-const login = async (req, res) => {
+const login = async (req, res, next) => {
   try {
-    const user= await User.findOne({username:req.body.username});
-    if(!user){
-       return res.status(404).send("User not found")
+    const user = await User.findOne({ username: req.body.username });
+    if (!user) {
+      //  return res.status(404).send("User not found")
+      return next(createError(404, "User not found!"));
     }
-    const isCorrect = bcrypt.compareSync(req.body.password, user.password )
-    if(!isCorrect){
-      return res.status(400).send("Username or password are not correct")
+    const isCorrect = bcrypt.compareSync(req.body.password, user.password);
+    if (!isCorrect) {
+      // return res.status(400).send("Username or password are not correct")
+      return next(createError(404, "Username or password are not correct"));
     }
-    const token= jwt.sign({
-      id: user._id,
-      isSeller: user.isSeller
-    }, process.env.JWT_KEY)
+    const token = jwt.sign(
+      {
+        id: user._id,
+        isSeller: user.isSeller,
+      },
+      process.env.JWT_KEY
+    );
 
-    const {password, ...info} = user._doc;
-    res.cookie("accessToken", token, {
-      httpOnly: true,
-    }).status(200).send(info)
+    const { password, ...info } = user._doc;
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+      })
+      .status(200)
+      .send(info);
     // res.status(200).send(info)
   } catch (err) {
-     res.status(404).send("Something went wrong");
+     next(createError(err))
   }
 };
 const logout = (req, res) => {
