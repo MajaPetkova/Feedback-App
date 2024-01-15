@@ -1,5 +1,5 @@
 import React from "react";
-import "./app.scss"
+import "./app.scss";
 import { Navbar } from "./components/navbar/Navbar";
 import { Home } from "./pages/home/Home";
 import { Gigs } from "./pages/gigs/Gigs";
@@ -10,11 +10,8 @@ import { Add } from "./pages/add/Add";
 import { Message } from "./pages/message/Message";
 import { Messages } from "./pages/messages/Messages";
 import { Footer } from "./components/footer/Footer";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Login } from "./pages/login/Login";
 
 function App() {
   const Layout = () => {
@@ -62,6 +59,9 @@ function App() {
         {
           path: "/message/:id",
           element: <Message />,
+        },
+        { path: "/login",
+         element: <Login /> 
         },
       ],
     },

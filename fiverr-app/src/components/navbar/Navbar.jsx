@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.scss";
 import { Link, useLocation } from "react-router-dom";
+import { Login } from "../../pages/login/Login";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -37,7 +38,7 @@ export const Navbar = () => {
           <span>Fiverr Business</span>
           <span>Explore</span>
           <span>English</span>
-          <span>Sign In</span>
+          <Link to="/login" className="link">Sign In</Link>
           {!currentUser?.isSeller && <span>Become a seller</span>}
           {!currentUser && <button>Join</button>}
           {currentUser && (
