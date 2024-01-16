@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const userRouter = require( "./routes/userRoute.js");
 const gigRouter = require("./routes/gigRoute.js")
 const orderRouter = require("./routes/orderRoute.js");
@@ -21,6 +22,7 @@ async function start() {
       return process.exit(1);
     }
     
+    app.use(cors({origin:"http://localhost:3000", credential:true}))
     app.use(express.json());
     app.use(cookieParser());
 
