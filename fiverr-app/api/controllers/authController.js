@@ -28,7 +28,7 @@ const login = async (req, res, next) => {
     const isCorrect = bcrypt.compareSync(req.body.password, user.password);
     if (!isCorrect) {
       // return res.status(400).send("Username or password are not correct")
-      return next(createError(404, "Username or password are not correct"));
+      return next(createError(400, "Username or password are not correct"));
     }
     const token = jwt.sign(
       {
@@ -47,7 +47,7 @@ const login = async (req, res, next) => {
       .send(info);
     // res.status(200).send(info)
   } catch (err) {
-     next(createError(err))
+     next(err)
   }
 };
 const logout = (req, res) => {

@@ -22,7 +22,7 @@ async function start() {
       return process.exit(1);
     }
     
-    app.use(cors({origin:"http://localhost:3000", credential:true}))
+    app.use(cors({origin:"http://localhost:3000", credentials:true}))
     app.use(express.json());
     app.use(cookieParser());
 
