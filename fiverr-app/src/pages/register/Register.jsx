@@ -27,10 +27,10 @@ export const Register = () => {
               <input type="checkbox" />
               <span className="slider round"></span>
             </label>
+          </div>
             <label htmlFor="">Phone Number</label>
             <input type="text" name="phone" placeholder="+1 234 567 89" />
             <label htmlFor="">Description</label><textarea name="desc" id="" cols="30" rows="10" placeholder="A short description of yourself"></textarea>
-          </div>
         </div>
       </form>
     </div>
