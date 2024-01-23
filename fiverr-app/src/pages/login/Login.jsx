@@ -54,8 +54,9 @@ export const Login = () => {
           name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <span className="error">{error && error}</span>
+        
         <button type="submit">Login</button>
-        {/* {error && error} */}
       </form>
     </div>
   );
