@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./register.scss";
+import axios from "axios";
+import upload from "../../utils/upload";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const [file, setFile] = useState(null);
@@ -12,6 +15,8 @@ export const Register = () => {
     isSeller: false,
     desc: "",
   });
+  // const navigate= useNavigate();
+
   const handleChange = (e) => {
     e.preventDefault();
     setUser((prev) => {
@@ -22,17 +27,34 @@ export const Register = () => {
     });
   };
 
-    const handleSeller= (e)=>{
-      setUser(prev => {
-        return{
-          ...prev, isSeller: e.target.checked
-        }
-      })
+  const handleSeller = (e) => {
+    setUser((prev) => {
+      return {
+        ...prev,
+        isSeller: e.target.checked,
+      };
+    });
+  };
+  // console.log(user);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const url = await upload(file);
+    try {
+      const res = await axios.post("http://localhost:8000/api/auth/register", {
+        ...user,
+        image: url,
+      });
+      console.log(res);
+      // navigate("/")
+    } catch (err) {
+      console.log(err);
     }
-    console.log(user)
+  };
+
   return (
     <div className="register">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
           <label htmlFor="">Username</label>
@@ -45,8 +67,8 @@ export const Register = () => {
           <label htmlFor="">Email</label>
           <input
             type="email"
-            name="password"
-            placeholder="johndoe@gmail.com"
+            name="email"
+            placeholder="email"
             onChange={handleChange}
           />
           <label htmlFor="">Password</label>
