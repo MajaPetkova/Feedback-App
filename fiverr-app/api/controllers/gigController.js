@@ -22,8 +22,8 @@ const deleteGig = async (req, res, next) => {
     if (gig.userId !== req.userId) {
       return next(createError(403, "You can delete only your Gig"));
     }
-    await Gig.findByIdAndDelete(req.params.id)
-    res.status(200).send("Your gig has been deleted")
+    await Gig.findByIdAndDelete(req.params.id);
+    res.status(200).send("Your gig has been deleted");
   } catch (err) {
     next(err);
   }
@@ -31,16 +31,28 @@ const deleteGig = async (req, res, next) => {
 const getGig = async (req, res, next) => {
   try {
     const gig = await Gig.findById(req.params.id);
-    if(!gig){
-      return next(createError(404, "Gig not found!"))
+    if (!gig) {
+      return next(createError(404, "Gig not found!"));
     }
-    req.status(200).send(gig)
+    req.status(200).send(gig);
   } catch (err) {
     next(err);
   }
 };
 const getGigs = async (req, res, next) => {
+  const q = req.query;
+
+  const filters = {
+    ...(q.userId && { userId: q.userId }),
+    ...(q.category && { category: q.category }),
+    ...((q.min || q.max) && {
+      price: { ...(q.min && { $gt: q.min }), ...(q.max && { $lt: q.max }) },
+    }),
+    ...(q.search && {title: {$regex: q.search,  $options: "i"}})
+  };
   try {
+    const gigs = await Gig.find(filters);
+    res.status(200).send(gigs);
   } catch (err) {
     next(err);
   }
