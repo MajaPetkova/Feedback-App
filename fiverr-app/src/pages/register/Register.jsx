@@ -8,14 +8,14 @@ export const Register = () => {
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
     username: "",
-    password: "",
     email: "",
-    image: "",
+    password: "",
+    img: "",
     country: "",
     isSeller: false,
     desc: "",
   });
-  // const navigate= useNavigate();
+  const navigate= useNavigate();
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -43,10 +43,10 @@ export const Register = () => {
     try {
       const res = await axios.post("http://localhost:8000/api/auth/register", {
         ...user,
-        image: url,
+        img: url,
       });
       console.log(res);
-      // navigate("/")
+      navigate("/")
     } catch (err) {
       console.log(err);
     }
