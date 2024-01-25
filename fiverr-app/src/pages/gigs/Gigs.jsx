@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./gigs.scss";
 import { gigs } from "../../data";
 import { GigCard } from "../../components/gigCard.jsx/GigCard";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
 
 export const Gigs = () => {
   const [open, setOpen] = useState(false);
@@ -10,6 +12,15 @@ export const Gigs = () => {
     setSort(type);
     setOpen(false);
   };
+  
+  const { isPending, error, data } = useQuery({
+    queryKey: ["repoData"],
+    queryFn: () => newRequest("/gigs"),
+  });
+  console.log(data);
+  
+
+
   return (
     <div className="gigs">
       <div className="container">

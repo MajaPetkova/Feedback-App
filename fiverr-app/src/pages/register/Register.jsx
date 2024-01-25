@@ -3,6 +3,7 @@ import "./register.scss";
 import axios from "axios";
 import upload from "../../utils/upload";
 import { useNavigate } from "react-router-dom";
+import newRequest from "../../utils/newRequest";
 
 export const Register = () => {
   const [file, setFile] = useState(null);
@@ -41,7 +42,7 @@ export const Register = () => {
     e.preventDefault();
     const url = await upload(file);
     try {
-      const res = await axios.post("http://localhost:8000/api/auth/register", {
+      const res = await newRequest.post("/auth/register", {
         ...user,
         img: url,
       });
