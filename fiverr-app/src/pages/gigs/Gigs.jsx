@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect} from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./gigs.scss";
 import { gigs } from "../../data";
 import { GigCard } from "../../components/gigCard.jsx/GigCard";
@@ -12,7 +12,6 @@ export const Gigs = () => {
   const minRef = useRef();
   const maxRef = useRef();
 
-
   const { search } = useLocation();
 
   const reSort = (type) => {
@@ -21,19 +20,24 @@ export const Gigs = () => {
   };
 
   const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ["repoData"],
+    queryKey: ["gigs"],
     queryFn: () =>
       newRequest
         .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}`)
+          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+        )
         .then((res) => {
           return res.data;
         }),
   });
   console.log(data);
 
+  useEffect(() => {
+    refetch();
+  }, [sort]);
+
   const apply = () => {
-  refetch()
+    refetch();
   };
 
   return (
@@ -68,6 +72,7 @@ export const Gigs = () => {
                 ) : (
                   <span onClick={() => reSort("sales")}>Best Selling</span>
                 )}
+                   <span onClick={() => reSort("sales")}>Popular</span>
               </div>
             )}
           </div>
