@@ -49,6 +49,7 @@ export const Navbar = () => {
           <Link to="/login" className="link">
             Sign In
           </Link>
+          {/* <Link className="link" to="/register"><button>Join</button></Link> */}
           {!currentUser?.isSeller && <span>Become a seller</span>}
           {!currentUser && <button>Join</button>}
           {currentUser && (

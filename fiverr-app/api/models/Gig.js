@@ -6,7 +6,7 @@ const GigSchema = new Schema({
   desc:{type:String, required:true},
   totalStars:{type:Number, default:0},
   starNumber:{type:Number, default:0},
-  category:{type:String, required:true},
+  cat:{type:String, required:true},
   price:{type:Number, required:true},
   cover:{type:String, required:true},
   images:{type:[String], required:false},

@@ -34,7 +34,7 @@ const getGig = async (req, res, next) => {
     if (!gig) {
       return next(createError(404, "Gig not found!"));
     }
-    req.status(200).send(gig);
+    res.status(200).send(gig);
   } catch (err) {
     next(err);
   }
@@ -48,7 +48,7 @@ const getGigs = async (req, res, next) => {
     ...((q.min || q.max) && {
       price: { ...(q.min && { $gt: q.min }), ...(q.max && { $lt: q.max }) },
     }),
-    ...(q.search && {title: {$regex: q.search,  $options: "i"}})
+    ...(q.search && { title: { $regex: q.search, $options: "i" } }),
   };
   try {
     const gigs = await Gig.find(filters);

@@ -28,7 +28,7 @@ async function start() {
 
     app.use("/api/auth", authRoute)
     app.use("/api/users",userRouter );
-    app.use("/api/gigs",gigRouter );
+    app.use("/api/gigs", gigRouter );
     app.use("/api/orders", orderRouter);
     app.use("/api/conversations", conversationRoute);
     app.use("/api/messages", messageRoute );
