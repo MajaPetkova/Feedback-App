@@ -1,14 +1,31 @@
 import React from "react";
 import "./gig.scss";
 import { Slider } from "infinite-react-carousel";
+import newRequest from "../../utils/newRequest";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 export const Gig = () => {
+  const { id } = useParams();
+  console.log(id);
+
+    const { isLoading, error, data } = useQuery({
+      queryKey: ["gig"],
+      queryFn: () =>
+        newRequest.get(`/gigs/single/${id}`).then((res) => {
+          return res.data;
+        }),
+    });
+  
+  console.log(data.title)
   return (
     <div className="gig">
-      <div className="container">
+      {isLoading ? "Loading...": error ? "Something went wrong!" : <div className="container">
         <div className="left">
-          <span className="breadCrumbs">FIVERR > GRAPHICS & DESIGN ></span>
-          <h1>I will create ai generated art for you</h1>
+          <span className="breadCrumbs">FIVERR {">"} GRAPHICS & DESIGN {">"}</span>
+          <h1>
+            {data.title}
+            </h1>
           <div className="user">
             <img
               className="pp"
@@ -17,46 +34,22 @@ export const Gig = () => {
             />
             <span>Melisa Doe</span>
             <div className="stars">
+               <img src="/images/star.png" alt="" />
               <img src="/images/star.png" alt="" />
               <img src="/images/star.png" alt="" />
               <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" />
+              <img src="/images/star.png" alt="" /> 
               <span>5</span>
             </div>
           </div>
           <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-            <img
-              src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt=""
-            />
-            <img
-              src="https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt=""
-            />
-            <img
-              src="https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt=""
-            />
+          {data.images.map((img) => (
+                <img key={img} src={img} alt="" />
+              ))}
           </Slider>
           <h2>About This Gig</h2>
           <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            libero qui distinctio doloribus possimus? Sequi ipsum odit fugiat
-            odio, eos recusandae, dolorum hic eligendi aliquam illo neque,
-            voluptates praesentium? Quibusdam fuga quam quisquam recusandae
-            ipsam aspernatur eaque, expedita illum modi repellendus, maxime
-            nihil quidem animi nisi aliquid beatae velit delectus ipsa. Fugiat
-            cupiditate reiciendis cum aperiam perferendis voluptatem odio
-            doloremque iusto. At rem assumenda iure blanditiis culpa, fugiat qui
-            tenetur esse, modi ullam incidunt, deserunt commodi. Dignissimos
-            modi rerum explicabo. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Facere illo esse omnis, inventore suscipit error
-            nostrum porro tempore expedita obcaecati in impedit, veniam sed quod
-            doloribus hic explicabo minima vitae laboriosam animi perferendis
-            repellat perspiciatis. Doloribus voluptatum praesentium quia
-            inventore. Culpa maiores tempora aliquid nostrum fugiat? Quod eos
-            quaerat ut iusto aut asperiores soluta error.
+            {data.desc}
           </p>
           <div className="seller">
             <h2>About The Seller</h2>
@@ -241,44 +234,33 @@ export const Gig = () => {
         </div>
         <div className="right">
           <div className="price">
-            <h3>1 AI generated image</h3>
-            <h2>$ 59.99</h2>
+            <h3>{data.shortTitle}</h3>
+            <h2>$ {data.price}</h2>
           </div>
           <p>
-            I will create a unique high quality AI generated image based on a
-            description that you give me
+            {data.shortDesc}
+            {/* I will create a unique high quality AI generated image based on a
+            description that you give me */}
           </p>
           <div className="details">
             <div className="item">
               <img src="/images/clock.png" alt="" />
-              <span>2 Days Delivery</span>
+              <span>{data.deliveryTime} Days Delivery</span>
             </div>
             <div className="item">
               <img src="/images/recycle.png" alt="" />
-              <span>3 Revisions</span>
+              <span>{data.revisionNumber} Revisions</span>
             </div>
           </div>
           <div className="features">
-            <div className="item">
-              <img src="/images/greencheck.png" alt="" />
-              <span>Prompt writing</span>
-            </div>
-            <div className="item">
-              <img src="/images/greencheck.png" alt="" />
-              <span>Artwork delivery</span>
-            </div>
-            <div className="item">
-              <img src="/images/greencheck.png" alt="" />
-              <span>Image upscaling</span>
-            </div>
-            <div className="item">
-              <img src="/images/greencheck.png" alt="" />
-              <span>Additional design</span>
-            </div>
+            {data.features.map((x)=> (<div className="item">
+              <img src="/images/greencheck.png" alt=""  key={x}/>
+              <span>{x}</span>
+            </div>))}
           </div>
           <button>Continue</button>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
