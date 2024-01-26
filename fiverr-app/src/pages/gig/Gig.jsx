@@ -33,14 +33,11 @@ export const Gig = () => {
               alt=""
             />
             <span>Melisa Doe</span>
-            <div className="stars">
-               <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" />
-              <img src="/images/star.png" alt="" /> 
-              <span>5</span>
-            </div>
+            {!isNaN(data.totalStars / data.starNumber) &&(
+                <div className="stars">
+                  {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
+                  <span> {Math.round(data.totalStars / data.starNumber)}</span>
+                </div>)}
           </div>
           <Slider slidesToShow={1} arrowsScroll={1} className="slider">
           {data.images.map((img) => (
@@ -60,14 +57,11 @@ export const Gig = () => {
               />
               <div className="info">
                 <span>Melisa Doe</span>
+                {!isNaN(data.totalStars / data.starNumber) &&(
                 <div className="stars">
-                  <img src="/images/star.png" alt="" />
-                  <img src="/images/star.png" alt="" />
-                  <img src="/images/star.png" alt="" />
-                  <img src="/images/star.png" alt="" />
-                  <img src="/images/star.png" alt="" />
-                  <span>5</span>
-                </div>
+                  {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
+                  <span> {Math.round(data.totalStars / data.starNumber)}</span>
+                </div>)}
                 <button>Contact Me</button>
               </div>
             </div>
@@ -123,14 +117,11 @@ export const Gig = () => {
                   </div>
                 </div>
               </div>
-              <div className="stars">
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <span>5</span>
-              </div>
+              {!isNaN(data.totalStars / data.starNumber) &&(
+                <div className="stars">
+                  {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
+                  <span> {Math.round(data.totalStars / data.starNumber)}</span>
+                </div>)}}
               <p>
                 I just want to say that art_with_ai was the first, and after
                 this, the only artist Ill be using on Fiverr. Communication was
@@ -166,14 +157,11 @@ export const Gig = () => {
                   </div>
                 </div>
               </div>
-              <div className="stars">
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <span>5</span>
-              </div>
+              {!isNaN(data.totalStars / data.starNumber) &&(
+                <div className="stars">
+                  {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
+                  <span> {Math.round(data.totalStars / data.starNumber)}</span>
+                </div>)}
               <p>
                 The designer took my photo for my book cover to the next level!
                 Professionalism and ease of working with designer along with
@@ -207,14 +195,11 @@ export const Gig = () => {
                   </div>
                 </div>
               </div>
-              <div className="stars">
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <img src="/images/star.png" alt="" />
-                <span>5</span>
-              </div>
+              {!isNaN(data.totalStars / data.starNumber) &&(
+                <div className="stars">
+                  {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
+                  <span> {Math.round(data.totalStars / data.starNumber)}</span>
+                </div>)}
               <p>
                 Amazing work! Communication was amazing, each and every day he
                 sent me images that I was free to request changes to. They
