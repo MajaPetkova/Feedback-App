@@ -82,7 +82,7 @@ export const Gigs = () => {
             ? "loading"
             : error
             ? "Something went wrong"
-            : data.map((x) => <GigCard key={x._id} item={x} />)}
+            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
         </div>
       </div>
     </div>
