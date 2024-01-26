@@ -16,6 +16,13 @@ export const Gig = () => {
           return res.data;
         }),
     });
+    const { isLoading: isLoadingUser, error: errorUser, data: dataUser } = useQuery({
+      queryKey: ["user"],
+      queryFn: () =>
+        newRequest.get(`/users/${data.userId}`).then((res) => {
+          return res.data;
+        }),
+    });
   
   console.log(data.title)
   return (
@@ -26,19 +33,19 @@ export const Gig = () => {
           <h1>
             {data.title}
             </h1>
-          <div className="user">
+          {isLoadingUser ? "Loading" :errorUser ? "Something went wrong":  <div className="user">
             <img
               className="pp"
-              src="https://images.pexels.com/photos/720327/pexels-photo-720327.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src={dataUser.img || "/images/noavatar.jpg"}
               alt=""
             />
-            <span>Melisa Doe</span>
+            <span>{dataUser.username}</span>
             {!isNaN(data.totalStars / data.starNumber) &&(
                 <div className="stars">
                   {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
                   <span> {Math.round(data.totalStars / data.starNumber)}</span>
                 </div>)}
-          </div>
+          </div>}
           <Slider slidesToShow={1} arrowsScroll={1} className="slider">
           {data.images.map((img) => (
                 <img key={img} src={img} alt="" />
@@ -48,15 +55,15 @@ export const Gig = () => {
           <p>
             {data.desc}
           </p>
-          <div className="seller">
+         { isLoadingUser ? "Loading..." : errorUser ? "Something went wrong!" : (<div className="seller">
             <h2>About The Seller</h2>
             <div className="user">
               <img
-                src="https://images.pexels.com/photos/720327/pexels-photo-720327.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={dataUser.img  || "/images/noavatar.jpg"}
                 alt=""
               />
               <div className="info">
-                <span>Melisa Doe</span>
+                <span>{dataUser.username}</span>
                 {!isNaN(data.totalStars / data.starNumber) &&(
                 <div className="stars">
                   {Array(Math.round(data.totalStars / data.starNumber)).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
@@ -69,7 +76,7 @@ export const Gig = () => {
               <div className="items">
                 <div className="item">
                   <span className="title">From</span>
-                  <span className="desc">USA</span>
+                  <span className="desc">{dataUser.country}</span>
                 </div>
                 <div className="item">
                   <span className="title">Member since</span>
@@ -90,13 +97,10 @@ export const Gig = () => {
               </div>
               <hr />
               <p>
-                My name is Melisa, I enjoy creating AI generated art in my spare
-                time. I have a lot of experience using the AI program and that
-                means I know what to prompt the AI with to get a great and
-                incredibly detailed result.
+               {dataUser.desc}
               </p>
             </div>
-          </div>
+          </div>)}
           <div className="reviews">
             <h2>Reviews</h2>
             <div className="item">
