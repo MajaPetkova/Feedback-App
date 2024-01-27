@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema, model, Types:{ObjectId} } = mongoose;
+const {Schema, model, Types: { ObjectId }} = require("mongoose");
 
 const ReviewSchema = new Schema({
   gigId:{type:String, required:true},
