@@ -17,12 +17,15 @@ export const Gig = () => {
           return res.data;
         }),
     });
+    
+    const userId = data?.userId
     const { isLoading: isLoadingUser, error: errorUser, data: dataUser } = useQuery({
       queryKey: ["user"],
       queryFn: () =>
-        newRequest.get(`/users/${data.userId}`).then((res) => {
+        newRequest.get(`/users/${userId}`).then((res) => {
           return res.data;
         }),
+        enabled: !!userId
     });
   
   // console.log(data)

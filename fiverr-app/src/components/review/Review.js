@@ -6,7 +6,7 @@ import newRequest from '../../utils/newRequest';
 const Review = ({review}) => {
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["reviewUser"],
+    queryKey: [review.userId],
     queryFn: () =>
       newRequest.get(`/users/${review.userId}`).then((res) => {
         return res.data;
@@ -15,7 +15,7 @@ const Review = ({review}) => {
     
   return (
     <div className="review">
-    <div className="user">
+   {isLoading ? "Loading" : error ? "Something went wrong!" : (<div className="user">
       <img
         className="pp"
         src={data.img || "/images/noavatar.jpg"}
@@ -27,7 +27,7 @@ const Review = ({review}) => {
           <span>{data.country}</span>
         </div>
       </div>
-    </div>
+    </div>)}
    
       <div className="stars">
         {Array(review.star).fill().map((item, i)=>( <img src="/images/star.png" alt="" key={i}/>))}
