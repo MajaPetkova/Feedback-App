@@ -25,7 +25,7 @@ export const Gig = () => {
         }),
     });
   
-  console.log(data.title)
+  // console.log(data)
   return (
     <div className="gig">
       {isLoading ? "Loading...": error ? "Something went wrong!" : <div className="container">
@@ -47,11 +47,11 @@ export const Gig = () => {
                   <span> {Math.round(data.totalStars / data.starNumber)}</span>
                 </div>)}
           </div>}
-          <Slider slidesToShow={1} arrowsScroll={1} className="slider">
+          {/* <Slider slidesToShow={1} arrowsScroll={1} className="slider">
           {data.images.map((img) => (
                 <img key={img} src={img} alt="" />
               ))}
-          </Slider>
+          </Slider> */}
           <h2>About This Gig</h2>
           <p>
             {data.desc}
