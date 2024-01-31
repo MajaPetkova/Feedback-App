@@ -1,8 +1,9 @@
-const { deleteUser } = require("../controllers/orderController");
+const { createOrder } = require("../controllers/orderController");
+const verifyToken = require("../middleware/jwt");
 
 const router = require("express").Router();
 
-router.get("/test", deleteUser)
+router.post("/:gigId",verifyToken, createOrder)
 
 
 
