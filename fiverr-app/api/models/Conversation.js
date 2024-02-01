@@ -7,7 +7,7 @@ buyerId:{ type: String, required:true},
 readBySeller:{ type: Boolean, required:true},
 readByBuyer:{ type:Boolean, required:true},
 lastMessage:{ type: String, required:false},
-});
+},  { timestamps: true });
 
 const Conversation = model("Conversation", ConversationSchema);
 module.exports= Conversation;
