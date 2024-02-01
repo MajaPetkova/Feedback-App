@@ -1,7 +1,15 @@
 const Conversation = require("../models/Conversation");
 
-const getConversations = async (req, res) => {};
-
+const getConversations = async (req, res, next) => {
+  try {
+    const conversations = await Conversation.find(
+      req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }
+    );
+    res.status(200).send(conversations);
+  } catch (err) {
+    next(err);
+  }
+};
 
 const createConversation = async (req, res, next) => {
   const newConversation = new Conversation({
@@ -19,17 +27,28 @@ const createConversation = async (req, res, next) => {
   }
 };
 
-
 const getSingleConversation = async (req, res, next) => {
   try {
+    const conversation = await Conversation.findOne({ id: req.params.id });
+    res.status(201).send(conversation);
   } catch (err) {
     next(err);
   }
 };
 
-
 const updateConversation = async (req, res, next) => {
   try {
+    const updatedConversation = await Conversation.findOneAndUpdate(
+      { id: req.params.id },
+      {
+        $set: {
+          readBySeller: true,
+          readByBuyer: true,
+        },
+      },
+      { new: true }
+    );
+    res.status(200).send(updatedConversation);
   } catch (err) {
     next(err);
   }
