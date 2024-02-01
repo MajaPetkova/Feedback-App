@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-const { Schema, model, Types:{ObjectId} } = mongoose;
+const {Schema, model, Types: { ObjectId }} = require("mongoose");
 
 const ConversationSchema = new Schema({
 id:{ type: String, required:true, unique:true},

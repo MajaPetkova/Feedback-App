@@ -14,7 +14,7 @@ export const Orders = () => {
         return res.data
       }),
     });
-    console.log(data)
+    
   return (
     <div className="myOrders">
       {isLoading ? "Loading..." :error ? "Something went wrong" : (<div className="container">
