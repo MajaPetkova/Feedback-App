@@ -12,15 +12,28 @@ const createOrder = async (req, res, next) => {
       buyerId: req.userId,
       sellerId: gig.userId,
       price: gig.price,
-      payment_intent:"temporary"
+      payment_intent: "temporary",
     });
-    await newOrder.save()
-    res.status(200).send("successful")
+    await newOrder.save();
+    res.status(200).send("successful");
   } catch (err) {
-    next(err)
+    next(err);
+  }
+};
+
+const getOrders = async (req, res, next) => {
+  try {
+    const orders = await Order.find({
+      ...(req.isSeller ? { sellerId: req.userId } : { buyerId: req.userId }),
+      isCompleted: true,
+    });
+    res.status(200).send(orders);
+  } catch (err) {
+    next(err);
   }
 };
 
 module.exports = {
   createOrder,
+  getOrders,
 };
