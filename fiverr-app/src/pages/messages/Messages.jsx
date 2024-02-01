@@ -6,7 +6,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import moment from "moment";
 
 export const Messages = () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
@@ -68,9 +68,9 @@ export const Messages = () => {
                   {((currentUser.isSeller && !x.readBySeller) ||
                     (!currentUser.isSeller && !x.readByBuyer)) && (
                     <button onClick={() => handleRead(x.id)}>
-                        Mark as Read
-                      </button>
-                    )}
+                      Mark as Read
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
