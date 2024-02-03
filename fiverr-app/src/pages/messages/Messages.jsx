@@ -19,7 +19,7 @@ export const Messages = () => {
 
   const mutation = useMutation({
     mutationFn: (id) => {
-      return newRequest.put(`/conversation/${id}`);
+      return newRequest.put(`/conversations/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["conversations"]);
