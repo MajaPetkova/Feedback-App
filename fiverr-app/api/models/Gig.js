@@ -16,7 +16,7 @@ const GigSchema = new Schema({
   revisionNumber:{type:String, required:true},
   features:{type:[String], required:false},
   sales: {type:Number, default:0}
-});
+},  { timestamps: true });
 
 const Gig = model("Gig", GigSchema);
 module.exports= Gig;

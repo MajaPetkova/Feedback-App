@@ -9,7 +9,7 @@ const UserSchema = new Schema({
   phone: { type: String, required: false },
   desc: { type: String, required: false },
   isSeller: { type: Boolean, default: false },
-});
+},  { timestamps: true });
 
 const User = model("User", UserSchema);
 module.exports = User;

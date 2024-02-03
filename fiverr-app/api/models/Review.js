@@ -6,7 +6,7 @@ const ReviewSchema = new Schema({
   star:{type:Number, required:true, enum:[1,2,3,4,5]},
   desc:{type:String, required:true}
 
-});
+},  { timestamps: true });
 
 const Review = model("Review", ReviewSchema);
 module.exports= Review;
