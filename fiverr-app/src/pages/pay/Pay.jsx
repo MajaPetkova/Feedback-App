@@ -11,34 +11,39 @@ const stripePromise = loadStripe(
 );
 
 export const Pay = () => {
-  const [clientSecret, setClientSecret] = useState("");
-  const { id } = useParams();
-
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = newRequest.post(`/orders/create-payment-intent/${id}`);
-        setClientSecret(res.data.clientSecret)
-      } catch (err) {
-        console.log(err);
-      }
+    const [clientSecret, setClientSecret] = useState("");
+  
+    const { id } = useParams();
+  
+    useEffect(() => {
+      const makeRequest = async () => {
+        try {
+          const res = await newRequest.post(
+            `/orders/create-payment-intent/${id}`
+          );
+          setClientSecret(res.data.clientSecret);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      makeRequest();
+    }, []);
+  
+    const appearance = {
+      theme: 'stripe',
     };
-    makeRequest()
-  }, []);
-
-  const appearance = {
-    theme: 'stripe',
+    const options = {
+      clientSecret,
+      appearance,
+    };
+  
+    return <div className="pay">
+      {clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )}
+    </div>;
   };
-  const options = {
-    clientSecret,
-    appearance,
-  };
-
-  return <div className="pay">
-     {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
-      )}
-  </div>;
-};
+  
+  

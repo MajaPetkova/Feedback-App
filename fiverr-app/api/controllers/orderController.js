@@ -58,7 +58,7 @@ const intent = async (req, res, next) => {
   await newOrder.save();
 
   res.status(200).send({
-    clientSecret: paymentIntent.clientSecret
+    clientSecret: paymentIntent.client_secret
   })
 };
 
