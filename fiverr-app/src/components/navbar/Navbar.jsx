@@ -51,7 +51,7 @@ export const Navbar = () => {
           </Link>
           {/* <Link className="link" to="/register"><button>Join</button></Link> */}
           {!currentUser?.isSeller && <span>Become a seller</span>}
-          {!currentUser && <button>Join</button>}
+          {!currentUser && <Link to="/register"> <button>Join</button></Link>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.img || "/images/noavatar.jpg"} alt="" />
