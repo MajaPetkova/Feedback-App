@@ -58,12 +58,29 @@ const intent = async (req, res, next) => {
   await newOrder.save();
 
   res.status(200).send({
-    clientSecret: paymentIntent.client_secret
-  })
+    clientSecret: paymentIntent.client_secret,
+  });
+};
+
+const confirm = async (req, res, next) => {
+  try {
+    const orders = await Order.findOneAndUpdate(
+      { payment_intent: req.body.payment_intent },
+      {
+        $set: {
+          isCompleted: true,
+        },
+      }
+    );
+    res.status(200).send("Order has been confirmed")
+  } catch (err) {
+    next(err)
+  }
 };
 
 module.exports = {
   // createOrder,
   getOrders,
   intent,
+  confirm,
 };
