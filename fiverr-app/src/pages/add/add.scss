@@ -25,19 +25,52 @@
           font-size: 18px;
           margin-top: 12px;
         }
+
         input,
         select,
         textarea {
           padding: 15px;
         }
-        button {
-            border: none;
-            padding: 20px;
-            background-color: #1dbf73;
-            color:white;
-            font-size: 16px;
-            font-weight: 600;
+        .images {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .imagesInput {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+        .btn {
+          border: none;
+          padding: 20px;
+          background-color: #1dbf73;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
           cursor: pointer;
+        }
+        .add {
+          display: flex;
+          justify-content: space-between;
+          input {
+            width: 80%;
+          }
+        }
+        .addedFeatures {
+          display: flex;
+          gap:20px;
+
+          button{
+            height: 30px;
+            font-size: 12px;
+            font-weight: 400;
+            background-color: transparent;
+            color: red;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            gap:20px
+          }
         }
       }
     }
