@@ -14,7 +14,7 @@ export const INITIAL_STATE = {
 };
 
 export const gigReducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case "CHANGE_INPUT":
       return { ...state, [action.payload.name]: action.payload.value };
     case "ADD_IMAGES":
@@ -23,12 +23,17 @@ export const gigReducer = (state, action) => {
         cover: action.payload.cover,
         images: action.payload.images,
       };
-    case "ADD_FEATURE":
-      return { ...state, features: [...state.feature, action.payload] };
+      case "ADD_FEATURE":
+      return {
+        ...state,
+        features: [...state.features, action.payload],
+      };
     case "REMOVE_FEATURE":
       return {
         ...state,
-        features: state.features.filter((x) => x !== action.payload),
+        features: state.features.filter(
+          (x) => x !== action.payload
+        ),
       };
     default:
       return state;

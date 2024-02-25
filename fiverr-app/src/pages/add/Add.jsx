@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
 import "./add.scss";
-import { INITIAL_STATE, gigReducer } from "../../reducers/gigReducer";
+import { INITIAL_STATE, gigReducer} from "../../reducers/gigReducer";
 import upload from "../../utils/upload";
 
 export const Add = () => {
@@ -24,7 +24,8 @@ export const Add = () => {
     });
     e.target[0].value = "";
   };
-  const handleUploads = async (e) => {
+
+  const handleUploads = async () => {
     setUploading(true);
     try {
       const cover = await upload(singleFile);
@@ -40,7 +41,7 @@ export const Add = () => {
       console.log(err);
     }
   };
-  console.log([...files]);
+
   return (
     <div className="add">
       <div className="container">
@@ -75,7 +76,9 @@ export const Add = () => {
                   onChange={(e) => setFiles(e.target.files)}
                 />
               </div>
-              <button className="btn">{uploading ? "Uploading" : "Upload"  }</button>
+              <button className="btn" onClick={handleUploads}>
+                {uploading ? "Uploading" : "Upload"}
+              </button>
             </div>
             <label htmlFor="">Description</label>
             <textarea
@@ -127,9 +130,18 @@ export const Add = () => {
               </button>
             </form>
             <div className="addedFeatures">
-              <div className="item">
-               <button className="btn">feature <span>X</span></button> 
-              </div>
+              {state?.features?.map((f) => (
+                <div className="item" key={f}>
+                  <button className="feat"
+                    onClick={() =>
+                      dispatch({ type: "REMOVE_FEATURE", payload: f })
+                    }
+                  >
+                    {f}
+                    <span>X</span>
+                  </button>
+                </div>
+              ))}
             </div>
             <label htmlFor="">Price</label>
             <input type="number" min={1} name="price" onChange={handleChange} />
