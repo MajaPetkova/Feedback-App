@@ -1,7 +1,10 @@
 import React, { useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./add.scss";
-import { INITIAL_STATE, gigReducer} from "../../reducers/gigReducer";
+import { INITIAL_STATE, gigReducer } from "../../reducers/gigReducer";
 import upload from "../../utils/upload";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
 
 export const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -40,6 +43,25 @@ export const Add = () => {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (gig) => {
+      return newRequest.post("/gigs", gig);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myGigs"]);
+    },
+  });
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(state);
+    navigate("/mygigs")
   };
 
   return (
@@ -89,7 +111,7 @@ export const Add = () => {
               placeholder="Brief descriptions to introduce your service to customers"
               onChange={handleChange}
             ></textarea>
-            <button className="btn">Create</button>
+            <button className="btn" onClick={handleSubmit}>Create</button>
           </div>
           <div className="right">
             <label htmlFor="">Service Title</label>
@@ -132,7 +154,8 @@ export const Add = () => {
             <div className="addedFeatures">
               {state?.features?.map((f) => (
                 <div className="item" key={f}>
-                  <button className="feat"
+                  <button
+                    className="feat"
                     onClick={() =>
                       dispatch({ type: "REMOVE_FEATURE", payload: f })
                     }
