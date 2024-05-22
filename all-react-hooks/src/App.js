@@ -6,6 +6,7 @@ import { ExerciseMemo } from "./components/ExerciseMemo";
 import { ExerciseCallback } from "./components/ExerciseCallback";
 import ExerciseContext from "./components/ExerciseContext";
 import Footer from "./components/Footer";
+import ExerciseReducer from "./components/ExerciseReducer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,6 +40,7 @@ function App() {
       <h3>Count: {count}</h3>
       <button onClick={increaseCount}>Increase by 4</button>
       <ExerciseContext/>
+      <ExerciseReducer/>
       <ExerciseEffect />
       <ExerciseRef />
       <ExerciseMemo />
