@@ -7,6 +7,8 @@ import { ExerciseCallback } from "./components/ExerciseCallback";
 import ExerciseContext from "./components/ExerciseContext";
 import Footer from "./components/Footer";
 import ExerciseReducer from "./components/ExerciseReducer";
+import ExerciseLayout from "./components/ExerciseLayout";
+import ExerciseCustom from "./components/ExerciseCustom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,6 +41,8 @@ function App() {
       <button onClick={changeColor}>Blue</button>
       <h3>Count: {count}</h3>
       <button onClick={increaseCount}>Increase by 4</button>
+      <ExerciseCustom/>
+      <ExerciseLayout/>
       <ExerciseContext/>
       <ExerciseReducer/>
       <ExerciseEffect />
