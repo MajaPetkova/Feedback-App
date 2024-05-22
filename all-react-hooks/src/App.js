@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import { ExerciseEffect } from "./components/ExerciseEffect";
+import { ExerciseRef } from "./components/ExerciseRef";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,10 +19,10 @@ function App() {
   };
 
   const increaseCount = () => {
-    setCount((prev) =>prev +1)
-    setCount((prev) =>prev +1)
-    setCount((prev) =>prev +1)
-    setCount((prev) =>prev +1)
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
   };
 
   return (
@@ -32,6 +34,8 @@ function App() {
       <button onClick={changeColor}>Blue</button>
       <h1>Count: {count}</h1>
       <button onClick={increaseCount}>Increase by 4</button>
+      <ExerciseEffect/>
+      <ExerciseRef/>
     </>
   );
 }
