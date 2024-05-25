@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./CSS/Todo.css";
 import TodoItems from "./TodoItems";
 
@@ -18,9 +18,20 @@ const Todo = () => {
       },
     ]);
     inputRef.current.value = "";
+    localStorage.setItem("todos_count", count);
   };
 
-  useState(() => {}, [todos]);
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+    count = localStorage.getItem("todos_count");
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      // console.log(todos);
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }, 100);
+  }, [todos]);
 
   return (
     <div className="todo">
@@ -46,6 +57,7 @@ const Todo = () => {
           return (
             <TodoItems
               key={index}
+              setTodos={setTodos}
               no={x.no}
               display={x.display}
               text={x.text}
