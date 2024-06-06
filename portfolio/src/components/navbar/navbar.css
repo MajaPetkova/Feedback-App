@@ -6,6 +6,7 @@
 }
 .logo-img{
     width: 70px;
+    z-index: 10;
 }
 .nav-menu{
     display: flex;
@@ -17,11 +18,18 @@
 .nav-connect{
     padding: 20px 40px;
     border-radius: 50px;
-    background: linear-gradient(267deg, #f5b7d6 0.36%, #35086c 107%);
+    background: linear-gradient(267deg, #fe5c95  0.36%, #35086c 107%);
     font-size: 22px;
     cursor: pointer;
     transition: 0.5s;
 }
 .nav-connect:hover {
     transform: scale(1.05);
+}
+.theme{
+    width: 120px;
+    margin-top: 60px;
+    position:absolute;
+
+    z-index: 1;
 }
