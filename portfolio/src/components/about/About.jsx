@@ -1,4 +1,3 @@
-import React from "react";
 import "./about.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import profile_img from "../../assets/ProfilePic.jpg";

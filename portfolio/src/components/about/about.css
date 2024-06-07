@@ -31,7 +31,7 @@
 .about-right {
   display: flex;
   flex-direction: column;
-  gap: 75px;
+  gap: 60px;
 }
 .about-para {
   display: flex;
