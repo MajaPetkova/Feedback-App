@@ -44,7 +44,7 @@ const Contact = () => {
             placeholder="Enter your message"
           ></textarea>
           <button type="submit" className="contact-submit">
-            Submit
+            Submit now
           </button>
         </form>
       </div>
