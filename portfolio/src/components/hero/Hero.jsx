@@ -10,7 +10,7 @@ const Hero = () => {
       <p>
         Motivated, enthusiastic and creative person looking to pursue a
         successful career in software development, where I can help in the
-        delivery of modern software solutions.{" "}
+        delivery of modern software solutions.
       </p>
       <div className="hero-actions">
         <div className="hero-connect">Connect with me</div>

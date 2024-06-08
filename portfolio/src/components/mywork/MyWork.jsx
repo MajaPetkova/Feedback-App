@@ -1,7 +1,7 @@
 import "./mywork.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import mywork_data from "../../assets/mywork_data";
-import arrow_icon from "../../assets/arrow_icon.svg";
+// import arrow_icon from "../../assets/arrow_icon.svg";
 
 const MyWork = () => {
   return (
@@ -13,10 +13,12 @@ const MyWork = () => {
       <div className="mywork-container">
         {mywork_data.map((work, index) => {
           return (
-            <div className="mywork-project">
-              <img src={work.w_img} alt="" key={index} />
-              <a href={work.w_link}>See project</a>
-            </div>
+            <>
+              <div className="mywork-project">
+                <img src={work.w_img} alt="" key={index} />
+                <a href={work.w_link}>See project</a>
+              </div>
+            </>
           );
         })}
       </div>
