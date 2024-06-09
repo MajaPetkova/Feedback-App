@@ -1,12 +1,33 @@
-.footer{
-
+.footer {
+  margin: 50px 70px;
+  display: flex;
+  flex-direction: column;
+  gap:30px;
 }
-.logo-img{
-    width: 70px;
-    z-index: 10;
-}.theme{
-    width: 120px;
-    margin-top: 60px;
-    position:absolute;
-    z-index: 1;
+
+.footer .theme {
+  width: 120px;
+  margin-top: 45px;
+  margin-left: -70px;
+  position: absolute;
+  z-index: -1;
+} 
+.footer-top {
+    display: flex;
+    justify-content:space-between ;
+}
+.footer-top-left{
+    font-size:18px ;
+    max-width: 400px;
+}
+.footer-top-left p{
+    margin-top: 35px;
+}
+.footer-top-right{
+    display: flex;
+    align-items: center;
+    gap:35px
+}
+.footer-email-input{
+    
 }
