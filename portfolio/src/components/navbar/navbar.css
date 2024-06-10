@@ -1,34 +1,44 @@
-.navbar{
-    display: flex;
-    align-items:center ;
-    justify-content: space-between;
-    margin:20px 170px
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 170px;
 }
-.logo-img{
-    width: 70px;
-    z-index: 10;
+.logo-img {
+  width: 70px;
+  z-index: 10;
 }
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap:60px;
-    font-size: 20px;
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 60px;
+  font-size: 20px;
 }
-.nav-connect{
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #fe5c95  0.36%, #35086c 107%);
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.5s;
+.nav-connect {
+  padding: 20px 40px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, #fe5c95 0.36%, #35086c 107%);
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 .nav-connect:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-.theme{
-    width: 120px;
-    margin-top: 60px;
-    position:absolute;
-    z-index: 1;
+.theme {
+  width: 120px;
+  margin-top: 60px;
+  position: absolute;
+  z-index: 1;
+}
+.nav-menu li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.nav-menu li img {
+  display: flex;
+  margin: auto;
 }
