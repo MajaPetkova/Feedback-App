@@ -2,7 +2,10 @@ import "./hero.css";
 import profile from "../../assets/ProfilePic.jpg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
+
 const Hero = () => {
+  const pdfFilePath =  '/Resume.pdf';
+
   return (
     <div className="hero" id="home">
       <img src={profile} alt="" className="hero-profile" />
@@ -20,7 +23,11 @@ const Hero = () => {
             Connect with me{" "}
           </AnchorLink>
         </div>
-        <div className="hero-resume">My resume </div>
+        <a href={pdfFilePath} download="Resume.pdf">
+        <div className="hero-resume" >
+          My resume
+        </div>
+        </a>
       </div>
     </div>
   );

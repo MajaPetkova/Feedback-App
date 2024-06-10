@@ -49,8 +49,8 @@
 .nav-mob-close {
   display: none;
 }
-.toggle{
-    display: none;
+.toggle {
+  display: none;
 }
 @media (max-width: 768px) {
   .navbar {
