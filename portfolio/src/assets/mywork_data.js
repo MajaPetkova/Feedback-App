@@ -54,7 +54,7 @@ const mywork_data = [
         w_link:"https://todo-app2-roaring-griffin-03b7b8.netlify.app/",
         w_img:todos
     },
-
-]
+    
+   ]
  
 export default mywork_data;

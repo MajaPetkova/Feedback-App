@@ -13,9 +13,7 @@ const Hero = () => {
         <span>I am Maya Petkova, </span>JavaScript developer based in Berlin
       </h1>
       <p>
-        Motivated, enthusiastic and creative person looking to pursue a
-        successful career in software development, where I can help in the
-        delivery of modern software solutions.
+      From social and health care to functionality. Fresh from the learning process, like a passionate frontend developer, I bring new perspectives and strong willingness for learning to the world of web design. My ability to care, I brought from my last experience as Social assistant, and now I am ready to care for the pleasant user experience, and I am ready to develop myself further.
       </p>
       <div className="hero-actions">
         <div className="hero-connect">
