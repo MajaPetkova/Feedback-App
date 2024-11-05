@@ -16,7 +16,8 @@ const MyWork = () => {
             <>
               <div className="mywork-project">
                 <img src={work.w_img} alt="" key={index} />
-                <a href={work.w_link}>See project</a>
+                <p className="desc">{work.w_name}</p>
+                <a href={work.w_link} target="_blank">See project</a>
               </div>
             </>
           );
