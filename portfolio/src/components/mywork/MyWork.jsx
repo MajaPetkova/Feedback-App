@@ -14,8 +14,8 @@ const MyWork = () => {
         {mywork_data.map((work, index) => {
           return (
             <>
-              <div className="mywork-project">
-                <img src={work.w_img} alt="" key={index} />
+              <div className="mywork-project" key={index}>
+                <img src={work.w_img} alt=""  />
                 <p className="desc">{work.w_name}</p>
                 <a href={work.w_link} target="_blank">See project</a>
               </div>

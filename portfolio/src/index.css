@@ -2,11 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 body{
   height: 100vh;
-  background: #161513;
+  /* background-color: #161513; */
   color:white;
   font-family: "Outfit";
+  position: relative;
+}
+#light{
+  background-color: white;
+  color:black
+}
+#dark{
+  background-color: #161513;
+
+}
+#light .hero-resume, #light .hero-connect, #light .nav-connect{
+  border:2px solid #161513
+}
+#light .mywork-container img{
+  border: 4px solid #fe5c95;
+}
+.switch-btn{
+  position: absolute;
+right: 20px;
+top:20px
 }

@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 170px;
+  margin: 0px 170px;
+  padding-top: 30px;
 }
 .logo-img {
   width: 70px;
@@ -12,7 +13,7 @@
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 60px;
+  gap: 40px;
   font-size: 20px;
 }
 .nav-connect {
@@ -35,7 +36,7 @@
 .nav-menu li {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0px;
   cursor: pointer;
 }
 .nav-menu li img {
@@ -45,12 +46,16 @@
 .anchor-link {
   text-decoration: none;
   color: white;
+  padding: 4px 2px;
 }
 .nav-mob-close {
   display: none;
 }
 .toggle {
   display: none;
+}
+#light .nav-menu li p {
+  color:black
 }
 @media (max-width: 768px) {
   .navbar {
@@ -84,10 +89,22 @@
     transition: right 0.5s;
     right: -350px;
   }
-  .nav-menu li {
+  #light .nav-menu{
+    background-color: white;
+  }
+  .nav-menu li p{
     font-size: 26px;
     padding-left: 100px;
     flex-direction: row;
     gap: 20px;
+  }
+ 
+  #light .nav-mob-close{
+    border:1px solid #161513;
+    background-color: #161513;
+  }
+  #light .toggle{
+    padding: 8px 8px;
+    background-color: #161513;
   }
 }

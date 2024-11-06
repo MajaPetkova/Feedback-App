@@ -69,6 +69,9 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+#light .footer-subscribe{
+  border:2px solid #161513
+}
 @media (max-width:768px) {
   .footer{
     margin: 50px 70px;

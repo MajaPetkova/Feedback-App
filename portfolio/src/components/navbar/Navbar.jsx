@@ -12,7 +12,7 @@ const Navbar = () => {
   const menuRef = useRef();
 
   const openMenu = () => {
-    menuRef.current.style.right = "0px"
+    menuRef.current.style.right = "0px";
   };
   const closeMenu = () => {
     menuRef.current.style.right = "-350px";
@@ -57,7 +57,7 @@ const Navbar = () => {
       </ul>
       <div className="nav-connect">
         <AnchorLink className="anchor-link" offset={50} href="#contact">
-          Connect with Me
+          Connect with me
         </AnchorLink>
       </div>
     </div>

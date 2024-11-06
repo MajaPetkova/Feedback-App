@@ -38,6 +38,7 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
+  margin-bottom: 20px;
 }
 .mywork-project a {
   margin: 20px 150px;
@@ -46,6 +47,7 @@
   font-weight: 500;
   text-decoration: none;
   color: white;
+  margin-top: -10px;
 }
 .mywork-container img:hover {
   transform: scale(1.1);
@@ -61,13 +63,15 @@
 .desc {
   display: none;
 }
-
+#light .mywork-project a{ 
+  color: black;
+}
 .mywork-project:hover .desc {
   display: block;
   position: absolute;
   /* margin-top: 80px; */
   top: 35%;
-  left: 50%;
+  left: 48%;
   transform: translate(-50%, -50%);
   font-size: 30px;
   color: rgb(254, 5, 101);
